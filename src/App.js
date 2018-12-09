@@ -1,28 +1,57 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { updateView } from './actions'
+import Page from './components/Page'
+
+import { VIEWS } from './constants/views'
+import LandingPage from './components/LandingPage'
+import ExplorePage from './containers/ExplorePage'
 
 class App extends Component {
+  getView() {
+    console.log(this.props.view)
+    switch(this.props.view) {
+      case VIEWS.LANDING:
+        return (
+          <LandingPage/>
+        )
+      case VIEWS.EXPLORE:
+        return (
+          <ExplorePage/>
+        )
+      default:
+        return (
+          <LandingPage/>
+        )
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Page>
+          {
+            this.getView()
+          }
+        </Page>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    view: state.view,
+    
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    updateView: (view) => {
+      dispatch(updateView(view))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

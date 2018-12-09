@@ -1,0 +1,4 @@
+export const VIEWS = {
+  LANDING: "VIEWS_LANDING",
+  EXPLORE: "VIEWS_EXPLORE"
+}
