@@ -1,5 +1,6 @@
 const cors = require('cors')
 const express = require('express')
+const path = require('path')
 const app = express()
 
 const port = process.env.PORT || 5000;
@@ -13,7 +14,6 @@ require('./server/loadCourses').loadCourses((data) => {
 app.use(cors())
 
 app.get('/api/courses/batch/:batchNumber', function (req, res) {
-  console.log("Hit")
   let batch_size = 9
   let batch = req.params.batchNumber
   let offset = batch_size * batch
