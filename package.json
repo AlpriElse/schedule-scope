@@ -11,9 +11,7 @@
     "cors": "^2.8.5",
     "csv-parse": "^4.1.0",
     "express": "^4.16.4",
-    "node-fetch": "^2.3.0"
-  },
-  "devDependencies": {
+    "node-fetch": "^2.3.0",
     "concurrently": "^4.0.1"
   }
 }
