@@ -3,6 +3,9 @@
  * Copyright 2013-2018 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-grayscale/blob/master/LICENSE)
  */
+
+
+
 #mainNav {
   min-height: 56px;
   background-color: #fff;
@@ -306,4 +309,21 @@ a:focus, a:hover {
 
 footer {
   padding: 5rem 0;
+}
+
+
+
+.btn-outline-special {
+  background-color: transparent;
+  border-radius: 0;
+  border: 1px solid white;
+  padding: 10px;
+  font-size: 1em;
+  font-weight: 300;
+  transition: .5s ease;
+  color: white;
+}
+.btn-outline-special:hover {
+  background-color: white;
+  color: black;
 }
