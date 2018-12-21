@@ -6,18 +6,29 @@ const app = express()
 const port = process.env.PORT || 5000;
 
 let courses
-require('./server/loadCourses').loadCourses((data) => {
+require('./server/loadCourses').loadCourses().then(course_data => {
+  courses = course_data
   console.log("Courses Saved.")
-  courses = data
 })
+
+// let subjects
+// require('./server/loadCourses').loadSubjects().then(subject_data => {
+//   console.log("Subjects Saved.")
+//   subjecs = subject_data
+// })
 
 app.use(cors())
 
-app.get('/api/courses/batch/:batchNumber', function (req, res) {
+app.get('/api/courses/batch/:batchNumber', (req, res) => {
   let batch_size = 9
   let batch = req.params.batchNumber
   let offset = batch_size * batch
+  console.log("Batch", batch, "requested.")
   res.json(courses.slice(offset, offset + batch_size))
+})
+
+app.get('/api/subjects', (req, res) => {
+  res.json(subjects)
 })
 
 if (process.env.NODE_ENV === 'production') {

@@ -15,6 +15,10 @@
     "csv-parse": "^4.1.0",
     "express": "^4.16.4",
     "js-hash-code": "^1.0.0",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-router-dom": "^4.3.1",
+    "reactstrap": "^6.5.0"
   }
 }

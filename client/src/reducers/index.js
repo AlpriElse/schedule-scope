@@ -1,22 +1,12 @@
-import { UPDATE_VIEW, ADD_COURSE, ADD_COURSE_BATCH,
-  FETCH_COURSE_BATCH } from '../constants/ActionTypes'
-import { VIEWS } from '../constants/views'
+import {
+  ADD_COURSE,
+  ADD_COURSE_BATCH,
+  FETCH_COURSE_BATCH,
+  UPDATE_FILTER } from '../constants/ActionTypes'
+import { initialState } from '../redux/initialState'
 
-const reducer = (state = {
-  view: VIEWS.LANDING,
-  courses: {
-    isFetching: false,
-    ready: false,
-    batchNumber: 0
-  },
-  courseList: []
-}, action) => {
-  console.log(action)
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case UPDATE_VIEW:
-      return Object.assign({}, state, {
-        view: action.view
-      })
     case ADD_COURSE:
       return Object.assign({}, state, {
         courseList: state.courseList.concat(action.course)
@@ -33,12 +23,15 @@ const reducer = (state = {
         }
       })
     case FETCH_COURSE_BATCH.SUCCESS:
-    return Object.assign({}, state, {
-      courses: {
-        ...state.courses,
-        isFetching: false
-      }
-    })
+      return Object.assign({}, state, {
+        courses: {
+          ...state.courses,
+          isFetching: false
+        }
+      })
+    case UPDATE_FILTER:
+      state.filters[action.filter] = action.value
+      return Object.assign({}, state)
     default:
       return state
   }

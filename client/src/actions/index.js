@@ -1,9 +1,14 @@
-import { UPDATE_VIEW, ADD_COURSE, ADD_COURSE_BATCH,
-  FETCH_COURSE_BATCH } from '../constants/ActionTypes'
+import {
+  ADD_COURSE,
+  ADD_COURSE_BATCH,
+  FETCH_COURSE_BATCH,
+  UPDATE_FILTER} from '../constants/ActionTypes'
 
-export const updateView = (view) => ({
-  type: UPDATE_VIEW,
-  view
+
+export const updateFilter = (filter, value) => ({
+  type: UPDATE_FILTER,
+  filter,
+  value
 })
 
 const fetchCourseBatchRequest = () => ({
@@ -22,8 +27,7 @@ const fetchCourseBatchFailure = (err) => ({
 
 export const fetchCourseBatch = (batch) => (dispatch) => {
   dispatch(fetchCourseBatchRequest())
-
-  return fetch('/api/courses/batch/' + batch).then(
+  return fetch('http://localhost:5000/api/courses/batch/' + batch).then(
     res => {
       dispatch(fetchCourseBatchSuccess)
       res.text().then((text) => {
