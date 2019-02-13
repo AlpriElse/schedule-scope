@@ -2,11 +2,10 @@
   "name": "illini-advisor",
   "version": "1.0.0",
   "scripts": {
-    "client": "cd client && npm install && npm run start",
-    "server": "node server.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "heroku-postbuild": ""
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -15,10 +14,14 @@
     "csv-parse": "^4.1.0",
     "express": "^4.16.4",
     "js-hash-code": "^1.0.0",
+    "next": "^7.0.2",
     "node-fetch": "^2.3.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-router-dom": "^4.3.1",
-    "reactstrap": "^6.5.0"
+    "react-masonry-component": "^6.2.1",
+    "react-redux": "^6.0.0",
+    "reactstrap": "^6.5.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   }
 }
