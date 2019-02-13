@@ -1,39 +1,42 @@
-var parse = require('csv-parse');
-var fs = require('fs');
+const parse = require('csv-parse');
+const fs = require('fs');
+const path = require('path')
 
-var course_columns = ["department", "department_code", "course_title", "course_number", "course_description", "course_hours"];
-var course_parser = parse({
+const course_columns = ["department", "department_code", "course_title", "course_number", "course_description", "course_hours"];
+const course_parser = parse({
   delimiter: ',',
   from_line: 2, // Skip label row,
   quote: true,
   columns: course_columns
 });
 
-var subject_columns = ["department", "code", "website", "college_code"];
-var subject_parser = parse({
+const subject_columns = ["department", "code", "website", "college_code"];
+const subject_parser = parse({
   delimiter: ',',
   from_line: 2,
   quote: true,
   columns: subject_columns
 });
 
-var COURSE_INFORMATION_FILEPATH = "./data/course-information.csv";
-var SUBJECT_INFORMATION_FILEPATH = "./data/subjects.csv";
+const COURSE_INFORMATION_FILEPATH = path.join(__dirname, "../data/course-information.csv");
+const SUBJECT_INFORMATION_FILEPATH = path.join(__dirname, "../data/subjects.csv");
 
-var readFile = function readFile(filename) {
+const readFile = (filename) => {
   return new Promise(function (resolve, reject) {
-    fs.readFile(filename, 'utf8', function (err, text) {
+    fs.readFile(filename, 'utf8', (err, text) => {
       if (err) {
-        reject();
+        console.log("Error reading file!")
+        console.log(err)
+        reject()
       }
-      resolve(text);
-    });
-  });
+      resolve(text)
+    })
+  })
 };
 
-module.exports.loadCourses = function () {
+module.exports.loadCourses = () => {
   return new Promise(function (resolve, reject) {
-    var courses = [];
+    let courses = [];
     console.log("Reading course information file.");
 
     readFile(COURSE_INFORMATION_FILEPATH).then(function (text) {
@@ -41,8 +44,8 @@ module.exports.loadCourses = function () {
       course_parser.write(text);
       course_parser.end();
       course_parser.on('readable', function () {
-        var record = course_parser.read();
-        var count = 0;
+        let record = course_parser.read();
+        let count = 0;
         while (record) {
           count += 1;
           courses.push(record);
@@ -55,6 +58,7 @@ module.exports.loadCourses = function () {
         resolve(courses);
       });
     }).catch(function (err) {
+      console.log("Error while parsing!")
       reject();
     });
   });
@@ -62,15 +66,15 @@ module.exports.loadCourses = function () {
 
 module.exports.loadSubjects = function () {
   return new Promise(function (resolve, reject) {
-    var subjects = [];
+    let subjects = [];
     console.log("Reading subject information file.");
     readFile(SUBJECT_INFORMATION_FILEPATH).then(function (text) {
       console.log("Parsing subject information csv file.");
       subject_parser.write(text);
       subject_parser.end();
       subject_parser.on('readable', function () {
-        var record = subject_parser.read();
-        var count = 0;
+        let record = subject_parser.read();
+        let count = 0;
         while (record) {
           count += 1;
           subjects.push(record);
