@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchCourseBatch } from '../actions'
 
+import Layout from '../components/Layout'
 import Masonry from 'react-masonry-component'
 import CourseCard from '../components/CourseCard'
 import Filter from '../containers/Filter'
@@ -29,38 +30,47 @@ class ExplorePage extends React.Component {
   }
 
   onScroll() {
-    if (document.offsetHeight + document.scrollTop > document.scrollHeight - 100
-      && !this.props.courses.isFetching) {
-      this.props.loadCoursesBatch(this.props.courses.batchNumber++)
-      console.log(this.props.courses.batchNumber)
+    if (process.browser) {
+      console.log(document.body.offsetHeight + document.body.scrollTop)
+      console.log(document.body.scrollHeight)
+      if (document.body.offsetHeight + document.body.scrollTop
+          > document.body.scrollHeight - 400 && !this.props.courses.isFetching) {
+        this.props.loadCoursesBatch(this.props.courses.batchNumber++)
+        console.log(this.props.courses.batchNumber)
+      }
     }
+
+
   }
   render() {
     return (
-      <Container>
-        <Row>
-          <Filter />
-        </Row>
-        <Row>
-          <Container>
-            <Masonry>
-              {
-                this.props.courseList.map((course) => {
-                  if (course.department_code == undefined) {
-                    console.log(course)
-                  }
-                  return (
-                    <CourseCard department_code={course.department_code}
-                      course_number={course.course_number}
-                      course_title={course.course_title}
-                      course_description={course.course_description}/>
-                  )
-                })
-              }
-            </Masonry>
-          </Container>
-        </Row>
-      </Container>
+      <Layout>
+        <Container>
+          <Row>
+            <Filter />
+          </Row>
+          <Row>
+            <Container>
+              <Masonry>
+                {
+                  this.props.courseList.map((course) => {
+                    if (course.department_code == undefined) {
+                      console.log(course)
+                    }
+                    return (
+                      <CourseCard department_code={course.department_code}
+                        course_number={course.course_number}
+                        course_title={course.course_title}
+                        course_description={course.course_description}
+                        key={course.department_code + course.course_number}/>
+                    )
+                  })
+                }
+              </Masonry>
+            </Container>
+          </Row>
+        </Container>
+      </Layout>
     )
   }
 }
