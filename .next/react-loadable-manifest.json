@@ -1,15 +1,21 @@
 {
-  "./index.scss": [
+  "./Filter.scss": [
     {
-      "id": "./pages/index.scss",
-      "name": "./pages/index.scss",
+      "id": "./containers/Filter/Filter.scss",
+      "name": "./containers/Filter/Filter.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
   ],
   "undefined": [
     {
-      "id": 4,
+      "id": 8,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 10,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -21,16 +27,30 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 10,
+      "id": 9,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 13,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./filter.scss": [
+  "./Keyword.scss": [
     {
-      "id": "./containers/filter.scss",
-      "name": "./containers/filter.scss",
+      "id": "./containers/Keyword/Keyword.scss",
+      "name": "./containers/Keyword/Keyword.scss",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./KeywordDisplay.scss": [
+    {
+      "id": "./containers/KeywordDisplay/KeywordDisplay.scss",
+      "name": "./containers/KeywordDisplay/KeywordDisplay.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -39,6 +59,14 @@
     {
       "id": "./pages/explore.scss",
       "name": "./pages/explore.scss",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./index.scss": [
+    {
+      "id": "./pages/index.scss",
+      "name": "./pages/index.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }

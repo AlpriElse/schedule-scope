@@ -5,7 +5,8 @@ import { fetchCourseBatch } from '../actions'
 import Layout from '../components/Layout'
 import Masonry from 'react-masonry-component'
 import CourseCard from '../components/CourseCard'
-import Filter from '../containers/Filter'
+import Filter from '../containers/Filter/'
+import KeywordDisplay from '../containers/KeywordDisplay/'
 
 import './explore.scss'
 
@@ -44,6 +45,9 @@ class ExplorePage extends React.Component {
         <div className="container">
           <div className="row filter-container">
             <Filter />
+          </div>
+          <div className="row">
+            <KeywordDisplay className="container"/>
           </div>
           <div className="row">
             <div className="container">

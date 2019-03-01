@@ -7,5 +7,6 @@ export var initialState = {
   courseList: [],
   filters: {
     department: ""
-  }
+  },
+  keywords: []
 };

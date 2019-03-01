@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { addKeyword as addKeywordAction} from '../../actions'
 
-import './filter.scss'
+import './Filter.scss'
 
 class Filter extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class Filter extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    this.props.addKeyword(this.state.currentKeyword)
     this.setState(currState => ({
       currentKeyword: ""
     }))
@@ -38,7 +40,7 @@ class Filter extends Component {
             <div className="input-group-append">
               <button
                 id="button-addon2"
-                className="btn btn-secondary"
+                className="btn btn-light"
                 type="button"
                 onClick={this.handleSubmit}>Apply</button>
             </div>
@@ -49,5 +51,10 @@ class Filter extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  addKeyword: (keyword) => {
+    dispatch(addKeywordAction(keyword))
+  }
+})
 
-export default connect()(Filter)
+export default connect(undefined, mapDispatchToProps)(Filter)

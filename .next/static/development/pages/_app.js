@@ -4,11 +4,13 @@
 /*!**********************************!*\
   !*** ./constants/ActionTypes.js ***!
   \**********************************/
-/*! exports provided: UPDATE_FILTER, ADD_COURSE, ADD_COURSE_BATCH, FETCH_COURSE_BATCH */
+/*! exports provided: ADD_KEYWORD, REMOVE_KEYWORD, UPDATE_FILTER, ADD_COURSE, ADD_COURSE_BATCH, FETCH_COURSE_BATCH */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_KEYWORD", function() { return ADD_KEYWORD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_KEYWORD", function() { return REMOVE_KEYWORD; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_FILTER", function() { return UPDATE_FILTER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COURSE", function() { return ADD_COURSE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COURSE_BATCH", function() { return ADD_COURSE_BATCH; });
@@ -21,6 +23,8 @@ var createAsyncActionStrings = function createAsyncActionStrings(action) {
   };
 };
 
+var ADD_KEYWORD = "ADD_KEYWORD";
+var REMOVE_KEYWORD = "REMOVE_KEYWORD";
 var UPDATE_FILTER = "UPDATE_FILTER";
 var ADD_COURSE = "ADD_COURSE";
 var ADD_COURSE_BATCH = "ADD_COURSE_BATCH";
@@ -11651,6 +11655,18 @@ var reducer = function reducer() {
   var action = arguments[1];
 
   switch (action.type) {
+    case _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_KEYWORD"]:
+      return Object.assign({}, state, {
+        keywords: state.keywords.concat(action.keyword)
+      });
+
+    case _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["REMOVE_KEYWORD"]:
+      return Object.assign({}, state, {
+        keywords: state.keywords.filter(function (keyword) {
+          return keyword != action.keyword;
+        })
+      });
+
     case _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_COURSE"]:
       return Object.assign({}, state, {
         courseList: state.courseList.concat(action.course)
@@ -11707,7 +11723,8 @@ var initialState = {
   courseList: [],
   filters: {
     department: ""
-  }
+  },
+  keywords: []
 };
 
 /***/ }),
