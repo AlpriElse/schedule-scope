@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
 
+import './index.scss'
+
 const Index = () => (
   <Layout>
-    <div className="container d-flex h-75 align-items-center">
-      <div className="flex-fill mx-auto text-center">
-        <h2 className="text-white mx-auto mt-2 mb-5">Explore courses that interest you at the University of Illinois at Urbana-Champaign.</h2>
+    <div className="container text-white text-right col-md-6">
+      <h2 className="brand">Illini Advisor</h2>
+      <div>
+        <h6 className="tagline lead">Find the course you'll love.</h6>
         <Link href="/explore">
           <a className="btn btn-primary">Explore</a>
         </Link>

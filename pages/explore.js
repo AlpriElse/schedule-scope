@@ -7,10 +7,7 @@ import Masonry from 'react-masonry-component'
 import CourseCard from '../components/CourseCard'
 import Filter from '../containers/Filter'
 
-import {
-  Container,
-  Row
-} from 'reactstrap'
+import './explore.scss'
 
 class ExplorePage extends React.Component {
   constructor(props) {
@@ -24,7 +21,6 @@ class ExplorePage extends React.Component {
     this.props.loadCoursesBatch(this.props.courses.batchNumber)
     window.addEventListener('scroll', this.onScroll, false);
   }
-
   componentWillUnmount() {
     window.removeEventListener('scroll', this.onScroll, false);
   }
@@ -45,12 +41,12 @@ class ExplorePage extends React.Component {
   render() {
     return (
       <Layout>
-        <Container>
-          <Row>
+        <div className="container">
+          <div className="row filter-container">
             <Filter />
-          </Row>
-          <Row>
-            <Container>
+          </div>
+          <div className="row">
+            <div className="container">
               <Masonry>
                 {
                   this.props.courseList.map((course) => {
@@ -67,9 +63,9 @@ class ExplorePage extends React.Component {
                   })
                 }
               </Masonry>
-            </Container>
-          </Row>
-        </Container>
+            </div>
+          </div>
+        </div>
       </Layout>
     )
   }
