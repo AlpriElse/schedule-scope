@@ -16,10 +16,10 @@ class Keyword extends Component {
   render() {
     return (
       <div className="btn-group keyword">
-        <a className="btn btn-light">
+        <a className="btn text-white">
           {this.props.keyword}
         </a>
-        <button className="btn btn-light"
+        <button className="btn text-white"
           onClick={this.handleClick}>X</button>
       </div>
     )

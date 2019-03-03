@@ -28,11 +28,12 @@ class ExplorePage extends React.Component {
 
   onScroll() {
     if (process.browser) {
-      // console.log(document.body.offsetHeight + document.body.scrollTop)
-      // console.log(document.body.scrollHeight)
-      if (!this.props.courses.isFetching && this.props.courses.batchNumber < 5) {
-        this.props.loadCoursesBatch(this.props.courses.batchNumber++)
-        console.log(this.props.courses.batchNumber)
+      if (window.innerHeight + window.scrollY
+        >= (document.body.offsetHeight - 500)) {
+        if (!this.props.courses.isFetching) {
+          this.props.loadCoursesBatch(this.props.courses.batchNumber++)
+          console.log(this.props.courses.batchNumber)
+        }
       }
     }
 

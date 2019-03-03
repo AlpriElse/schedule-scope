@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import axios from 'axios'
 import { addKeyword as addKeywordAction} from '../../actions'
 
 import './Searchbar.scss'
@@ -17,12 +18,12 @@ class Searchbar extends Component {
   }
 
   componentWillMount() {
-    this.state.suggestions = [
-      "Computer Science",
-      "College of Engineering",
-      "Mechanical Engineering",
-      "Gies College of Business"
-    ]
+    axios.get("/static/data/keywords.json")
+      .then(res => {
+        this.setState({
+          suggestions: res.data
+        })
+      })
   }
 
   handleKeyDown = e => {
@@ -45,7 +46,6 @@ class Searchbar extends Component {
         break;
       case 40:
         //  [Down Arrow]
-        console.log("called")
         this.setState(state => ({
           activeSuggestion: Math.min(state.filteredSuggestions.length,
             state.activeSuggestion + 1)
@@ -72,8 +72,9 @@ class Searchbar extends Component {
     }))
   }
 
-  handleClick = e => {
+  handleClick = keyword => {
     this.setState(state => {
+      this.props.addKeyword(`#${keyword}`)
 
       return {
         activeSuggestion: 0,
@@ -121,7 +122,7 @@ class Searchbar extends Component {
                 return (
                   <li className={className}
                       key={suggestion}
-                      onClick={handleClick}>
+                      onClick={() => handleClick(suggestion)}>
                     {`#${suggestion}`}
                   </li>
                 )

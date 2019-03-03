@@ -354,7 +354,7 @@ function (_React$Component) {
         style: overlaycontainer
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn btn-outline-light"
-      }, "Go to Course"))))));
+      }, "Show Me Details"))))));
     }
   }]);
 
@@ -530,9 +530,9 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "btn-group keyword"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "btn btn-light"
+        className: "btn text-white"
       }, this.props.keyword), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "btn btn-light",
+        className: "btn text-white",
         onClick: this.handleClick
       }, "X"));
     }
@@ -675,9 +675,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions */ "./actions/index.js");
-/* harmony import */ var _Searchbar_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Searchbar.scss */ "./containers/Searchbar/Searchbar.scss");
-/* harmony import */ var _Searchbar_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Searchbar_scss__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions */ "./actions/index.js");
+/* harmony import */ var _Searchbar_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Searchbar.scss */ "./containers/Searchbar/Searchbar.scss");
+/* harmony import */ var _Searchbar_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Searchbar_scss__WEBPACK_IMPORTED_MODULE_4__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -697,6 +699,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -738,8 +741,6 @@ function (_Component) {
 
         case 40:
           //  [Down Arrow]
-          console.log("called");
-
           _this.setState(function (state) {
             return {
               activeSuggestion: Math.min(state.filteredSuggestions.length, state.activeSuggestion + 1)
@@ -775,8 +776,10 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function (e) {
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function (keyword) {
       _this.setState(function (state) {
+        _this.props.addKeyword("#".concat(keyword));
+
         return {
           activeSuggestion: 0,
           filteredSuggestions: [],
@@ -799,7 +802,13 @@ function (_Component) {
   _createClass(Searchbar, [{
     key: "componentWillMount",
     value: function componentWillMount() {
-      this.state.suggestions = ["Computer Science", "College of Engineering", "Mechanical Engineering", "Gies College of Business"];
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("/static/data/keywords.json").then(function (res) {
+        _this2.setState({
+          suggestions: res.data
+        });
+      });
     }
   }, {
     key: "render",
@@ -838,7 +847,9 @@ function (_Component) {
             return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
               className: className,
               key: suggestion,
-              onClick: handleClick
+              onClick: function onClick() {
+                return handleClick(suggestion);
+              }
             }, "#".concat(suggestion));
           }));
         } else {
@@ -877,7 +888,7 @@ function (_Component) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     addKeyword: function addKeyword(keyword) {
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_2__["addKeyword"])(keyword));
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_3__["addKeyword"])(keyword));
     }
   };
 };
@@ -1043,6 +1054,17 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 
 module.exports = __webpack_require__(/*! ./pages/explore.js */"./pages/explore.js");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
