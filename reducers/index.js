@@ -14,6 +14,9 @@ const reducer = function reducer() {
 
   switch (action.type) {
     case ADD_KEYWORD:
+      if (state.keywords.indexOf(action.keyword) != -1) {
+        return state
+      }
       return Object.assign({}, state, {
         keywords: state.keywords.concat(action.keyword)
       })

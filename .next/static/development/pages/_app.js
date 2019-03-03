@@ -11656,6 +11656,10 @@ var reducer = function reducer() {
 
   switch (action.type) {
     case _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_KEYWORD"]:
+      if (state.keywords.indexOf(action.keyword) != -1) {
+        return state;
+      }
+
       return Object.assign({}, state, {
         keywords: state.keywords.concat(action.keyword)
       });

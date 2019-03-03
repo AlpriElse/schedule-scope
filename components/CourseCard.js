@@ -119,7 +119,7 @@ class CourseCard extends React.Component {
               <div className="text-center text-white" style={overlayText}>{course.department_code} {course.course_number}</div>
               <br/>
               <div style={overlaycontainer}>
-                <button className="btn btn-outline-special">Go to Course</button>
+                <button className="btn btn-outline-light">Go to Course</button>
               </div>
             </div>
           </div>

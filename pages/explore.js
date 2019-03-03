@@ -5,7 +5,7 @@ import { fetchCourseBatch } from '../actions'
 import Layout from '../components/Layout'
 import Masonry from 'react-masonry-component'
 import CourseCard from '../components/CourseCard'
-import Filter from '../containers/Filter/'
+import Searchbar from '../containers/Searchbar/'
 import KeywordDisplay from '../containers/KeywordDisplay/'
 
 import './explore.scss'
@@ -28,10 +28,9 @@ class ExplorePage extends React.Component {
 
   onScroll() {
     if (process.browser) {
-      console.log(document.body.offsetHeight + document.body.scrollTop)
-      console.log(document.body.scrollHeight)
-      if (document.body.offsetHeight + document.body.scrollTop
-          > document.body.scrollHeight - 400 && !this.props.courses.isFetching) {
+      // console.log(document.body.offsetHeight + document.body.scrollTop)
+      // console.log(document.body.scrollHeight)
+      if (!this.props.courses.isFetching && this.props.courses.batchNumber < 5) {
         this.props.loadCoursesBatch(this.props.courses.batchNumber++)
         console.log(this.props.courses.batchNumber)
       }
@@ -43,10 +42,10 @@ class ExplorePage extends React.Component {
     return (
       <Layout>
         <div className="container">
-          <div className="row filter-container">
-            <Filter />
+          <div className="row searchbar-container">
+            <Searchbar />
           </div>
-          <div className="row">
+          <div className="col-md-12">
             <KeywordDisplay className="container"/>
           </div>
           <div className="row">
