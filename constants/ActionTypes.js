@@ -6,8 +6,8 @@ var createAsyncActionStrings = function createAsyncActionStrings(action) {
   }
 }
 
-export var ADD_KEYWORD = "ADD_KEYWORD"
-export var REMOVE_KEYWORD = "REMOVE_KEYWORD"
+export var UPDATE_KEYWORDS = "UPDATE_KEYWORDS"
+export var INCREMENT_BATCH_NUMBER = "INCREMENT_BATCH_NUMBER"
 
 export var UPDATE_FILTER = "UPDATE_FILTER"
 

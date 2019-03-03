@@ -3,28 +3,25 @@ import {
   ADD_COURSE_BATCH,
   FETCH_COURSE_BATCH,
   UPDATE_FILTER,
-  ADD_KEYWORD,
-  REMOVE_KEYWORD } from '../constants/ActionTypes'
+  UPDATE_KEYWORDS,
+  INCREMENT_BATCH_NUMBER } from '../constants/ActionTypes'
 
 import { initialState } from '../redux/initialState'
 
 const reducer = function reducer() {
   let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState
   let action = arguments[1]
-
   switch (action.type) {
-    case ADD_KEYWORD:
-      if (state.keywords.indexOf(action.keyword) != -1) {
-        return state
-      }
+    case UPDATE_KEYWORDS:
       return Object.assign({}, state, {
-        keywords: state.keywords.concat(action.keyword)
-      })
-    case REMOVE_KEYWORD:
-      return Object.assign({}, state, {
-        keywords: state.keywords.filter(keyword => {
-          return keyword != action.keyword
-        })
+        keywords: action.keywords,
+        courses: {
+          isFetching: false,
+          ready: false,
+          batchNumber: 0
+        },
+        courseList: [],
+        batchNumber: 0
       })
     case ADD_COURSE:
       return Object.assign({}, state, {
@@ -46,9 +43,10 @@ const reducer = function reducer() {
           isFetching: false
         })
       })
-    case UPDATE_FILTER:
-      state.filters[action.filter] = action.value;
-      return Object.assign({}, state);
+    case INCREMENT_BATCH_NUMBER:
+      return Object.assign({}, state, {
+        batchNumber: state.batchNumber + 1
+      })
     default:
       return state
   }

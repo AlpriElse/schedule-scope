@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { addKeyword as addKeywordAction} from '../../actions'
+import {
+  updateKeywords as updateKeywordsAction,
+  fetchCourseBatch} from '../../actions'
 
 import './Searchbar.scss'
 
@@ -30,11 +32,18 @@ class Searchbar extends Component {
     switch(e.keyCode) {
       case 13:
         //  [Enter]
-        this.setState(state => {
+        this.setState((state, props) => {
+          let { updateKeywords, keywords } = props
           if (state.activeSuggestion == 0) {
-            this.props.addKeyword(`"${state.currentKeyword}"`)
+            updateKeywords(keywords.concat({
+              type: "CUSTOM",
+              word: state.currentKeyword
+            }))
           } else {
-            this.props.addKeyword(`#${state.filteredSuggestions[state.activeSuggestion - 1]}`)
+            updateKeywords(keywords.concat({
+              type: "SUGGESTED",
+              word: state.filteredSuggestions[state.activeSuggestion - 1]
+            }))
           }
           return {
             activeSuggestion: 0,
@@ -73,9 +82,9 @@ class Searchbar extends Component {
   }
 
   handleClick = keyword => {
+    let { keywords, updateKeywords, loadCoursesBatch } = this.props
     this.setState(state => {
-      this.props.addKeyword(`#${keyword}`)
-
+      updateKeywords(keywords.concat(keyword))
       return {
         activeSuggestion: 0,
         filteredSuggestions: [],
@@ -166,9 +175,13 @@ class Searchbar extends Component {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  addKeyword: (keyword) => {
-    dispatch(addKeywordAction(keyword))
+  updateKeywords: (keywords) => {
+    dispatch(updateKeywordsAction(keywords))
   }
 })
 
-export default connect(undefined, mapDispatchToProps)(Searchbar)
+const mapStateToProps = (state, ownProps) => ({
+  keywords: state.keywords
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Searchbar)

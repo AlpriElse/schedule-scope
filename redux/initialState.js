@@ -8,5 +8,6 @@ export var initialState = {
   filters: {
     department: ""
   },
-  keywords: []
+  keywords: [],
+  batchNumber: 0
 };

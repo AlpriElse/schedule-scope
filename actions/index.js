@@ -1,22 +1,21 @@
+import axios from 'axios'
+
 import {
   ADD_COURSE,
   ADD_COURSE_BATCH,
   FETCH_COURSE_BATCH,
   UPDATE_FILTER,
-  ADD_KEYWORD,
-  REMOVE_KEYWORD } from '../constants/ActionTypes';
+  UPDATE_KEYWORDS,
+  REMOVE_KEYWORD,
+  INCREMENT_BATCH_NUMBER } from '../constants/ActionTypes';
 
-export const addKeyword = (keyword) => {
-  return {
-    type: ADD_KEYWORD,
-    keyword: keyword
-  }
-}
-
-export const removeKeyword = (keyword) => {
-  return {
-    type: REMOVE_KEYWORD,
-    keyword: keyword
+export const updateKeywords = (keywords) => {
+  return dispatch => {
+    dispatch(fetchCourseBatch(0, keywords))
+    dispatch({
+      type: UPDATE_KEYWORDS,
+      keywords: keywords
+    })
   }
 }
 
@@ -47,17 +46,19 @@ const fetchCourseBatchFailure = (err) => {
   }
 }
 
-export const fetchCourseBatch = (batch) => {
-  return function (dispatch) {
-    dispatch(fetchCourseBatchRequest());
-    return fetch('http://localhost:5000/api/courses/batch/' + batch).then(function (res) {
-      dispatch(fetchCourseBatchSuccess);
-      res.text().then(function (text) {
-        dispatch(fetchCourseBatchSuccess());
-        dispatch(addCourseBatch(JSON.parse(text)));
-      })
-    }, function (err) {
-      dispatch(fetchCourseBatchFailure(err.data));
+export const fetchCourseBatch = (batch, keywords) => {
+  return dispatch => {
+    dispatch(fetchCourseBatchRequest())
+    return axios({
+      url: '/api/courses/batch/' + batch,
+      params: {
+        keywords: keywords
+      }
+    }).then(res => {
+      dispatch(fetchCourseBatchSuccess())
+      dispatch(addCourseBatch(res.data))
+    }).catch(err => {
+      dispatch(fetchCourseBatchFailure(err.data))
     })
   }
 }
@@ -66,12 +67,18 @@ export const addCourse = (course) => {
   return {
     type: ADD_COURSE,
     course: course
-  };
-};
+  }
+}
 
 export const addCourseBatch = (batch) => {
   return {
     type: ADD_COURSE_BATCH,
     batch: batch
-  };
-};
+  }
+}
+
+export const incrementBatchNumber = () => {
+  return {
+    type: INCREMENT_BATCH_NUMBER
+  }
+}

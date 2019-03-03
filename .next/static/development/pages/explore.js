@@ -4,34 +4,34 @@
 /*!**************************!*\
   !*** ./actions/index.js ***!
   \**************************/
-/*! exports provided: addKeyword, removeKeyword, updateFilter, fetchCourseBatch, addCourse, addCourseBatch */
+/*! exports provided: updateKeywords, updateFilter, fetchCourseBatch, addCourse, addCourseBatch, incrementBatchNumber */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addKeyword", function() { return addKeyword; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeKeyword", function() { return removeKeyword; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateKeywords", function() { return updateKeywords; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateFilter", function() { return updateFilter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCourseBatch", function() { return fetchCourseBatch; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourse", function() { return addCourse; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourseBatch", function() { return addCourseBatch; });
-/* harmony import */ var _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/ActionTypes */ "./constants/ActionTypes.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "incrementBatchNumber", function() { return incrementBatchNumber; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/ActionTypes */ "./constants/ActionTypes.js");
 
-var addKeyword = function addKeyword(keyword) {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_KEYWORD"],
-    keyword: keyword
-  };
-};
-var removeKeyword = function removeKeyword(keyword) {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["REMOVE_KEYWORD"],
-    keyword: keyword
+
+var updateKeywords = function updateKeywords(keywords) {
+  return function (dispatch) {
+    dispatch(fetchCourseBatch(0, keywords));
+    dispatch({
+      type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["UPDATE_KEYWORDS"],
+      keywords: keywords
+    });
   };
 };
 var updateFilter = function updateFilter(filter, value) {
   return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["UPDATE_FILTER"],
+    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["UPDATE_FILTER"],
     filter: filter,
     value: value
   };
@@ -39,47 +39,54 @@ var updateFilter = function updateFilter(filter, value) {
 
 var fetchCourseBatchRequest = function fetchCourseBatchRequest() {
   return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["FETCH_COURSE_BATCH"].REQUEST
+    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["FETCH_COURSE_BATCH"].REQUEST
   };
 };
 
 var fetchCourseBatchSuccess = function fetchCourseBatchSuccess() {
   return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["FETCH_COURSE_BATCH"].SUCCESS
+    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["FETCH_COURSE_BATCH"].SUCCESS
   };
 };
 
 var fetchCourseBatchFailure = function fetchCourseBatchFailure(err) {
   return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["FETCH_COURSE_BATCH"].FAILURE,
+    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["FETCH_COURSE_BATCH"].FAILURE,
     err: err
   };
 };
 
-var fetchCourseBatch = function fetchCourseBatch(batch) {
+var fetchCourseBatch = function fetchCourseBatch(batch, keywords) {
   return function (dispatch) {
     dispatch(fetchCourseBatchRequest());
-    return fetch('http://localhost:5000/api/courses/batch/' + batch).then(function (res) {
-      dispatch(fetchCourseBatchSuccess);
-      res.text().then(function (text) {
-        dispatch(fetchCourseBatchSuccess());
-        dispatch(addCourseBatch(JSON.parse(text)));
-      });
-    }, function (err) {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default()({
+      url: '/api/courses/batch/' + batch,
+      params: {
+        keywords: keywords
+      }
+    }).then(function (res) {
+      dispatch(fetchCourseBatchSuccess());
+      dispatch(addCourseBatch(res.data));
+    }).catch(function (err) {
       dispatch(fetchCourseBatchFailure(err.data));
     });
   };
 };
 var addCourse = function addCourse(course) {
   return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_COURSE"],
+    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["ADD_COURSE"],
     course: course
   };
 };
 var addCourseBatch = function addCourseBatch(batch) {
   return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_COURSE_BATCH"],
+    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["ADD_COURSE_BATCH"],
     batch: batch
+  };
+};
+var incrementBatchNumber = function incrementBatchNumber() {
+  return {
+    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["INCREMENT_BATCH_NUMBER"]
   };
 };
 
@@ -332,13 +339,13 @@ var Layout = function Layout(props) {
 /*!**********************************!*\
   !*** ./constants/ActionTypes.js ***!
   \**********************************/
-/*! exports provided: ADD_KEYWORD, REMOVE_KEYWORD, UPDATE_FILTER, ADD_COURSE, ADD_COURSE_BATCH, FETCH_COURSE_BATCH */
+/*! exports provided: UPDATE_KEYWORDS, INCREMENT_BATCH_NUMBER, UPDATE_FILTER, ADD_COURSE, ADD_COURSE_BATCH, FETCH_COURSE_BATCH */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_KEYWORD", function() { return ADD_KEYWORD; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_KEYWORD", function() { return REMOVE_KEYWORD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_KEYWORDS", function() { return UPDATE_KEYWORDS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INCREMENT_BATCH_NUMBER", function() { return INCREMENT_BATCH_NUMBER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_FILTER", function() { return UPDATE_FILTER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COURSE", function() { return ADD_COURSE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COURSE_BATCH", function() { return ADD_COURSE_BATCH; });
@@ -351,8 +358,8 @@ var createAsyncActionStrings = function createAsyncActionStrings(action) {
   };
 };
 
-var ADD_KEYWORD = "ADD_KEYWORD";
-var REMOVE_KEYWORD = "REMOVE_KEYWORD";
+var UPDATE_KEYWORDS = "UPDATE_KEYWORDS";
+var INCREMENT_BATCH_NUMBER = "INCREMENT_BATCH_NUMBER";
 var UPDATE_FILTER = "UPDATE_FILTER";
 var ADD_COURSE = "ADD_COURSE";
 var ADD_COURSE_BATCH = "ADD_COURSE_BATCH";
@@ -413,7 +420,22 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Keyword).call(this, props));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function () {
-      _this.props.removeKeyword(_this.props.keyword);
+      var _this$props = _this.props,
+          keyword = _this$props.keyword,
+          keywords = _this$props.keywords,
+          updateKeywords = _this$props.updateKeywords;
+      var newKeywords = keywords.slice(0);
+      var idx = -1;
+
+      for (var i = 0; i < keywords.length; i++) {
+        if (newKeywords[i].word == keyword) {
+          idx = i;
+          break;
+        }
+      }
+
+      newKeywords.splice(idx, 1);
+      updateKeywords(newKeywords);
     });
 
     return _this;
@@ -422,11 +444,12 @@ function (_Component) {
   _createClass(Keyword, [{
     key: "render",
     value: function render() {
+      var keyword = this.props.keyword;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "btn-group keyword"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "btn text-white"
-      }, this.props.keyword), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, keyword.type == "CUSTOM" ? "\"".concat(keyword.word, "\"") : "#".concat(keyword.word)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn text-white",
         onClick: this.handleClick
       }, "X"));
@@ -438,13 +461,19 @@ function (_Component) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
-    removeKeyword: function removeKeyword(keyword) {
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_2__["removeKeyword"])(keyword));
+    updateKeywords: function updateKeywords(keywords) {
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_2__["updateKeywords"])(keywords));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(undefined, mapDispatchToProps)(Keyword));
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    keywords: state.keywords
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Keyword));
 
 /***/ }),
 
@@ -500,24 +529,25 @@ function (_Component) {
   _createClass(KeywordDisplay, [{
     key: "render",
     value: function render() {
-      var keywords;
+      var keywords = this.props.keywords;
+      var keywordsList;
 
-      if (this.props.keywords.length == 0) {
-        keywords = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      if (keywords.length == 0) {
+        keywordsList = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "text-center text-white"
         }, "add filtering keywords with the searchbar");
       } else {
-        keywords = this.props.keywords.map(function (keyword) {
+        keywordsList = keywords.map(function (keyword) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Keyword__WEBPACK_IMPORTED_MODULE_2__["default"], {
             keyword: keyword,
-            key: keyword
+            key: keyword.word
           });
         });
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "keywordDisplay"
-      }, keywords);
+      }, keywordsList);
     }
   }]);
 
@@ -582,22 +612,31 @@ var Searchbar =
 function (_Component) {
   _inherits(Searchbar, _Component);
 
-  function Searchbar(props) {
+  function Searchbar(_props) {
     var _this;
 
     _classCallCheck(this, Searchbar);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Searchbar).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Searchbar).call(this, _props));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleKeyDown", function (e) {
       switch (e.keyCode) {
         case 13:
           //  [Enter]
-          _this.setState(function (state) {
+          _this.setState(function (state, props) {
+            var updateKeywords = props.updateKeywords,
+                keywords = props.keywords;
+
             if (state.activeSuggestion == 0) {
-              _this.props.addKeyword("\"".concat(state.currentKeyword, "\""));
+              updateKeywords(keywords.concat({
+                type: "CUSTOM",
+                word: state.currentKeyword
+              }));
             } else {
-              _this.props.addKeyword("#".concat(state.filteredSuggestions[state.activeSuggestion - 1]));
+              updateKeywords(keywords.concat({
+                type: "SUGGESTED",
+                word: state.filteredSuggestions[state.activeSuggestion - 1]
+              }));
             }
 
             return {
@@ -648,9 +687,13 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function (keyword) {
-      _this.setState(function (state) {
-        _this.props.addKeyword("#".concat(keyword));
+      var _this$props = _this.props,
+          keywords = _this$props.keywords,
+          updateKeywords = _this$props.updateKeywords,
+          loadCoursesBatch = _this$props.loadCoursesBatch;
 
+      _this.setState(function (state) {
+        updateKeywords(keywords.concat(keyword));
         return {
           activeSuggestion: 0,
           filteredSuggestions: [],
@@ -758,13 +801,19 @@ function (_Component) {
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
-    addKeyword: function addKeyword(keyword) {
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_3__["addKeyword"])(keyword));
+    updateKeywords: function updateKeywords(keywords) {
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_3__["updateKeywords"])(keywords));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(undefined, mapDispatchToProps)(Searchbar));
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  return {
+    keywords: state.keywords
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mapStateToProps, mapDispatchToProps)(Searchbar));
 
 /***/ }),
 
@@ -50783,9 +50832,6 @@ function (_React$Component) {
     _classCallCheck(this, ExplorePage);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(ExplorePage).call(this, props));
-    _this.state = {
-      batchNumber: 0
-    };
     _this.onScroll = _this.onScroll.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
@@ -50793,7 +50839,11 @@ function (_React$Component) {
   _createClass(ExplorePage, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.loadCoursesBatch(this.props.courses.batchNumber);
+      var _this$props = this.props,
+          loadCoursesBatch = _this$props.loadCoursesBatch,
+          courses = _this$props.courses,
+          keywords = _this$props.keywords;
+      loadCoursesBatch(courses.batchNumber, keywords);
       window.addEventListener('scroll', this.onScroll, false);
     }
   }, {
@@ -50804,11 +50854,18 @@ function (_React$Component) {
   }, {
     key: "onScroll",
     value: function onScroll() {
+      var _this$props2 = this.props,
+          loadCoursesBatch = _this$props2.loadCoursesBatch,
+          incrementBatchNumber = _this$props2.incrementBatchNumber,
+          courses = _this$props2.courses,
+          keywords = _this$props2.keywords,
+          batchNumber = _this$props2.batchNumber;
+
       if (true) {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
-          if (!this.props.courses.isFetching) {
-            this.props.loadCoursesBatch(this.props.courses.batchNumber++);
-            console.log(this.props.courses.batchNumber);
+          if (!courses.isFetching) {
+            loadCoursesBatch(batchNumber, keywords);
+            incrementBatchNumber();
           }
         }
       }
@@ -50850,14 +50907,19 @@ function (_React$Component) {
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     courses: state.courses,
-    courseList: state.courseList
+    courseList: state.courseList,
+    keywords: state.keywords,
+    batchNumber: state.batchNumber
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
-    loadCoursesBatch: function loadCoursesBatch(batch) {
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCourseBatch"])(batch));
+    loadCoursesBatch: function loadCoursesBatch(batch, keywords) {
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCourseBatch"])(batch, keywords));
+    },
+    incrementBatchNumber: function incrementBatchNumber() {
+      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_2__["incrementBatchNumber"])());
     }
   };
 };

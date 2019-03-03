@@ -11,20 +11,21 @@ class KeywordDisplay extends Component {
   }
 
   render () {
-    let keywords
-    if (this.props.keywords.length == 0) {
-      keywords = (
+    let { keywords } = this.props
+    let keywordsList
+    if (keywords.length == 0) {
+      keywordsList = (
         <p className="text-center text-white">add filtering keywords with the searchbar</p>
       )
     } else {
-      keywords = this.props.keywords.map((keyword) => (
-        <Keyword keyword={keyword} key={keyword}/>
+      keywordsList = keywords.map((keyword) => (
+        <Keyword keyword={keyword} key={keyword.word}/>
       ))
     }
     return (
       <div className="keywordDisplay">
         {
-          keywords
+          keywordsList
         }
       </div>
     )
