@@ -15,13 +15,15 @@ class Keyword extends Component {
 
     let idx = -1;
     for (let i = 0; i < keywords.length; i++) {
-      if (newKeywords[i].word == keyword) {
+      if (newKeywords[i].word == keyword.word) {
         idx = i;
         break;
       }
     }
-    newKeywords.splice(idx, 1)
-    updateKeywords(newKeywords)
+    if (idx != -1) {
+      newKeywords.splice(idx, 1)
+      updateKeywords(newKeywords)
+    }
   }
 
   render() {

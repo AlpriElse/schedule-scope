@@ -32,8 +32,10 @@ class ExplorePage extends React.Component {
       if (window.innerHeight + window.scrollY
         >= (document.body.offsetHeight - 500)) {
         if (!courses.isFetching) {
-          loadCoursesBatch(batchNumber, keywords)
-          incrementBatchNumber()
+          if (batchNumber < 5) {
+            loadCoursesBatch(batchNumber, keywords)
+            incrementBatchNumber()
+          }
         }
       }
     }

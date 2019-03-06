@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -533,14 +533,16 @@ function (_Component) {
       var idx = -1;
 
       for (var i = 0; i < keywords.length; i++) {
-        if (newKeywords[i].word == keyword) {
+        if (newKeywords[i].word == keyword.word) {
           idx = i;
           break;
         }
       }
 
-      newKeywords.splice(idx, 1);
-      updateKeywords(newKeywords);
+      if (idx != -1) {
+        newKeywords.splice(idx, 1);
+        updateKeywords(newKeywords);
+      }
     });
 
     return _this;
@@ -1107,7 +1109,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!********************************!*\
   !*** multi ./pages/explore.js ***!
   \********************************/
