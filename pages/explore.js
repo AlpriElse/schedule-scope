@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchCourseBatch,
-  incrementBatchNumber as incrementBatchNumberAction } from '../actions'
+  incrementBatchNumber as incrementBatchNumberAction } from '../actions/courses'
 
 import Layout from '../components/Layout'
 import Masonry from 'react-masonry-component'
@@ -79,10 +79,10 @@ class ExplorePage extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  courses: state.courses,
-  courseList: state.courseList,
-  keywords: state.keywords,
-  batchNumber: state.batchNumber
+  courses: state.courses.courses,
+  courseList: state.courses.courseList,
+  keywords: state.filtering.keywords,
+  batchNumber: state.courses.batchNumber
 })
 const mapDispatchToProps = (dispatch, ownProps) => ({
   loadCoursesBatch: (batch, keywords) => {

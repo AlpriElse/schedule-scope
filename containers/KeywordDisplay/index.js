@@ -33,7 +33,7 @@ class KeywordDisplay extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    keywords: state.keywords
+    keywords: state.filtering.keywords
 })
 
 export default connect(mapStateToProps, undefined)(KeywordDisplay)

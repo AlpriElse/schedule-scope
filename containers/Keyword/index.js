@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateKeywords as updateKeywordsAction } from '../../actions'
+import { updateKeywords as updateKeywordsAction } from '../../actions/filtering'
 
 import './Keyword.scss'
 
@@ -49,7 +49,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 })
 
 const mapStateToProps = (state, ownProps) => ({
-  keywords: state.keywords
+  keywords: state.filtering.keywords
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Keyword)

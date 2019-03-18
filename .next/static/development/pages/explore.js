@@ -1,41 +1,24 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/explore.js"],{
 
-/***/ "./actions/index.js":
-/*!**************************!*\
-  !*** ./actions/index.js ***!
-  \**************************/
-/*! exports provided: updateKeywords, updateFilter, fetchCourseBatch, addCourse, addCourseBatch, incrementBatchNumber */
+/***/ "./actions/courses.js":
+/*!****************************!*\
+  !*** ./actions/courses.js ***!
+  \****************************/
+/*! exports provided: fetchCourseBatch, addCourse, addCourseBatch, incrementBatchNumber, clearCourses */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateKeywords", function() { return updateKeywords; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateFilter", function() { return updateFilter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCourseBatch", function() { return fetchCourseBatch; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourse", function() { return addCourse; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourseBatch", function() { return addCourseBatch; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "incrementBatchNumber", function() { return incrementBatchNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearCourses", function() { return clearCourses; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/ActionTypes */ "./constants/ActionTypes.js");
 
 
-var updateKeywords = function updateKeywords(keywords) {
-  return function (dispatch) {
-    dispatch(fetchCourseBatch(0, keywords));
-    dispatch({
-      type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["UPDATE_KEYWORDS"],
-      keywords: keywords
-    });
-  };
-};
-var updateFilter = function updateFilter(filter, value) {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["UPDATE_FILTER"],
-    filter: filter,
-    value: value
-  };
-};
 
 var fetchCourseBatchRequest = function fetchCourseBatchRequest() {
   return {
@@ -87,6 +70,46 @@ var addCourseBatch = function addCourseBatch(batch) {
 var incrementBatchNumber = function incrementBatchNumber() {
   return {
     type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["INCREMENT_BATCH_NUMBER"]
+  };
+};
+var clearCourses = function clearCourses() {
+  return {
+    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["CLEAR_COURSES"]
+  };
+};
+
+/***/ }),
+
+/***/ "./actions/filtering.js":
+/*!******************************!*\
+  !*** ./actions/filtering.js ***!
+  \******************************/
+/*! exports provided: updateKeywords, updateFilter */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateKeywords", function() { return updateKeywords; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateFilter", function() { return updateFilter; });
+/* harmony import */ var _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/ActionTypes */ "./constants/ActionTypes.js");
+/* harmony import */ var _courses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./courses */ "./actions/courses.js");
+
+
+var updateKeywords = function updateKeywords(keywords) {
+  return function (dispatch) {
+    dispatch(Object(_courses__WEBPACK_IMPORTED_MODULE_1__["clearCourses"])());
+    dispatch(Object(_courses__WEBPACK_IMPORTED_MODULE_1__["fetchCourseBatch"])(0, keywords));
+    dispatch({
+      type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["UPDATE_KEYWORDS"],
+      keywords: keywords
+    });
+  };
+};
+var updateFilter = function updateFilter(filter, value) {
+  return {
+    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["UPDATE_FILTER"],
+    filter: filter,
+    value: value
   };
 };
 
@@ -339,11 +362,12 @@ var Layout = function Layout(props) {
 /*!**********************************!*\
   !*** ./constants/ActionTypes.js ***!
   \**********************************/
-/*! exports provided: UPDATE_KEYWORDS, INCREMENT_BATCH_NUMBER, UPDATE_FILTER, ADD_COURSE, ADD_COURSE_BATCH, FETCH_COURSE_BATCH */
+/*! exports provided: CLEAR_COURSES, UPDATE_KEYWORDS, INCREMENT_BATCH_NUMBER, UPDATE_FILTER, ADD_COURSE, ADD_COURSE_BATCH, FETCH_COURSE_BATCH */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_COURSES", function() { return CLEAR_COURSES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_KEYWORDS", function() { return UPDATE_KEYWORDS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INCREMENT_BATCH_NUMBER", function() { return INCREMENT_BATCH_NUMBER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_FILTER", function() { return UPDATE_FILTER; });
@@ -358,6 +382,7 @@ var createAsyncActionStrings = function createAsyncActionStrings(action) {
   };
 };
 
+var CLEAR_COURSES = "CLEAR_COURSES";
 var UPDATE_KEYWORDS = "UPDATE_KEYWORDS";
 var INCREMENT_BATCH_NUMBER = "INCREMENT_BATCH_NUMBER";
 var UPDATE_FILTER = "UPDATE_FILTER";
@@ -379,7 +404,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions */ "./actions/index.js");
+/* harmony import */ var _actions_filtering__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/filtering */ "./actions/filtering.js");
 /* harmony import */ var _Keyword_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Keyword.scss */ "./containers/Keyword/Keyword.scss");
 /* harmony import */ var _Keyword_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Keyword_scss__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -464,14 +489,14 @@ function (_Component) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     updateKeywords: function updateKeywords(keywords) {
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_2__["updateKeywords"])(keywords));
+      dispatch(Object(_actions_filtering__WEBPACK_IMPORTED_MODULE_2__["updateKeywords"])(keywords));
     }
   };
 };
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    keywords: state.keywords
+    keywords: state.filtering.keywords
   };
 };
 
@@ -558,7 +583,7 @@ function (_Component) {
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    keywords: state.keywords
+    keywords: state.filtering.keywords
   };
 };
 
@@ -580,9 +605,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions */ "./actions/index.js");
-/* harmony import */ var _Searchbar_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Searchbar.scss */ "./containers/Searchbar/Searchbar.scss");
-/* harmony import */ var _Searchbar_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Searchbar_scss__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _actions_filtering__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/filtering */ "./actions/filtering.js");
+/* harmony import */ var _actions_courses__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/courses */ "./actions/courses.js");
+/* harmony import */ var _Searchbar_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Searchbar.scss */ "./containers/Searchbar/Searchbar.scss");
+/* harmony import */ var _Searchbar_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Searchbar_scss__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -602,6 +628,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -804,14 +831,14 @@ function (_Component) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     updateKeywords: function updateKeywords(keywords) {
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_3__["updateKeywords"])(keywords));
+      dispatch(Object(_actions_filtering__WEBPACK_IMPORTED_MODULE_3__["updateKeywords"])(keywords));
     }
   };
 };
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    keywords: state.keywords
+    keywords: state.filtering.keywords
   };
 };
 
@@ -5537,7 +5564,7 @@ function getOption(options, name, defaultValue) {
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(/*! buffer */ 8).Buffer;
+    Buffer = __webpack_require__(/*! buffer */ 6).Buffer;
   } catch (e) {
   }
 
@@ -8979,7 +9006,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(/*! crypto */ 9);
+    var crypto = __webpack_require__(/*! crypto */ 7);
     if (typeof crypto.randomBytes !== 'function')
       throw new Error('Not supported');
 
@@ -43757,7 +43784,7 @@ util.inherits = __webpack_require__(/*! inherits */ "./node_modules/inherits/inh
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(/*! util */ 6);
+var debugUtil = __webpack_require__(/*! util */ 4);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -45646,7 +45673,7 @@ Writable.prototype._destroy = function (err, cb) {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Buffer = __webpack_require__(/*! safe-buffer */ "./node_modules/safe-buffer/index.js").Buffer;
-var util = __webpack_require__(/*! util */ 7);
+var util = __webpack_require__(/*! util */ 5);
 
 function copyBuffer(src, target, offset) {
   src.copy(target, offset);
@@ -50786,7 +50813,7 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions */ "./actions/index.js");
+/* harmony import */ var _actions_courses__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/courses */ "./actions/courses.js");
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var react_masonry_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-masonry-component */ "./node_modules/react-masonry-component/lib/index.js");
 /* harmony import */ var react_masonry_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_masonry_component__WEBPACK_IMPORTED_MODULE_4__);
@@ -50910,20 +50937,20 @@ function (_React$Component) {
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    courses: state.courses,
-    courseList: state.courseList,
-    keywords: state.keywords,
-    batchNumber: state.batchNumber
+    courses: state.courses.courses,
+    courseList: state.courses.courseList,
+    keywords: state.filtering.keywords,
+    batchNumber: state.courses.batchNumber
   };
 };
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     loadCoursesBatch: function loadCoursesBatch(batch, keywords) {
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCourseBatch"])(batch, keywords));
+      dispatch(Object(_actions_courses__WEBPACK_IMPORTED_MODULE_2__["fetchCourseBatch"])(batch, keywords));
     },
     incrementBatchNumber: function incrementBatchNumber() {
-      dispatch(Object(_actions__WEBPACK_IMPORTED_MODULE_2__["incrementBatchNumber"])());
+      dispatch(Object(_actions_courses__WEBPACK_IMPORTED_MODULE_2__["incrementBatchNumber"])());
     }
   };
 };
@@ -50951,7 +50978,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 
 /***/ }),
 
-/***/ 5:
+/***/ 3:
 /*!********************************!*\
   !*** multi ./pages/explore.js ***!
   \********************************/
@@ -50965,29 +50992,29 @@ return { page: module.exports.default }});
 
 /***/ }),
 
+/***/ 4:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 5:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
 /***/ 6:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 7:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 8:
 /*!************************!*\
   !*** buffer (ignored) ***!
   \************************/
@@ -50998,7 +51025,7 @@ return { page: module.exports.default }});
 
 /***/ }),
 
-/***/ 9:
+/***/ 7:
 /*!************************!*\
   !*** crypto (ignored) ***!
   \************************/
@@ -51020,5 +51047,5 @@ module.exports = dll_ecf3a5bbb48abe85e1e6;
 
 /***/ })
 
-},[[5,"static/runtime/webpack.js","styles"]]]));;
+},[[3,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=explore.js.map

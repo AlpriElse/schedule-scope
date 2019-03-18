@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import {
-  updateKeywords as updateKeywordsAction,
-  fetchCourseBatch} from '../../actions'
+import { updateKeywords as updateKeywordsAction } from '../../actions/filtering'
+import { fetchCourseBatch } from '../../actions/courses'
 
 import './Searchbar.scss'
 
@@ -181,7 +180,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 })
 
 const mapStateToProps = (state, ownProps) => ({
-  keywords: state.keywords
+  keywords: state.filtering.keywords
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Searchbar)
