@@ -5,7 +5,7 @@ import { fetchCourseBatch,
 
 import Layout from '../components/Layout'
 import Masonry from 'react-masonry-component'
-import CourseCard from '../components/CourseCard'
+import CourseCard from '../components/CourseCard/'
 import Searchbar from '../containers/Searchbar/'
 import KeywordDisplay from '../containers/KeywordDisplay/'
 

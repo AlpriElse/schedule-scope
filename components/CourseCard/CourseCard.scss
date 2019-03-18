@@ -1,0 +1,50 @@
+.course-card {
+  margin-bottom: 20px;
+  border-radius: 0;
+  border: none;
+  background-color: rgb(255, 255, 255)
+}
+.course-label {
+  display: inline-block;
+  padding: 5px;
+  font-weight: 200;
+}
+
+.course-name {
+  font-weight: 600;
+}
+
+.course-description {
+  font-weight: 300;
+}
+
+.overlay-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-text {
+  font-weight: 200;
+  font-size: 1.75em;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  padding: -10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay:hover {
+  opacity: 1;
+}

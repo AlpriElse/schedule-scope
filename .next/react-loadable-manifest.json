@@ -7,15 +7,21 @@
       "publicPath": "static/chunks/0.js"
     }
   ],
-  "./Searchbar.scss": [
+  "./CourseCard.scss": [
     {
-      "id": "./containers/Searchbar/Searchbar.scss",
-      "name": "./containers/Searchbar/Searchbar.scss",
+      "id": "./components/CourseCard/CourseCard.scss",
+      "name": "./components/CourseCard/CourseCard.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
   ],
   "undefined": [
+    {
+      "id": 12,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
     {
       "id": 8,
       "name": null,
@@ -37,6 +43,14 @@
     {
       "id": 11,
       "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./Searchbar.scss": [
+    {
+      "id": "./containers/Searchbar/Searchbar.scss",
+      "name": "./containers/Searchbar/Searchbar.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
