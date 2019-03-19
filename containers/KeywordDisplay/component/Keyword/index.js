@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateKeywords as updateKeywordsAction } from '../../actions/filtering'
+import { updateKeywords as updateKeywordsAction } from '../../../../actions/filtering'
 
 import './Keyword.scss'
 
 class Keyword extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   handleClick = () => {
     let { keyword, keywords, updateKeywords} = this.props
     let newKeywords = keywords.slice(0)

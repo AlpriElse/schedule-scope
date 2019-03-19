@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import Keyword from '../Keyword'
+import Keyword from './component/Keyword/'
 
 import './KeywordDisplay.scss'
 

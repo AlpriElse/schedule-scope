@@ -431,10 +431,10 @@ var FETCH_COURSE_BATCH = createAsyncActionStrings("FETCH_COURSE_BATCH");
 
 /***/ }),
 
-/***/ "./containers/Keyword/Keyword.scss":
-/*!*****************************************!*\
-  !*** ./containers/Keyword/Keyword.scss ***!
-  \*****************************************/
+/***/ "./containers/KeywordDisplay/KeywordDisplay.scss":
+/*!*******************************************************!*\
+  !*** ./containers/KeywordDisplay/KeywordDisplay.scss ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -442,10 +442,21 @@ var FETCH_COURSE_BATCH = createAsyncActionStrings("FETCH_COURSE_BATCH");
 
 /***/ }),
 
-/***/ "./containers/Keyword/index.js":
-/*!*************************************!*\
-  !*** ./containers/Keyword/index.js ***!
-  \*************************************/
+/***/ "./containers/KeywordDisplay/component/Keyword/Keyword.scss":
+/*!******************************************************************!*\
+  !*** ./containers/KeywordDisplay/component/Keyword/Keyword.scss ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./containers/KeywordDisplay/component/Keyword/index.js":
+/*!**************************************************************!*\
+  !*** ./containers/KeywordDisplay/component/Keyword/index.js ***!
+  \**************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -455,8 +466,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _actions_filtering__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/filtering */ "./actions/filtering.js");
-/* harmony import */ var _Keyword_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Keyword.scss */ "./containers/Keyword/Keyword.scss");
+/* harmony import */ var _actions_filtering__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../actions/filtering */ "./actions/filtering.js");
+/* harmony import */ var _Keyword_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Keyword.scss */ "./containers/KeywordDisplay/component/Keyword/Keyword.scss");
 /* harmony import */ var _Keyword_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Keyword_scss__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -488,12 +499,18 @@ var Keyword =
 function (_Component) {
   _inherits(Keyword, _Component);
 
-  function Keyword(props) {
+  function Keyword() {
+    var _getPrototypeOf2;
+
     var _this;
 
     _classCallCheck(this, Keyword);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Keyword).call(this, props));
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _possibleConstructorReturn(this, (_getPrototypeOf2 = _getPrototypeOf(Keyword)).call.apply(_getPrototypeOf2, [this].concat(args)));
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function () {
       var _this$props = _this.props,
@@ -555,17 +572,6 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 
 /***/ }),
 
-/***/ "./containers/KeywordDisplay/KeywordDisplay.scss":
-/*!*******************************************************!*\
-  !*** ./containers/KeywordDisplay/KeywordDisplay.scss ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
 /***/ "./containers/KeywordDisplay/index.js":
 /*!********************************************!*\
   !*** ./containers/KeywordDisplay/index.js ***!
@@ -579,7 +585,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Keyword__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Keyword */ "./containers/Keyword/index.js");
+/* harmony import */ var _component_Keyword___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./component/Keyword/ */ "./containers/KeywordDisplay/component/Keyword/index.js");
 /* harmony import */ var _KeywordDisplay_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./KeywordDisplay.scss */ "./containers/KeywordDisplay/KeywordDisplay.scss");
 /* harmony import */ var _KeywordDisplay_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_KeywordDisplay_scss__WEBPACK_IMPORTED_MODULE_3__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -628,7 +634,7 @@ function (_Component) {
         }, "add filtering keywords with the searchbar");
       } else {
         keywordsList = keywords.map(function (keyword) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Keyword__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_component_Keyword___WEBPACK_IMPORTED_MODULE_2__["default"], {
             keyword: keyword,
             key: keyword.word
           });

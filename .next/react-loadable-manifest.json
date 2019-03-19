@@ -35,13 +35,13 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 12,
+      "id": 11,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 7,
+      "id": 12,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -49,8 +49,8 @@
   ],
   "./Keyword.scss": [
     {
-      "id": "./containers/Keyword/Keyword.scss",
-      "name": "./containers/Keyword/Keyword.scss",
+      "id": "./containers/KeywordDisplay/component/Keyword/Keyword.scss",
+      "name": "./containers/KeywordDisplay/component/Keyword/Keyword.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
