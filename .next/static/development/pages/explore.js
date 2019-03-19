@@ -140,7 +140,7 @@ var setBackground = function setBackground(color) {
 };
 
 var CourseCard = function CourseCard(props) {
-  var course = props;
+  var course = props.course;
   var course_title = course.course_title,
       course_number = course.course_number,
       course_description = course.course_description,
@@ -156,16 +156,16 @@ var CourseCard = function CourseCard(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "card-title text-center mx-auto text-white course-label",
     style: setBackground(Object(_services_color__WEBPACK_IMPORTED_MODULE_1__["assignColor"])(course))
-  }, "title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text course-name"
   }, course_title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text course-description"
   }, course_description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    class: "overlay",
+    className: "overlay",
     style: setBackground(Object(_services_color__WEBPACK_IMPORTED_MODULE_1__["assignColor"])(course))
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "text-center text-white overlay-text"
-  }, "title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "overlay-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-outline-light"
