@@ -208,10 +208,10 @@ var updateFilter = function updateFilter(filter, value) {
 
 /***/ }),
 
-/***/ "./components/CourseCard/CourseCard.scss":
-/*!***********************************************!*\
-  !*** ./components/CourseCard/CourseCard.scss ***!
-  \***********************************************/
+/***/ "./components/CourseView/components/CourseCard/CourseCard.scss":
+/*!*********************************************************************!*\
+  !*** ./components/CourseView/components/CourseCard/CourseCard.scss ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -219,10 +219,10 @@ var updateFilter = function updateFilter(filter, value) {
 
 /***/ }),
 
-/***/ "./components/CourseCard/index.js":
-/*!****************************************!*\
-  !*** ./components/CourseCard/index.js ***!
-  \****************************************/
+/***/ "./components/CourseView/components/CourseCard/index.js":
+/*!**************************************************************!*\
+  !*** ./components/CourseView/components/CourseCard/index.js ***!
+  \**************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -230,8 +230,8 @@ var updateFilter = function updateFilter(filter, value) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services_color__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/color */ "./components/CourseCard/services/color.js");
-/* harmony import */ var _CourseCard_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CourseCard.scss */ "./components/CourseCard/CourseCard.scss");
+/* harmony import */ var _services_color__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/color */ "./components/CourseView/components/CourseCard/services/color.js");
+/* harmony import */ var _CourseCard_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CourseCard.scss */ "./components/CourseView/components/CourseCard/CourseCard.scss");
 /* harmony import */ var _CourseCard_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_CourseCard_scss__WEBPACK_IMPORTED_MODULE_2__);
 
 
@@ -245,6 +245,11 @@ var setBackground = function setBackground(color) {
 
 var CourseCard = function CourseCard(props) {
   var course = props;
+  var course_title = course.course_title,
+      course_number = course.course_number,
+      course_description = course.course_description,
+      department_code = course.department_code;
+  var title = "".concat(department_code, " ").concat(course_number);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "col-md-4"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -255,16 +260,16 @@ var CourseCard = function CourseCard(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
     className: "card-title text-center mx-auto text-white course-label",
     style: setBackground(Object(_services_color__WEBPACK_IMPORTED_MODULE_1__["assignColor"])(course))
-  }, course.department_code, " ", course.course_number), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, "title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text course-name"
-  }, course.course_title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, course_title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text course-description"
-  }, course.course_description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, course_description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     class: "overlay",
     style: setBackground(Object(_services_color__WEBPACK_IMPORTED_MODULE_1__["assignColor"])(course))
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "text-center text-white overlay-text"
-  }, course.department_code, " ", course.course_number), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, "title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "overlay-container"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "btn btn-outline-light"
@@ -275,10 +280,10 @@ var CourseCard = function CourseCard(props) {
 
 /***/ }),
 
-/***/ "./components/CourseCard/services/color.js":
-/*!*************************************************!*\
-  !*** ./components/CourseCard/services/color.js ***!
-  \*************************************************/
+/***/ "./components/CourseView/components/CourseCard/services/color.js":
+/*!***********************************************************************!*\
+  !*** ./components/CourseView/components/CourseCard/services/color.js ***!
+  \***********************************************************************/
 /*! exports provided: assignColor */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -294,6 +299,45 @@ var assignColor = function assignColor(course) {
   var color = colors[Math.abs(parseInt(code)) % colors.length];
   return color;
 };
+
+/***/ }),
+
+/***/ "./components/CourseView/index.js":
+/*!****************************************!*\
+  !*** ./components/CourseView/index.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_masonry_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-masonry-component */ "react-masonry-component");
+/* harmony import */ var react_masonry_component__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_masonry_component__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _components_CourseCard___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/CourseCard/ */ "./components/CourseView/components/CourseCard/index.js");
+
+
+
+
+var CourseView = function CourseView(props) {
+  var courseList = props.courseList;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "container"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_masonry_component__WEBPACK_IMPORTED_MODULE_1___default.a, null, courseList.map(function (course) {
+    if (course.department_code == undefined) {
+      console.log(course);
+    }
+
+    var key = course.department_code + course.course_number;
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CourseCard___WEBPACK_IMPORTED_MODULE_2__["default"], {
+      course: course,
+      key: course.department_code + course.course_number
+    });
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (CourseView);
 
 /***/ }),
 
@@ -892,13 +936,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _actions_courses__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/courses */ "./actions/courses.js");
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
-/* harmony import */ var react_masonry_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-masonry-component */ "react-masonry-component");
-/* harmony import */ var react_masonry_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_masonry_component__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _components_CourseCard___WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/CourseCard/ */ "./components/CourseCard/index.js");
-/* harmony import */ var _containers_Searchbar___WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../containers/Searchbar/ */ "./containers/Searchbar/index.js");
-/* harmony import */ var _containers_KeywordDisplay___WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../containers/KeywordDisplay/ */ "./containers/KeywordDisplay/index.js");
-/* harmony import */ var _explore_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./explore.scss */ "./pages/explore.scss");
-/* harmony import */ var _explore_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_explore_scss__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _containers_Searchbar___WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../containers/Searchbar/ */ "./containers/Searchbar/index.js");
+/* harmony import */ var _containers_KeywordDisplay___WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../containers/KeywordDisplay/ */ "./containers/KeywordDisplay/index.js");
+/* harmony import */ var _components_CourseView___WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/CourseView/ */ "./components/CourseView/index.js");
+/* harmony import */ var _explore_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./explore.scss */ "./pages/explore.scss");
+/* harmony import */ var _explore_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_explore_scss__WEBPACK_IMPORTED_MODULE_7__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -916,7 +958,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 
 
 
@@ -976,27 +1017,15 @@ function (_React$Component) {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row searchbar-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_Searchbar___WEBPACK_IMPORTED_MODULE_6__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_Searchbar___WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-12"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_KeywordDisplay___WEBPACK_IMPORTED_MODULE_7__["default"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_KeywordDisplay___WEBPACK_IMPORTED_MODULE_5__["default"], {
         className: "container"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_masonry_component__WEBPACK_IMPORTED_MODULE_4___default.a, null, this.props.courseList.map(function (course) {
-        if (course.department_code == undefined) {
-          console.log(course);
-        }
-
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CourseCard___WEBPACK_IMPORTED_MODULE_5__["default"], {
-          department_code: course.department_code,
-          course_number: course.course_number,
-          course_title: course.course_title,
-          course_description: course.course_description,
-          key: course.department_code + course.course_number
-        });
-      }))))));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_CourseView___WEBPACK_IMPORTED_MODULE_6__["default"], {
+        courseList: this.props.courseList
+      }))));
     }
   }]);
 

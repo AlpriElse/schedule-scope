@@ -4,10 +4,9 @@ import { fetchCourseBatch,
   incrementBatchNumber as incrementBatchNumberAction } from '../actions/courses'
 
 import Layout from '../components/Layout'
-import Masonry from 'react-masonry-component'
-import CourseCard from '../components/CourseCard/'
 import Searchbar from '../containers/Searchbar/'
 import KeywordDisplay from '../containers/KeywordDisplay/'
+import CourseView from '../components/CourseView/'
 
 import './explore.scss'
 
@@ -53,24 +52,7 @@ class ExplorePage extends React.Component {
             <KeywordDisplay className="container"/>
           </div>
           <div className="row">
-            <div className="container">
-              <Masonry>
-                {
-                  this.props.courseList.map((course) => {
-                    if (course.department_code == undefined) {
-                      console.log(course)
-                    }
-                    return (
-                      <CourseCard department_code={course.department_code}
-                        course_number={course.course_number}
-                        course_title={course.course_title}
-                        course_description={course.course_description}
-                        key={course.department_code + course.course_number}/>
-                    )
-                  })
-                }
-              </Masonry>
-            </div>
+            <CourseView courseList={this.props.courseList}/>
           </div>
         </div>
       </Layout>
