@@ -1,383 +1,932 @@
 [
-"Accountancy",
-"ACCY",
-"Agricultural and Consumer Economics",
-"ACE",
-"Agricultural, Consumer and Environmental Sciences",
-"ACES",
-"Advertising",
-"ADV",
-"Aerospace Engineering",
-"AE",
-"Air Force Aerospace Studies",
-"AFAS",
-"African American Studies",
-"AFRO",
-"African Studies",
-"AFST",
-"Agricultural Communications",
-"AGCM",
-"Agricultural Education",
-"AGED",
-"Applied Health Sciences Courses",
-"AHS",
-"American Indian Studies",
-"AIS",
-"Animal Sciences",
-"ANSC",
-"Anthropology",
-"ANTH",
-"Arabic",
-"ARAB",
-"Architecture",
-"ARCH",
-"Art",
-"ART",
-"Art--Design",
-"ARTD",
-"Art--Education",
-"ARTE",
-"Art--Foundation",
-"ARTF",
-"Art--History",
-"ARTH",
-"Art--Studio",
-"ARTS",
-"Actuarial Science and Risk Management",
-"ASRM",
-"Asian Studies",
-"ASST",
-"Astronomy",
-"ASTR",
-"Atmospheric Sciences",
-"ATMS",
-"Business Administration",
-"BADM",
-"Basque",
-"BASQ",
-"Brain and Cognitive Science",
-"BCOG",
-"Bosnian-Croatian-Serbian",
-"BCS",
-"Biochemistry",
-"BIOC",
-"Bioengineering",
-"BIOE",
-"Biology",
-"BIOL",
-"Biophysics",
-"BIOP",
-"Biomedical Sciences and Engineering",
-"BSE",
-"Business and Technical Writing",
-"BTW",
-"Business",
-"BUS",
-"Center for Advanced Study",
-"CAS",
-"Comparative Biosciences",
-"CB",
-"Cell and Developmental Biology",
-"CDB",
-"Civil and Environmental Engineering",
-"CEE",
-"Chemical and Biomolecular Engineering",
-"CHBE",
-"Chemistry",
-"CHEM",
-"Chinese",
-"CHIN",
-"ABE",
-"Community Health",
-"Campus Honors Program Courses",
-"CHP",
-"Curriculum and Instruction",
-"CI",
-"Committee on Inst Cooperation",
-"CIC",
-"Classical Civilization",
-"CHLH",
-"Clinical Sciences and Engineering",
-"CLE",
-"Communication",
-"CMN",
-"CLCV",
-"CPSC",
-"Computer Science",
-"CS",
-"Computational Science and Engineering",
-"CSE",
-"Creative Writing",
-"CW",
-"Comparative and World Literature",
-"CWL",
-"Czech",
-"CZCH",
-"Dance",
-"DANC",
-"East Asian Language and Culture",
-"EALC",
-"Electrical and Computer Engineering",
-"ECE",
-"Economics",
-"ECON",
-"Educational Practice",
-"EDPR",
-"Education",
-"EDUC",
-"English as an International Language",
-"EIL",
-"Engineering",
-"ENG",
-"Engineering Honors",
-"ENGH",
-"English",
-"ENGL",
-"Environmental Sustainability",
-"ENSU",
-"Entomology",
-"ENT",
-"Environmental Studies",
-"AAS",
-"ENVS",
-"EOL",
-"Education Policy, Organization and Leadership",
-"EPOL",
-"Educational Policy Studies",
-"EPS",
-"Educational Psychology",
-"EPSY",
-"Earth, Society, and Environment",
-"ESE",
-"English as a Second Language",
-"ESL",
-"Crop Sciences",
-"European Union Studies",
-"FAA",
-"Fine and Applied Arts",
-"Finance",
-"FIN",
-"Foreign Language Teacher Education",
-"FLTE",
-"French",
-"FR",
-"Food Science and Human Nutrition",
-"FSHN",
-"Graduate College",
-"GC",
-"Grand Challenge Learning",
-"GCL",
-"Geography",
-"GEOG",
-"Geology",
-"GEOL",
-"German",
-"GER",
-"GLBL",
-"Global Studies",
-"Germanic",
-"GMC",
-"Greek",
-"GRK",
-"Modern Greek",
-"GRKM",
-"General Studies",
-"GS",
-"Gender and Women's Studies",
-"GWS",
-"Human Development and Family Studies",
-"HDFS",
-"Hebrew, Modern and Classical",
-"HEBR",
-"History",
-"HIST",
-"Hindi",
-"HNDI",
-"HORT",
-"Horticulture",
-"HRD",
-"Human Resource Development",
-"Humanities Courses",
-"HUM",
-"Integrative Biology",
-"IB",
-"Industrial Engineering",
-"IE",
-"i-Health Program",
-"IHLT",
-"Informatics",
-"INFO",
-"Information Sciences",
-"IS",
-"Italian",
-"ITAL",
-"Japanese",
-"JAPN",
-"Journalism",
-"JOUR",
-"Jewish Studies",
-"JS",
-"Kinesiology",
-"KIN",
-"Korean",
-"KOR",
-"Landscape Architecture",
-"LA",
-"Liberal Arts and Sciences",
-"LAS",
-"Latin American and Caribbean Studies",
-"LAST",
-"Latin",
-"LAT",
-"Law",
-"LAW",
-"Labor and Employment Relations",
-"LER",
-"Linguistics",
-"LING",
-"EURO",
-"LLS",
-"Media and Cinema Studies",
-"MACS",
-"Mathematics",
-"MATH",
-"Regular MBA Program Administration",
-"MBA",
-"Molecular and Cell Biology",
-"MCB",
-"Media",
-"MDIA",
-"Medieval Studies",
-"MDVL",
-"Mechanical Engineering",
-"ME",
-"Microbiology",
-"MICR",
-"Military Science",
-"MILS",
-"Molecular and Integrative Physiology",
-"MIP",
-"Materials Science and Engineering",
-"MSE",
-"Music",
-"MUS",
-"Museum Studies",
-"MUSE",
-"Neuroscience",
-"NEUR",
-"Nuclear, Plasma, and Radiological Engineering",
-"NPRE",
-"Natural Resources and Environmental Sciences",
-"NRES",
-"Naval Science",
-"NS",
-"Nutritional Sciences",
-"NUTR",
-"PATH",
-"Pathobiology",
-"Plant Biology",
-"PBIO",
-"Persian",
-"PERS",
-"Philosophy",
-"PHIL",
-"Physics",
-"PHYS",
-"PLPA",
-"Plant Pathology",
-"Polish",
-"POL",
-"Portuguese",
-"PORT",
-"PS",
-"Political Science",
-"Professional Science Master's Program",
-"PSM",
-"Psychology",
-"PSYC",
-"Russian, East European and Eurasian Studies",
-"REES",
-"REHB",
-"Rehabilitation Counseling",
-"Religion",
-"REL",
-"Rhetoric and Composition",
-"RHET",
-"Romance Linguistics",
-"RMLG",
-"Recreation, Sport, and Tourism",
-"RST",
-"Educational Organization and Leadership",
-"Russian",
-"South Asian and Middle Eastern Studies",
-"SAME",
-"Strategic Brand Communication",
-"SBC",
-"RUSS",
-"SCAN",
-"Systems Engineering and Design",
-"SE",
-"Speech and Hearing Science",
-"Scandinavian",
-"SLAV",
-"Slavic",
-"Literatures, Cultures, and Linguistics",
-"SLCL",
-"Second Language Studies",
-"SLS",
-"Sociology",
-"Latina/Latino Studies",
-"SOC",
-"SOCW",
-"Spanish",
-"SPAN",
-"SPED",
-"Special Education",
-"Statistics",
-"STAT",
-"Swahili",
-"SWAH",
-"TAM",
-"Theoretical and Applied Mechanics",
-"Technology Entrepreneurship",
-"TE",
-"Theatre",
-"THEA",
-"Technology and Management Courses",
-"TMGT",
-"Translation Studies",
-"TRST",
-"Technical Systems Management",
-"TSM",
-"Turkish",
-"TURK",
-"Agricultural and Biological Engineering",
-"UKR",
-"Urban and Regional Planning",
-"UP",
-"Veterinary Clinical Medicine",
-"VCM",
-"Veterinary Medicine Courses",
-"VM",
-"Women and Gender in Global Perspectives Program",
-"WGGP",
-"Wolof",
-"WLOF",
-"Writing Studies",
-"WRIT",
-"Yiddish",
-"YDSH",
-"SHS",
-"Ukrainian",
-"Social Work",
-"College of Agricultural, Consumer and Environmental Sciences",
-"College of Applied Health Sciences",
-"Gies College of Business",
-"College of Education",
-"College of Engineering",
-"College of Fine and Applied Arts",
-"Division of General Studies",
-"College of Liberal Arts and Sciences",
-"College of Media",
-"School of Social Work"
+   {
+      "type":"DEPARTMENT",
+      "name":"Asian American Studies",
+      "abbrev":"AAS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Agricultural and Biological Engineering",
+      "abbrev":"ABE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Agricultural and Consumer Economics",
+      "abbrev":"ACE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Agricultural, Consumer and Environmental Sciences",
+      "abbrev":"ACES"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Advertising",
+      "abbrev":"ADV"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Air Force Aerospace Studies",
+      "abbrev":"AFAS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"African American Studies",
+      "abbrev":"AFRO"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Agricultural Communications",
+      "abbrev":"AGCM"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Agricultural Education",
+      "abbrev":"AGED"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Applied Health Sciences Courses",
+      "abbrev":"AHS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"American Indian Studies",
+      "abbrev":"AIS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Animal Sciences",
+      "abbrev":"ANSC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Anthropology",
+      "abbrev":"ANTH"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Arabic",
+      "abbrev":"ARAB"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Architecture",
+      "abbrev":"ARCH"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Art",
+      "abbrev":"ART"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Art--Design",
+      "abbrev":"ARTD"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Art--Education",
+      "abbrev":"ARTE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Art--Foundation",
+      "abbrev":"ARTF"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Art--History",
+      "abbrev":"ARTH"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Art--Studio",
+      "abbrev":"ARTS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Actuarial Science and Risk Management",
+      "abbrev":"ASRM"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Asian Studies",
+      "abbrev":"ASST"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Astronomy",
+      "abbrev":"ASTR"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Atmospheric Sciences",
+      "abbrev":"ATMS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Business Administration",
+      "abbrev":"BADM"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Basque",
+      "abbrev":"BASQ"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Brain and Cognitive Science",
+      "abbrev":"BCOG"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Bosnian-Croatian-Serbian",
+      "abbrev":"BCS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Accountancy",
+      "abbrev":"ACCY"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Aerospace Engineering",
+      "abbrev":"AE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"African Studies",
+      "abbrev":"AFST"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Biochemistry",
+      "abbrev":"BIOC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Bioengineering",
+      "abbrev":"BIOE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Biology",
+      "abbrev":"BIOL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Biophysics",
+      "abbrev":"BIOP"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Biomedical Sciences and Engineering",
+      "abbrev":"BSE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Comparative Biosciences",
+      "abbrev":"CB"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Cell and Developmental Biology",
+      "abbrev":"CDB"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Civil and Environmental Engineering",
+      "abbrev":"CEE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Chemical and Biomolecular Engineering",
+      "abbrev":"CHBE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Chemistry",
+      "abbrev":"CHEM"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Chinese",
+      "abbrev":"CHIN"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Community Health",
+      "abbrev":"CHLH"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Campus Honors Program Courses",
+      "abbrev":"CHP"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Curriculum and Instruction",
+      "abbrev":"CI"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Business and Technical Writing",
+      "abbrev":"BTW"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Classical Civilization",
+      "abbrev":"CLCV"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Clinical Sciences and Engineering",
+      "abbrev":"CLE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Business",
+      "abbrev":"BUS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Crop Sciences",
+      "abbrev":"CPSC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Computer Science",
+      "abbrev":"CS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Computational Science and Engineering",
+      "abbrev":"CSE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Creative Writing",
+      "abbrev":"CW"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Comparative and World Literature",
+      "abbrev":"CWL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Czech",
+      "abbrev":"CZCH"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Dance",
+      "abbrev":"DANC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"East Asian Language and Culture",
+      "abbrev":"EALC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Electrical and Computer Engineering",
+      "abbrev":"ECE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Economics",
+      "abbrev":"ECON"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Communication",
+      "abbrev":"CMN"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Committee on Inst Cooperation",
+      "abbrev":"CIC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Educational Practice",
+      "abbrev":"EDPR"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Engineering",
+      "abbrev":"ENG"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Engineering Honors",
+      "abbrev":"ENGH"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"English",
+      "abbrev":"ENGL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Environmental Sustainability",
+      "abbrev":"ENSU"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Entomology",
+      "abbrev":"ENT"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Environmental Studies",
+      "abbrev":"ENVS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Educational Organization and Leadership",
+      "abbrev":"EOL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Education Policy, Organization and Leadership",
+      "abbrev":"EPOL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"English as an International Language",
+      "abbrev":"EIL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Educational Policy Studies",
+      "abbrev":"EPS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Earth, Society, and Environment",
+      "abbrev":"ESE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"English as a Second Language",
+      "abbrev":"ESL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"European Union Studies",
+      "abbrev":"EURO"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Fine and Applied Arts",
+      "abbrev":"FAA"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Finance",
+      "abbrev":"FIN"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Foreign Language Teacher Education",
+      "abbrev":"FLTE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"French",
+      "abbrev":"FR"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Food Science and Human Nutrition",
+      "abbrev":"FSHN"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Graduate College",
+      "abbrev":"GC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Grand Challenge Learning",
+      "abbrev":"GCL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Geography",
+      "abbrev":"GEOG"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Geology",
+      "abbrev":"GEOL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"German",
+      "abbrev":"GER"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Global Studies",
+      "abbrev":"GLBL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Germanic",
+      "abbrev":"GMC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Greek",
+      "abbrev":"GRK"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Modern Greek",
+      "abbrev":"GRKM"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"General Studies",
+      "abbrev":"GS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Gender and Women's Studies",
+      "abbrev":"GWS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Human Development and Family Studies",
+      "abbrev":"HDFS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Hebrew, Modern and Classical",
+      "abbrev":"HEBR"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"History",
+      "abbrev":"HIST"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Hindi",
+      "abbrev":"HNDI"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Horticulture",
+      "abbrev":"HORT"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Human Resource Development",
+      "abbrev":"HRD"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Humanities Courses",
+      "abbrev":"HUM"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Integrative Biology",
+      "abbrev":"IB"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Industrial Engineering",
+      "abbrev":"IE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"i-Health Program",
+      "abbrev":"IHLT"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Informatics",
+      "abbrev":"INFO"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Information Sciences",
+      "abbrev":"IS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Italian",
+      "abbrev":"ITAL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Japanese",
+      "abbrev":"JAPN"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Journalism",
+      "abbrev":"JOUR"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Jewish Studies",
+      "abbrev":"JS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Kinesiology",
+      "abbrev":"KIN"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Korean",
+      "abbrev":"KOR"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Landscape Architecture",
+      "abbrev":"LA"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Liberal Arts and Sciences",
+      "abbrev":"LAS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Latin American and Caribbean Studies",
+      "abbrev":"LAST"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Latin",
+      "abbrev":"LAT"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Law",
+      "abbrev":"LAW"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Labor and Employment Relations",
+      "abbrev":"LER"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Linguistics",
+      "abbrev":"LING"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Latina/Latino Studies",
+      "abbrev":"LLS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Media and Cinema Studies",
+      "abbrev":"MACS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Mathematics",
+      "abbrev":"MATH"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Regular MBA Program Administration",
+      "abbrev":"MBA"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Molecular and Cell Biology",
+      "abbrev":"MCB"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Media",
+      "abbrev":"MDIA"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Medieval Studies",
+      "abbrev":"MDVL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Mechanical Engineering",
+      "abbrev":"ME"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Microbiology",
+      "abbrev":"MICR"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Military Science",
+      "abbrev":"MILS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Molecular and Integrative Physiology",
+      "abbrev":"MIP"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Materials Science and Engineering",
+      "abbrev":"MSE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Music",
+      "abbrev":"MUS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Museum Studies",
+      "abbrev":"MUSE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Neuroscience",
+      "abbrev":"NEUR"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Nuclear, Plasma, and Radiological Engineering",
+      "abbrev":"NPRE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Natural Resources and Environmental Sciences",
+      "abbrev":"NRES"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Naval Science",
+      "abbrev":"NS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Nutritional Sciences",
+      "abbrev":"NUTR"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Pathobiology",
+      "abbrev":"PATH"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Plant Biology",
+      "abbrev":"PBIO"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Persian",
+      "abbrev":"PERS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Philosophy",
+      "abbrev":"PHIL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Physics",
+      "abbrev":"PHYS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Plant Pathology",
+      "abbrev":"PLPA"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Polish",
+      "abbrev":"POL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Portuguese",
+      "abbrev":"PORT"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Political Science",
+      "abbrev":"PS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Professional Science Master's Program",
+      "abbrev":"PSM"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Psychology",
+      "abbrev":"PSYC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Russian, East European and Eurasian Studies",
+      "abbrev":"REES"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Rehabilitation Counseling",
+      "abbrev":"REHB"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Religion",
+      "abbrev":"REL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Rhetoric and Composition",
+      "abbrev":"RHET"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Romance Linguistics",
+      "abbrev":"RMLG"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Education",
+      "abbrev":"EDUC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Recreation, Sport, and Tourism",
+      "abbrev":"RST"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"South Asian and Middle Eastern Studies",
+      "abbrev":"SAME"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Strategic Brand Communication",
+      "abbrev":"SBC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Scandinavian",
+      "abbrev":"SCAN"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Systems Engineering and Design",
+      "abbrev":"SE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Russian",
+      "abbrev":"RUSS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Speech and Hearing Science",
+      "abbrev":"SHS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Literatures, Cultures, and Linguistics",
+      "abbrev":"SLCL"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Second Language Studies",
+      "abbrev":"SLS"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Sociology",
+      "abbrev":"SOC"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Social Work",
+      "abbrev":"SOCW"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Spanish",
+      "abbrev":"SPAN"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Special Education",
+      "abbrev":"SPED"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Statistics",
+      "abbrev":"STAT"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Swahili",
+      "abbrev":"SWAH"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Educational Psychology",
+      "abbrev":"EPSY"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Theoretical and Applied Mechanics",
+      "abbrev":"TAM"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Theatre",
+      "abbrev":"THEA"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Technology and Management Courses",
+      "abbrev":"TMGT"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Translation Studies",
+      "abbrev":"TRST"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Technical Systems Management",
+      "abbrev":"TSM"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Turkish",
+      "abbrev":"TURK"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Ukrainian",
+      "abbrev":"UKR"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Urban and Regional Planning",
+      "abbrev":"UP"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Veterinary Clinical Medicine",
+      "abbrev":"VCM"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Veterinary Medicine Courses",
+      "abbrev":"VM"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Women and Gender in Global Perspectives Program",
+      "abbrev":"WGGP"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Wolof",
+      "abbrev":"WLOF"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Writing Studies",
+      "abbrev":"WRIT"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Yiddish",
+      "abbrev":"YDSH"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Slavic",
+      "abbrev":"SLAV"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Technology Entrepreneurship",
+      "abbrev":"TE"
+   },
+   {
+      "type":"DEPARTMENT",
+      "name":"Center for Advanced Study",
+      "abbrev":"CAS"
+   }
 ]

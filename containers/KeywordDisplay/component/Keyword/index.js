@@ -28,7 +28,7 @@ class Keyword extends Component {
       <div className="btn-group keyword">
         <a className="btn text-white">
           {
-            keyword.type == "CUSTOM" ? `"${keyword.word}"` : `#${keyword.word}`
+            keyword.type == "CUSTOM" ? `"${keyword.name}"` : `#${keyword.name}`
           }
         </a>
         <button className="btn text-white"

@@ -27,10 +27,16 @@ class Searchbar extends Component {
   }
   addKeyword = (type, word) => {
     let { updateKeywords, keywords } = this.props
-    updateKeywords(keywords.concat({
-      type,
-      word
-    }))
+    let keyword
+    if (type === "CUSTOM") {
+      keyword = {
+        type: "CUSTOM",
+        name: word
+      }
+    } else {
+      keyword = word
+    }
+    updateKeywords(keywords.concat(keyword))
   }
 
   handleKeyDown = e => {
@@ -74,7 +80,8 @@ class Searchbar extends Component {
     this.setState(state => ({
       currentKeyword,
       filteredSuggestions: state.suggestions.filter(suggestion => (
-        suggestion.toLowerCase().indexOf(currentKeyword.toLowerCase()) != -1
+        suggestion.name.toLowerCase().indexOf(currentKeyword.toLowerCase()) != -1
+          || suggestion.abbrev.toLowerCase().indexOf(currentKeyword.toLowerCase()) != -1
       )),
       showSuggestions: true,
       activeSuggestion: 0

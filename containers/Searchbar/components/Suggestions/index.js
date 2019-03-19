@@ -19,9 +19,9 @@ const Suggestions = (props) => {
     }
     return (
       <li className={className}
-          key={suggestion}
+          key={suggestion.name}
           onClick={() => handleClick("SUGGESTION", suggestion)}>
-        {`#${suggestion}`}
+        {`#${suggestion.name}`}
       </li>
     )
   })

@@ -19,31 +19,51 @@ api.get('/courses/batch/:batchNumber', (req, res) => {
   console.log("Batch", batch, "requested.")
 
   let keywords = req.query.keywords
-  if (keywords == undefined) {
+  if (keywords === undefined) {
     keywords = []
+  } else {
+    keywords = keywords.map(keyword => JSON.parse(keyword))
   }
-  res.json(courses.filter(course => {
-    if (keywords.length == 0) {
-      return true
-    }
 
-    for (let keyword of keywords) {
-      let word = JSON.parse(keyword).word
-      if (course.department.indexOf(word) != -1 ||
-        course.department_code.indexOf(word) != -1 ||
-        course.course_title.indexOf(word) != -1 ||
-        course.course_number == parseInt(word) ||
-        course.course_description.indexOf(word) != -1 ||
-        course.course_hours.indexOf(word) != -1) {
-          return true
-        }
-    }
-    return false
-  }).slice(offset, offset + batch_size))
+  let filteredCourses = filterCourses(courses, keywords)
+  res.json(filteredCourses.slice(offset, offset + batch_size))
 })
 
 api.get('/subjects', (req, res) => {
   res.json(subjects)
 })
+
+const filterCourses = (courses, keywords) => {
+  if (keywords.length === 0) {
+    return courses
+  }
+
+  //  Filter by department
+  courses = courses.filter(course => {
+    let shouldKeep = false
+    deptKeywords = keywords.filter(keyword => keyword.type === "DEPARTMENT")
+    for (let keyword of deptKeywords) {
+      if (course.department_code === keyword.abbrev) {
+        shouldKeep = true
+        break
+      }
+    }
+    customKeywords = keywords.filter(keyword => keyword.type === "CUSTOM")
+    for (let keyword of customKeywords) {
+      if (course.course_number.indexOf(keyword.name) != -1
+        || course.course_description.indexOf(keyword.name) != -1
+        || course.department.indexOf(keyword.name) != -1
+        || course.department_code.indexOf(keyword.name) != -1
+        || course.course_title.indexOf(keyword.name) != -1
+        || course.course_number.indexOf(keyword.name) != -1
+        || course.course_hours.indexOf(keyword.name) != -1) {
+          continue
+      }
+      shouldKeep = false
+    }
+    return shouldKeep
+  })
+  return courses
+}
 
 module.exports = api

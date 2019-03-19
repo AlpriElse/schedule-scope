@@ -544,7 +544,7 @@ function (_Component) {
         className: "btn-group keyword"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "btn text-white"
-      }, keyword.type == "CUSTOM" ? "\"".concat(keyword.word, "\"") : "#".concat(keyword.word)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, keyword.type == "CUSTOM" ? "\"".concat(keyword.name, "\"") : "#".concat(keyword.name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "btn text-white",
         onClick: this.handleClick
       }, "X"));
@@ -705,11 +705,11 @@ var Suggestions = function Suggestions(props) {
 
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
       className: className,
-      key: suggestion,
+      key: suggestion.name,
       onClick: function onClick() {
         return handleClick("SUGGESTION", suggestion);
       }
-    }, "#".concat(suggestion));
+    }, "#".concat(suggestion.name));
   });
   var customSuggestionClass = activeSuggestion == 0 ? "suggestion-active" : "suggestion-custom";
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -788,10 +788,18 @@ function (_Component) {
       var _this$props = _this.props,
           updateKeywords = _this$props.updateKeywords,
           keywords = _this$props.keywords;
-      updateKeywords(keywords.concat({
-        type: type,
-        word: word
-      }));
+      var keyword;
+
+      if (type === "CUSTOM") {
+        keyword = {
+          type: "CUSTOM",
+          name: word
+        };
+      } else {
+        keyword = word;
+      }
+
+      updateKeywords(keywords.concat(keyword));
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleKeyDown", function (e) {
@@ -847,7 +855,7 @@ function (_Component) {
         return {
           currentKeyword: currentKeyword,
           filteredSuggestions: state.suggestions.filter(function (suggestion) {
-            return suggestion.toLowerCase().indexOf(currentKeyword.toLowerCase()) != -1;
+            return suggestion.name.toLowerCase().indexOf(currentKeyword.toLowerCase()) != -1 || suggestion.abbrev.toLowerCase().indexOf(currentKeyword.toLowerCase()) != -1;
           }),
           showSuggestions: true,
           activeSuggestion: 0
