@@ -4,6 +4,13 @@ import CourseCard from './components/CourseCard/'
 
 const CourseView = (props) => {
   let { courseList } = props
+  if (courseList.length === 0) {
+    return (
+      <div className="container text-center text-white">
+        <p>No courses found</p>
+      </div>
+    )
+  }
   return (
     <div className="container">
       <Masonry>
