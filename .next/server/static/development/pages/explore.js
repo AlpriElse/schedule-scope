@@ -660,14 +660,70 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 
 /***/ }),
 
-/***/ "./containers/Searchbar/Searchbar.scss":
-/*!*********************************************!*\
-  !*** ./containers/Searchbar/Searchbar.scss ***!
-  \*********************************************/
+/***/ "./containers/Searchbar/components/Suggestions/Suggestions.scss":
+/*!**********************************************************************!*\
+  !*** ./containers/Searchbar/components/Suggestions/Suggestions.scss ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 
+
+/***/ }),
+
+/***/ "./containers/Searchbar/components/Suggestions/index.js":
+/*!**************************************************************!*\
+  !*** ./containers/Searchbar/components/Suggestions/index.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Suggestions_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Suggestions.scss */ "./containers/Searchbar/components/Suggestions/Suggestions.scss");
+/* harmony import */ var _Suggestions_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Suggestions_scss__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+var Suggestions = function Suggestions(props) {
+  var currentKeyword = props.currentKeyword,
+      filteredSuggestions = props.filteredSuggestions,
+      activeSuggestion = props.activeSuggestion,
+      handleClick = props.handleClick;
+  var suggestionsList = filteredSuggestions.map(function (suggestion, index) {
+    var className = "";
+
+    if (index > 10) {
+      return;
+    }
+
+    if (index + 1 == activeSuggestion) {
+      className = "suggestion-active";
+    }
+
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      className: className,
+      key: suggestion,
+      onClick: function onClick() {
+        return handleClick("SUGGESTION", suggestion);
+      }
+    }, "#".concat(suggestion));
+  });
+  var customSuggestionClass = activeSuggestion == 0 ? "suggestion-active" : "suggestion-custom";
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "suggestions"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+    className: customSuggestionClass,
+    key: currentKeyword,
+    onClick: function onClick() {
+      return handleClick("CUSTOM", currentKeyword);
+    }
+  }, "".concat(currentKeyword)), suggestionsList);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Suggestions);
 
 /***/ }),
 
@@ -688,8 +744,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _actions_filtering__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/filtering */ "./actions/filtering.js");
 /* harmony import */ var _actions_courses__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/courses */ "./actions/courses.js");
-/* harmony import */ var _Searchbar_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Searchbar.scss */ "./containers/Searchbar/Searchbar.scss");
-/* harmony import */ var _Searchbar_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Searchbar_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _components_Suggestions___WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Suggestions/ */ "./containers/Searchbar/components/Suggestions/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -729,6 +784,16 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Searchbar).call(this, _props));
 
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "addKeyword", function (type, word) {
+      var _this$props = _this.props,
+          updateKeywords = _this$props.updateKeywords,
+          keywords = _this$props.keywords;
+      updateKeywords(keywords.concat({
+        type: type,
+        word: word
+      }));
+    });
+
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleKeyDown", function (e) {
       switch (e.keyCode) {
         case 13:
@@ -738,15 +803,9 @@ function (_Component) {
                 keywords = props.keywords;
 
             if (state.activeSuggestion == 0) {
-              updateKeywords(keywords.concat({
-                type: "CUSTOM",
-                word: state.currentKeyword
-              }));
+              _this.addKeyword("CUSTOM", state.currentKeyword);
             } else {
-              updateKeywords(keywords.concat({
-                type: "SUGGESTED",
-                word: state.filteredSuggestions[state.activeSuggestion - 1]
-              }));
+              _this.addKeyword("SUGGESTION", state.filteredSuggestions[state.activeSuggestion - 1]);
             }
 
             return {
@@ -796,14 +855,15 @@ function (_Component) {
       });
     });
 
-    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function (keyword) {
-      var _this$props = _this.props,
-          keywords = _this$props.keywords,
-          updateKeywords = _this$props.updateKeywords,
-          loadCoursesBatch = _this$props.loadCoursesBatch;
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleClick", function (type, keyword) {
+      var _this$props2 = _this.props,
+          keywords = _this$props2.keywords,
+          updateKeywords = _this$props2.updateKeywords,
+          loadCoursesBatch = _this$props2.loadCoursesBatch;
 
       _this.setState(function (state) {
-        updateKeywords(keywords.concat(keyword));
+        _this.addKeyword(type, keyword);
+
         return {
           activeSuggestion: 0,
           filteredSuggestions: [],
@@ -849,42 +909,12 @@ function (_Component) {
       var suggestionsComponent;
 
       if (showSuggestions && currentKeyword.length != 0) {
-        if (filteredSuggestions.length != 0) {
-          suggestionsComponent = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-            className: "suggestions"
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-            className: "suggestion-custom",
-            key: currentKeyword,
-            onClick: handleClick
-          }, "\"".concat(currentKeyword, "\"")), filteredSuggestions.map(function (suggestion, index) {
-            var className = "";
-            index += 1;
-
-            if (index > 10) {
-              return;
-            }
-
-            if (index == activeSuggestion) {
-              className = "suggestion-active";
-            }
-
-            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-              className: className,
-              key: suggestion,
-              onClick: function onClick() {
-                return handleClick(suggestion);
-              }
-            }, "#".concat(suggestion));
-          }));
-        } else {
-          suggestionsComponent = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-            className: "suggestions"
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-            className: "suggestion-custom",
-            key: currentKeyword,
-            onClick: handleClick
-          }, "\"".concat(currentKeyword, "\"")));
-        }
+        suggestionsComponent = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Suggestions___WEBPACK_IMPORTED_MODULE_5__["default"], {
+          currentKeyword: currentKeyword,
+          filteredSuggestions: filteredSuggestions,
+          activeSuggestion: activeSuggestion,
+          handleClick: handleClick
+        });
       }
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

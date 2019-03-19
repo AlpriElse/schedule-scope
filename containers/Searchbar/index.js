@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import axios from 'axios'
 import { updateKeywords as updateKeywordsAction } from '../../actions/filtering'
 import { fetchCourseBatch } from '../../actions/courses'
-
-import './Searchbar.scss'
+import Suggestions from './components/Suggestions/'
 
 class Searchbar extends Component {
   constructor(props) {
@@ -26,6 +25,13 @@ class Searchbar extends Component {
         })
       })
   }
+  addKeyword = (type, word) => {
+    let { updateKeywords, keywords } = this.props
+    updateKeywords(keywords.concat({
+      type,
+      word
+    }))
+  }
 
   handleKeyDown = e => {
     switch(e.keyCode) {
@@ -34,15 +40,10 @@ class Searchbar extends Component {
         this.setState((state, props) => {
           let { updateKeywords, keywords } = props
           if (state.activeSuggestion == 0) {
-            updateKeywords(keywords.concat({
-              type: "CUSTOM",
-              word: state.currentKeyword
-            }))
+            this.addKeyword("CUSTOM", state.currentKeyword)
           } else {
-            updateKeywords(keywords.concat({
-              type: "SUGGESTED",
-              word: state.filteredSuggestions[state.activeSuggestion - 1]
-            }))
+            this.addKeyword("SUGGESTION",
+              state.filteredSuggestions[state.activeSuggestion - 1])
           }
           return {
             activeSuggestion: 0,
@@ -80,10 +81,10 @@ class Searchbar extends Component {
     }))
   }
 
-  handleClick = keyword => {
+  handleClick = (type, keyword) => {
     let { keywords, updateKeywords, loadCoursesBatch } = this.props
     this.setState(state => {
-      updateKeywords(keywords.concat(keyword))
+      this.addKeyword(type, keyword)
       return {
         activeSuggestion: 0,
         filteredSuggestions: [],
@@ -109,46 +110,13 @@ class Searchbar extends Component {
 
     let suggestionsComponent
     if (showSuggestions && currentKeyword.length != 0) {
-      if (filteredSuggestions.length != 0) {
-        suggestionsComponent = (
-          <ul className="suggestions">
-            <li className="suggestion-custom"
-                key={currentKeyword}
-                onClick={handleClick}>
-              {`"${currentKeyword}"`}
-            </li>
-            {
-              filteredSuggestions.map((suggestion, index) => {
-                let className = ""
-                index += 1
-                if (index > 10) {
-                  return
-                }
-                if (index == activeSuggestion) {
-                  className = "suggestion-active"
-                }
-                return (
-                  <li className={className}
-                      key={suggestion}
-                      onClick={() => handleClick(suggestion)}>
-                    {`#${suggestion}`}
-                  </li>
-                )
-              })
-            }
-          </ul>
-        )
-      } else {
-        suggestionsComponent = (
-          <ul className="suggestions">
-            <li className="suggestion-custom"
-                key={currentKeyword}
-                onClick={handleClick}>
-              {`"${currentKeyword}"`}
-            </li>
-          </ul>
-        )
-      }
+      suggestionsComponent = (
+        <Suggestions
+          currentKeyword={currentKeyword}
+          filteredSuggestions={filteredSuggestions}
+          activeSuggestion={activeSuggestion}
+          handleClick={handleClick}/>
+      )
     }
 
 
