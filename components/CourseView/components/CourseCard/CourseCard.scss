@@ -1,13 +1,19 @@
 .course-card {
   margin-bottom: 20px;
-  border-radius: 0;
-  border: none;
-  background-color: rgb(255, 255, 255)
+  border: 1px solid #5ABCF0;
+  border-radius: 10px;
 }
+
+.course-card:hover {
+  border-color: white;
+}
+
 .course-label {
   display: inline-block;
-  padding: 5px;
+  padding: 10px;
   font-weight: 200;
+  border-radius: 10px;
+
 }
 
 .course-name {
@@ -43,8 +49,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  border: 1px solid inherit;
 }
 
 .overlay:hover {
   opacity: 1;
+  
+}
+.btn-outline-light {
+  border-radius: 10px;
 }

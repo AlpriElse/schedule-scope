@@ -15,7 +15,7 @@ class KeywordDisplay extends Component {
     let keywordsList
     if (keywords.length == 0) {
       keywordsList = (
-        <p className="text-center text-white">add filtering keywords with the searchbar</p>
+        <p className="text-center">add filtering keywords with the searchbar</p>
       )
     } else {
       keywordsList = keywords.map((keyword) => (

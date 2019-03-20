@@ -127,8 +127,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _services_color__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./services/color */ "./components/CourseView/components/CourseCard/services/color.js");
-/* harmony import */ var _CourseCard_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CourseCard.scss */ "./components/CourseView/components/CourseCard/CourseCard.scss");
-/* harmony import */ var _CourseCard_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_CourseCard_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _services_trim__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/trim */ "./components/CourseView/components/CourseCard/services/trim.js");
+/* harmony import */ var _CourseCard_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CourseCard.scss */ "./components/CourseView/components/CourseCard/CourseCard.scss");
+/* harmony import */ var _CourseCard_scss__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_CourseCard_scss__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
@@ -160,7 +162,7 @@ var CourseCard = function CourseCard(props) {
     className: "card-text course-name"
   }, course_title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "card-text course-description"
-  }, course_description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+  }, Object(_services_trim__WEBPACK_IMPORTED_MODULE_2__["trim"])(course_description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "overlay",
     style: setBackground(Object(_services_color__WEBPACK_IMPORTED_MODULE_1__["assignColor"])(course))
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -198,6 +200,26 @@ var assignColor = function assignColor(course) {
 
 /***/ }),
 
+/***/ "./components/CourseView/components/CourseCard/services/trim.js":
+/*!**********************************************************************!*\
+  !*** ./components/CourseView/components/CourseCard/services/trim.js ***!
+  \**********************************************************************/
+/*! exports provided: trim */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "trim", function() { return trim; });
+var trim = function trim(description) {
+  if (description.length > 450) {
+    return "".concat(description.substring(0, 447), "...");
+  } else {
+    return description;
+  }
+};
+
+/***/ }),
+
 /***/ "./components/CourseView/index.js":
 /*!****************************************!*\
   !*** ./components/CourseView/index.js ***!
@@ -221,7 +243,7 @@ var CourseView = function CourseView(props) {
 
   if (courseList.length === 0) {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "container text-center text-white"
+      className: "container text-center"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "No courses found"));
   }
 
@@ -505,7 +527,7 @@ function (_Component) {
 
       if (keywords.length == 0) {
         keywordsList = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-          className: "text-center text-white"
+          className: "text-center"
         }, "add filtering keywords with the searchbar");
       } else {
         keywordsList = keywords.map(function (keyword) {
@@ -50886,6 +50908,8 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_Layout__WEBPACK_IMPORTED_MODULE_3__["default"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row searchbar-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_containers_Searchbar___WEBPACK_IMPORTED_MODULE_4__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-md-12"

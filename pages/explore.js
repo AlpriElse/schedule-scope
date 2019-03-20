@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchCourseBatch,
   incrementBatchNumber as incrementBatchNumberAction } from '../actions/courses'
@@ -45,6 +45,9 @@ class ExplorePage extends React.Component {
     return (
       <Layout>
         <div className="container">
+          <div className="row">
+
+          </div>
           <div className="row searchbar-container">
             <Searchbar />
           </div>
