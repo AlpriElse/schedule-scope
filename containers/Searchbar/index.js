@@ -3,6 +3,11 @@ import { connect } from 'react-redux'
 import axios from 'axios'
 import { updateKeywords as updateKeywordsAction } from '../../actions/filtering'
 import { fetchCourseBatch } from '../../actions/courses'
+
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import Form from 'react-bootstrap/Form'
+
 import Suggestions from './components/Suggestions/'
 
 class Searchbar extends Component {
@@ -128,22 +133,24 @@ class Searchbar extends Component {
 
 
     return (
-      <div className="col-md-12 row">
-        <form className="col-md-8 offset-md-2"
-          onSubmit={e => e.preventDefault()}>
-          <div className="input-group">
-            <input
-              className="form-control"
-              type="text"
-              value={currentKeyword}
-              onChange={handleChange}
-              onKeyDown={handleKeyDown}/>
-          </div>
-          {
-            suggestionsComponent
-          }
-        </form>
-      </div>
+      <Col md={12}>
+        <Row>
+          <Col md={8} className="offset-md-2">
+            <Form onSubmit={e => e.preventDefault()}>
+              <Form.Group>
+                <Form.Control
+                  type="text"
+                  value={currentKeyword}
+                  onChange={handleChange}
+                  onKeyDown={handleKeyDown}/>
+              </Form.Group>
+              {
+                suggestionsComponent
+              }
+            </Form>
+          </Col>
+        </Row>
+      </Col>
     )
   }
 }

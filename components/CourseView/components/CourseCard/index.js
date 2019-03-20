@@ -1,4 +1,8 @@
 import React from 'react'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
+
 import { assignColor } from './services/color'
 import { trim } from './services/trim'
 import './CourseCard.scss'
@@ -16,25 +20,28 @@ const CourseCard = (props) => {
     department_code } = course
   let title = `${department_code} ${course_number}`
   return (
-    <div className="col-md-4">
-      <div className="card course-card" data-aos="fade-up">
-        <div className="card-body">
-          <h5 className="card-title text-center mx-auto text-white course-label"
-            style={setBackground(assignColor(course))}>{title}</h5>
-          <p className="card-text course-name">{course_title}</p>
-          <p className="card-text course-description">{trim(course_description)}</p>
-        </div>
+    <Col md={4}>
+      <Card className="course-card" data-aos="fade-up">
+        <Card.Body>
+          <Card.Title className="text-center mx-auto text-white course-label"
+            style={setBackground(assignColor(course))}>{title}</Card.Title>
+          <Card.Text>
+            <span className="course-name">{course_title}</span>
+            <br/>
+            <span className="course-description">{trim(course_description)}</span>
+          </Card.Text>
+        </Card.Body>
         <div className="overlay" style={setBackground(assignColor(course))}>
           <div>
             <div className="text-center text-white overlay-text">{title}</div>
             <br/>
             <div className="overlay-container">
-              <button className="btn btn-outline-light">Show Me Details</button>
+              <Button variant="outline-light">Show Me Details</Button>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </Card>
+    </Col>
   )
 }
 

@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateKeywords as updateKeywordsAction } from '../../../../actions/filtering'
 
+import ButtonGroup from 'react-bootstrap/ButtonGroup'
+import Button from 'react-bootstrap/Button'
+
 import './Keyword.scss'
 
 class Keyword extends Component {
@@ -22,15 +25,15 @@ class Keyword extends Component {
   render() {
     let { keyword } = this.props
     return (
-      <div className="btn-group keyword">
-        <a className="btn text-white">
+      <ButtonGroup className="keyword">
+        <Button className="text-white">
           {
             keyword.type == "CUSTOM" ? `"${keyword.name}"` : `#${keyword.name}`
           }
-        </a>
-        <button className="btn text-white"
-          onClick={this.handleClick}>X</button>
-      </div>
+        </Button>
+        <Button className="text-white"
+          onClick={this.handleClick}>X</Button>
+      </ButtonGroup>
     )
   }
 }

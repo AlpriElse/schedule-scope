@@ -7,10 +7,10 @@
       "publicPath": "static/chunks/0.js"
     }
   ],
-  "./Suggestions.scss": [
+  "./Nav.scss": [
     {
-      "id": "./containers/Searchbar/components/Suggestions/Suggestions.scss",
-      "name": "./containers/Searchbar/components/Suggestions/Suggestions.scss",
+      "id": "./components/AppNav/Nav.scss",
+      "name": "./components/AppNav/Nav.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -35,7 +35,7 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 11,
+      "id": 7,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -43,6 +43,20 @@
     {
       "id": 12,
       "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 13,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./Suggestions.scss": [
+    {
+      "id": "./containers/Searchbar/components/Suggestions/Suggestions.scss",
+      "name": "./containers/Searchbar/components/Suggestions/Suggestions.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }

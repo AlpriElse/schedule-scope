@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { fetchCourseBatch,
   incrementBatchNumber as incrementBatchNumberAction } from '../actions/courses'
 
+import AppNav from '../components/AppNav/'
 import Layout from '../components/Layout'
 import Searchbar from '../containers/Searchbar/'
 import KeywordDisplay from '../containers/KeywordDisplay/'
@@ -45,8 +46,8 @@ class ExplorePage extends React.Component {
     return (
       <Layout>
         <div className="container">
-          <div className="row">
-
+          <div className="container">
+            <AppNav/>
           </div>
           <div className="row searchbar-container">
             <Searchbar />

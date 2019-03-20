@@ -1,4 +1,7 @@
 import React from 'react'
+
+import Container from 'react-bootstrap/Container'
+
 import Masonry from 'react-masonry-component'
 import CourseCard from './components/CourseCard/'
 
@@ -12,7 +15,7 @@ const CourseView = (props) => {
     )
   }
   return (
-    <div className="container">
+    <Container>
       <Masonry>
         {
           courseList.map((course) => {
@@ -28,7 +31,7 @@ const CourseView = (props) => {
           })
         }
       </Masonry>
-    </div>
+    </Container>
   )
 }
 export default CourseView
