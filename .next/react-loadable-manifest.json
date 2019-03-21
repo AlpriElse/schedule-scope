@@ -1,12 +1,4 @@
 {
-  "./noop": [
-    {
-      "id": "./node_modules/next/dist/client/noop.js",
-      "name": "./node_modules/next/dist/client/noop.js",
-      "file": "static/chunks/0.js",
-      "publicPath": "static/chunks/0.js"
-    }
-  ],
   "./Nav.scss": [
     {
       "id": "./components/AppNav/Nav.scss",
@@ -51,6 +43,12 @@
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
+    },
+    {
+      "id": 15,
+      "name": null,
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
     }
   ],
   "./Suggestions.scss": [
@@ -91,6 +89,22 @@
       "name": "./pages/explore.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./index.scss": [
+    {
+      "id": "./pages/index.scss",
+      "name": "./pages/index.scss",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./noop": [
+    {
+      "id": "./node_modules/next/dist/client/noop.js",
+      "name": "./node_modules/next/dist/client/noop.js",
+      "file": "static/chunks/0.js",
+      "publicPath": "static/chunks/0.js"
     }
   ]
 }

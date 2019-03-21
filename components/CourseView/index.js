@@ -9,9 +9,9 @@ const CourseView = (props) => {
   let { courseList } = props
   if (courseList.length === 0) {
     return (
-      <div className="container text-center">
+      <Container className="text-center">
         <p>No courses found</p>
-      </div>
+      </Container>
     )
   }
   return (

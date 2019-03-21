@@ -285,10 +285,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/Button */ "react-bootstrap/Button");
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _services_color__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/color */ "./components/CourseView/components/CourseCard/services/color.js");
-/* harmony import */ var _services_trim__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/trim */ "./components/CourseView/components/CourseCard/services/trim.js");
-/* harmony import */ var _CourseCard_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CourseCard.scss */ "./components/CourseView/components/CourseCard/CourseCard.scss");
-/* harmony import */ var _CourseCard_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_CourseCard_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Modal */ "react-bootstrap/Modal");
+/* harmony import */ var react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _services_color__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./services/color */ "./components/CourseView/components/CourseCard/services/color.js");
+/* harmony import */ var _services_trim__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/trim */ "./components/CourseView/components/CourseCard/services/trim.js");
+/* harmony import */ var _CourseCard_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./CourseCard.scss */ "./components/CourseView/components/CourseCard/CourseCard.scss");
+/* harmony import */ var _CourseCard_scss__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_CourseCard_scss__WEBPACK_IMPORTED_MODULE_7__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
 
 
 
@@ -303,36 +326,86 @@ var setBackground = function setBackground(color) {
   };
 };
 
-var CourseCard = function CourseCard(props) {
-  var course = props.course;
-  var course_title = course.course_title,
-      course_number = course.course_number,
-      course_description = course.course_description,
-      department_code = course.department_code;
-  var title = "".concat(department_code, " ").concat(course_number);
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    md: 4
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    className: "course-card",
-    "data-aos": "fade-up"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2___default.a.Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2___default.a.Title, {
-    className: "text-center mx-auto text-white course-label",
-    style: setBackground(Object(_services_color__WEBPACK_IMPORTED_MODULE_4__["assignColor"])(course))
-  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2___default.a.Text, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "course-name"
-  }, course_title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-    className: "course-description"
-  }, Object(_services_trim__WEBPACK_IMPORTED_MODULE_5__["trim"])(course_description)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "overlay",
-    style: setBackground(Object(_services_color__WEBPACK_IMPORTED_MODULE_4__["assignColor"])(course))
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "text-center text-white overlay-text"
-  }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "overlay-container"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    variant: "outline-light"
-  }, "Show Me Details"))))));
-};
+var CourseCard =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(CourseCard, _Component);
+
+  function CourseCard(props) {
+    var _this;
+
+    _classCallCheck(this, CourseCard);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CourseCard).call(this, props));
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleOpenModal", function () {
+      _this.setState(function (state) {
+        return {
+          showModal: true
+        };
+      });
+    });
+
+    _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleCloseModal", function () {
+      _this.setState(function (state) {
+        return {
+          showModal: false
+        };
+      });
+    });
+
+    _this.state = {
+      showModal: false
+    };
+    return _this;
+  }
+
+  _createClass(CourseCard, [{
+    key: "render",
+    value: function render() {
+      var showModal = this.state.showModal;
+      var course = this.props.course;
+      var course_title = course.course_title,
+          course_number = course.course_number,
+          course_description = course.course_description,
+          department_code = course.department_code;
+      var title = "".concat(department_code, " ").concat(course_number);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_1___default.a, {
+        md: 4
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2___default.a, {
+        className: "course-card",
+        "data-aos": "fade-up"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2___default.a.Body, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2___default.a.Title, {
+        className: "text-center mx-auto text-white course-label",
+        style: setBackground(Object(_services_color__WEBPACK_IMPORTED_MODULE_5__["assignColor"])(course))
+      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Card__WEBPACK_IMPORTED_MODULE_2___default.a.Text, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "course-name"
+      }, course_title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "course-description"
+      }, Object(_services_trim__WEBPACK_IMPORTED_MODULE_6__["trim"])(course_description)))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "overlay",
+        style: setBackground(Object(_services_color__WEBPACK_IMPORTED_MODULE_5__["assignColor"])(course))
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-center text-white overlay-text"
+      }, title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "overlay-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        variant: "outline-light",
+        onClick: this.handleOpenModal
+      }, "Show Me Details"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default.a, {
+        show: showModal,
+        onHide: this.handleCloseModal
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default.a.Header, {
+        closeButton: true
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default.a.Title, null, title + " " + course_title)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default.a.Body, null, course_description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Modal__WEBPACK_IMPORTED_MODULE_4___default.a.Footer, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_3___default.a, {
+        variant: "primary",
+        onClick: this.handleCloseModal
+      }, "Close"))));
+    }
+  }]);
+
+  return CourseCard;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (CourseCard);
 
@@ -405,8 +478,8 @@ var CourseView = function CourseView(props) {
   var courseList = props.courseList;
 
   if (courseList.length === 0) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "container text-center"
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap_Container__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      className: "text-center"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "No courses found"));
   }
 
@@ -1341,6 +1414,17 @@ module.exports = require("react-bootstrap/Container");
 /***/ (function(module, exports) {
 
 module.exports = require("react-bootstrap/Form");
+
+/***/ }),
+
+/***/ "react-bootstrap/Modal":
+/*!****************************************!*\
+  !*** external "react-bootstrap/Modal" ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-bootstrap/Modal");
 
 /***/ }),
 
