@@ -1,5 +1,5 @@
-import * as Types from '../constants/ActionTypes'
-import { initialState } from '../redux/initialState'
+import { Types } from './actions'
+import { initialState } from '../../redux/initialState'
 
 const courses = (state = initialState, action) => {
   switch(action.type) {

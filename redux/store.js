@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 import { initialState } from './initialState'
-import reducer from '../reducers'
+import reducer from '../services/reducers'
 
 export function initializeStore (initialState = initialState) {
   return createStore(

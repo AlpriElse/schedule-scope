@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateKeywords as updateKeywordsAction } from '../../../../actions/filtering'
+import { updateKeywords as updateKeywordsAction } from '../../../../services/filtering/actions'
 
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'

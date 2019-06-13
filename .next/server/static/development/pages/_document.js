@@ -112,7 +112,7 @@ module.exports = __webpack_require__(/*! next/document */ "next/document")
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /mnt/c/Users/alpri/Documents/Projects/SOFTWARE DEV/illini-advisor/node_modules/next/dist/pages/_document.js */"./node_modules/next/dist/pages/_document.js");
+module.exports = __webpack_require__(/*! /home/alprielse/Documents/Projects/schedule-scope/node_modules/next/dist/pages/_document.js */"./node_modules/next/dist/pages/_document.js");
 
 
 /***/ }),

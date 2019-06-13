@@ -1,13 +1,11 @@
 {
-  "./Nav.scss": [
+  "undefined": [
     {
-      "id": "./components/AppNav/Nav.scss",
-      "name": "./components/AppNav/Nav.scss",
+      "id": 8,
+      "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "undefined": [
+    },
     {
       "id": 4,
       "name": null,
@@ -15,13 +13,7 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 5,
-      "name": null,
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    },
-    {
-      "id": 6,
+      "id": 9,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -33,13 +25,13 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 12,
+      "id": 14,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 13,
+      "id": 6,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -51,18 +43,18 @@
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./Suggestions.scss": [
+  "./Nav.scss": [
     {
-      "id": "./containers/Searchbar/components/Suggestions/Suggestions.scss",
-      "name": "./containers/Searchbar/components/Suggestions/Suggestions.scss",
+      "id": "./components/AppNav/Nav.scss",
+      "name": "./components/AppNav/Nav.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./Keyword.scss": [
+  "./CourseCard.scss": [
     {
-      "id": "./containers/KeywordDisplay/component/Keyword/Keyword.scss",
-      "name": "./containers/KeywordDisplay/component/Keyword/Keyword.scss",
+      "id": "./components/CourseView/components/CourseCard/CourseCard.scss",
+      "name": "./components/CourseView/components/CourseCard/CourseCard.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -75,10 +67,18 @@
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./CourseCard.scss": [
+  "./Keyword.scss": [
     {
-      "id": "./components/CourseView/components/CourseCard/CourseCard.scss",
-      "name": "./components/CourseView/components/CourseCard/CourseCard.scss",
+      "id": "./containers/KeywordDisplay/component/Keyword/Keyword.scss",
+      "name": "./containers/KeywordDisplay/component/Keyword/Keyword.scss",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./Suggestions.scss": [
+    {
+      "id": "./containers/Searchbar/components/Suggestions/Suggestions.scss",
+      "name": "./containers/Searchbar/components/Suggestions/Suggestions.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }

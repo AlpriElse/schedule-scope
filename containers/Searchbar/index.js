@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import { updateKeywords as updateKeywordsAction } from '../../actions/filtering'
-import { fetchCourseBatch } from '../../actions/courses'
+import { updateKeywords as updateKeywordsAction } from '../../services/filtering/actions'
+import { fetchCourseBatch } from '../../services/courses/actions'
 
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'

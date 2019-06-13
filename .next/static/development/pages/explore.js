@@ -1,120 +1,5 @@
 ((window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static/development/pages/explore.js"],{
 
-/***/ "./actions/courses.js":
-/*!****************************!*\
-  !*** ./actions/courses.js ***!
-  \****************************/
-/*! exports provided: fetchCourseBatch, addCourse, addCourseBatch, incrementBatchNumber, clearCourses */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCourseBatch", function() { return fetchCourseBatch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourse", function() { return addCourse; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourseBatch", function() { return addCourseBatch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "incrementBatchNumber", function() { return incrementBatchNumber; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearCourses", function() { return clearCourses; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/ActionTypes */ "./constants/ActionTypes.js");
-
-
-
-var fetchCourseBatchRequest = function fetchCourseBatchRequest() {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["FETCH_COURSE_BATCH"].REQUEST
-  };
-};
-
-var fetchCourseBatchSuccess = function fetchCourseBatchSuccess() {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["FETCH_COURSE_BATCH"].SUCCESS
-  };
-};
-
-var fetchCourseBatchFailure = function fetchCourseBatchFailure(err) {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["FETCH_COURSE_BATCH"].FAILURE,
-    err: err
-  };
-};
-
-var fetchCourseBatch = function fetchCourseBatch(batch, keywords) {
-  return function (dispatch) {
-    dispatch(fetchCourseBatchRequest());
-    return axios__WEBPACK_IMPORTED_MODULE_0___default()({
-      url: '/api/courses/batch/' + batch,
-      params: {
-        keywords: keywords
-      }
-    }).then(function (res) {
-      dispatch(fetchCourseBatchSuccess());
-      dispatch(addCourseBatch(res.data));
-    }).catch(function (err) {
-      dispatch(fetchCourseBatchFailure(err.data));
-    });
-  };
-};
-var addCourse = function addCourse(course) {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["ADD_COURSE"],
-    course: course
-  };
-};
-var addCourseBatch = function addCourseBatch(batch) {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["ADD_COURSE_BATCH"],
-    batch: batch
-  };
-};
-var incrementBatchNumber = function incrementBatchNumber() {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["INCREMENT_BATCH_NUMBER"]
-  };
-};
-var clearCourses = function clearCourses() {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["CLEAR_COURSES"]
-  };
-};
-
-/***/ }),
-
-/***/ "./actions/filtering.js":
-/*!******************************!*\
-  !*** ./actions/filtering.js ***!
-  \******************************/
-/*! exports provided: updateKeywords, updateFilter */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateKeywords", function() { return updateKeywords; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateFilter", function() { return updateFilter; });
-/* harmony import */ var _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/ActionTypes */ "./constants/ActionTypes.js");
-/* harmony import */ var _courses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./courses */ "./actions/courses.js");
-
-
-var updateKeywords = function updateKeywords(keywords) {
-  return function (dispatch) {
-    dispatch(Object(_courses__WEBPACK_IMPORTED_MODULE_1__["clearCourses"])());
-    dispatch(Object(_courses__WEBPACK_IMPORTED_MODULE_1__["fetchCourseBatch"])(0, keywords));
-    dispatch({
-      type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["UPDATE_KEYWORDS"],
-      keywords: keywords
-    });
-  };
-};
-var updateFilter = function updateFilter(filter, value) {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["UPDATE_FILTER"],
-    filter: filter,
-    value: value
-  };
-};
-
-/***/ }),
-
 /***/ "./components/AppNav/index.js":
 /*!************************************!*\
   !*** ./components/AppNav/index.js ***!
@@ -441,40 +326,6 @@ var Layout = function Layout(props) {
 
 /***/ }),
 
-/***/ "./constants/ActionTypes.js":
-/*!**********************************!*\
-  !*** ./constants/ActionTypes.js ***!
-  \**********************************/
-/*! exports provided: CLEAR_COURSES, UPDATE_KEYWORDS, INCREMENT_BATCH_NUMBER, UPDATE_FILTER, ADD_COURSE, ADD_COURSE_BATCH, FETCH_COURSE_BATCH */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_COURSES", function() { return CLEAR_COURSES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_KEYWORDS", function() { return UPDATE_KEYWORDS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INCREMENT_BATCH_NUMBER", function() { return INCREMENT_BATCH_NUMBER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_FILTER", function() { return UPDATE_FILTER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COURSE", function() { return ADD_COURSE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COURSE_BATCH", function() { return ADD_COURSE_BATCH; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_COURSE_BATCH", function() { return FETCH_COURSE_BATCH; });
-var createAsyncActionStrings = function createAsyncActionStrings(action) {
-  return {
-    REQUEST: action + "_REQUEST",
-    SUCCESS: action + "_SUCCESS",
-    FAILURE: action + "_FAILURE"
-  };
-};
-
-var CLEAR_COURSES = "CLEAR_COURSES";
-var UPDATE_KEYWORDS = "UPDATE_KEYWORDS";
-var INCREMENT_BATCH_NUMBER = "INCREMENT_BATCH_NUMBER";
-var UPDATE_FILTER = "UPDATE_FILTER";
-var ADD_COURSE = "ADD_COURSE";
-var ADD_COURSE_BATCH = "ADD_COURSE_BATCH";
-var FETCH_COURSE_BATCH = createAsyncActionStrings("FETCH_COURSE_BATCH");
-
-/***/ }),
-
 /***/ "./containers/KeywordDisplay/component/Keyword/index.js":
 /*!**************************************************************!*\
   !*** ./containers/KeywordDisplay/component/Keyword/index.js ***!
@@ -487,7 +338,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_filtering__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../actions/filtering */ "./actions/filtering.js");
+/* harmony import */ var _services_filtering_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../services/filtering/actions */ "./services/filtering/actions.js");
 /* harmony import */ var react_bootstrap_ButtonGroup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/ButtonGroup */ "./node_modules/react-bootstrap/ButtonGroup.js");
 /* harmony import */ var react_bootstrap_ButtonGroup__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_ButtonGroup__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Button */ "./node_modules/react-bootstrap/Button.js");
@@ -580,7 +431,7 @@ function (_Component) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     updateKeywords: function updateKeywords(keywords) {
-      dispatch(Object(_actions_filtering__WEBPACK_IMPORTED_MODULE_2__["updateKeywords"])(keywords));
+      dispatch(Object(_services_filtering_actions__WEBPACK_IMPORTED_MODULE_2__["updateKeywords"])(keywords));
     }
   };
 };
@@ -752,8 +603,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _actions_filtering__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/filtering */ "./actions/filtering.js");
-/* harmony import */ var _actions_courses__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/courses */ "./actions/courses.js");
+/* harmony import */ var _services_filtering_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/filtering/actions */ "./services/filtering/actions.js");
+/* harmony import */ var _services_courses_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/courses/actions */ "./services/courses/actions.js");
 /* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Col */ "./node_modules/react-bootstrap/Col.js");
 /* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Row */ "./node_modules/react-bootstrap/Row.js");
@@ -968,7 +819,7 @@ function (_Component) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     updateKeywords: function updateKeywords(keywords) {
-      dispatch(Object(_actions_filtering__WEBPACK_IMPORTED_MODULE_3__["updateKeywords"])(keywords));
+      dispatch(Object(_services_filtering_actions__WEBPACK_IMPORTED_MODULE_3__["updateKeywords"])(keywords));
     }
   };
 };
@@ -3661,7 +3512,6 @@ var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ "./node_modules/
 var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ "./node_modules/axios/lib/helpers/parseHeaders.js");
 var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ "./node_modules/axios/lib/helpers/isURLSameOrigin.js");
 var createError = __webpack_require__(/*! ../core/createError */ "./node_modules/axios/lib/core/createError.js");
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(/*! ./../helpers/btoa */ "./node_modules/axios/lib/helpers/btoa.js");
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -3673,22 +3523,6 @@ module.exports = function xhrAdapter(config) {
     }
 
     var request = new XMLHttpRequest();
-    var loadEvent = 'onreadystatechange';
-    var xDomain = false;
-
-    // For IE 8/9 CORS support
-    // Only supports POST and GET calls and doesn't returns the response headers.
-    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
-    if ("development" !== 'test' &&
-        typeof window !== 'undefined' &&
-        window.XDomainRequest && !('withCredentials' in request) &&
-        !isURLSameOrigin(config.url)) {
-      request = new window.XDomainRequest();
-      loadEvent = 'onload';
-      xDomain = true;
-      request.onprogress = function handleProgress() {};
-      request.ontimeout = function handleTimeout() {};
-    }
 
     // HTTP basic authentication
     if (config.auth) {
@@ -3703,8 +3537,8 @@ module.exports = function xhrAdapter(config) {
     request.timeout = config.timeout;
 
     // Listen for ready state
-    request[loadEvent] = function handleLoad() {
-      if (!request || (request.readyState !== 4 && !xDomain)) {
+    request.onreadystatechange = function handleLoad() {
+      if (!request || request.readyState !== 4) {
         return;
       }
 
@@ -3721,15 +3555,26 @@ module.exports = function xhrAdapter(config) {
       var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
       var response = {
         data: responseData,
-        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
-        status: request.status === 1223 ? 204 : request.status,
-        statusText: request.status === 1223 ? 'No Content' : request.statusText,
+        status: request.status,
+        statusText: request.statusText,
         headers: responseHeaders,
         config: config,
         request: request
       };
 
       settle(resolve, reject, response);
+
+      // Clean up request
+      request = null;
+    };
+
+    // Handle browser request cancellation (as opposed to a manual cancellation)
+    request.onabort = function handleAbort() {
+      if (!request) {
+        return;
+      }
+
+      reject(createError('Request aborted', config, 'ECONNABORTED', request));
 
       // Clean up request
       request = null;
@@ -3762,8 +3607,8 @@ module.exports = function xhrAdapter(config) {
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
-          cookies.read(config.xsrfCookieName) :
-          undefined;
+        cookies.read(config.xsrfCookieName) :
+        undefined;
 
       if (xsrfValue) {
         requestHeaders[config.xsrfHeaderName] = xsrfValue;
@@ -3850,6 +3695,7 @@ module.exports = function xhrAdapter(config) {
 var utils = __webpack_require__(/*! ./utils */ "./node_modules/axios/lib/utils.js");
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
 var Axios = __webpack_require__(/*! ./core/Axios */ "./node_modules/axios/lib/core/Axios.js");
+var mergeConfig = __webpack_require__(/*! ./core/mergeConfig */ "./node_modules/axios/lib/core/mergeConfig.js");
 var defaults = __webpack_require__(/*! ./defaults */ "./node_modules/axios/lib/defaults.js");
 
 /**
@@ -3879,7 +3725,7 @@ axios.Axios = Axios;
 
 // Factory for creating new instances
 axios.create = function create(instanceConfig) {
-  return createInstance(utils.merge(defaults, instanceConfig));
+  return createInstance(mergeConfig(axios.defaults, instanceConfig));
 };
 
 // Expose Cancel & CancelToken
@@ -4028,10 +3874,11 @@ module.exports = function isCancel(value) {
 "use strict";
 
 
-var defaults = __webpack_require__(/*! ./../defaults */ "./node_modules/axios/lib/defaults.js");
 var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/utils.js");
+var buildURL = __webpack_require__(/*! ../helpers/buildURL */ "./node_modules/axios/lib/helpers/buildURL.js");
 var InterceptorManager = __webpack_require__(/*! ./InterceptorManager */ "./node_modules/axios/lib/core/InterceptorManager.js");
 var dispatchRequest = __webpack_require__(/*! ./dispatchRequest */ "./node_modules/axios/lib/core/dispatchRequest.js");
+var mergeConfig = __webpack_require__(/*! ./mergeConfig */ "./node_modules/axios/lib/core/mergeConfig.js");
 
 /**
  * Create a new instance of Axios
@@ -4055,13 +3902,14 @@ Axios.prototype.request = function request(config) {
   /*eslint no-param-reassign:0*/
   // Allow for axios('example/url'[, config]) a la fetch API
   if (typeof config === 'string') {
-    config = utils.merge({
-      url: arguments[0]
-    }, arguments[1]);
+    config = arguments[1] || {};
+    config.url = arguments[0];
+  } else {
+    config = config || {};
   }
 
-  config = utils.merge(defaults, {method: 'get'}, this.defaults, config);
-  config.method = config.method.toLowerCase();
+  config = mergeConfig(this.defaults, config);
+  config.method = config.method ? config.method.toLowerCase() : 'get';
 
   // Hook up interceptors middleware
   var chain = [dispatchRequest, undefined];
@@ -4080,6 +3928,11 @@ Axios.prototype.request = function request(config) {
   }
 
   return promise;
+};
+
+Axios.prototype.getUri = function getUri(config) {
+  config = mergeConfig(this.defaults, config);
+  return buildURL(config.url, config.params, config.paramsSerializer).replace(/^\?/, '');
 };
 
 // Provide aliases for supported request methods
@@ -4326,9 +4179,93 @@ module.exports = function enhanceError(error, config, code, request, response) {
   if (code) {
     error.code = code;
   }
+
   error.request = request;
   error.response = response;
+  error.isAxiosError = true;
+
+  error.toJSON = function() {
+    return {
+      // Standard
+      message: this.message,
+      name: this.name,
+      // Microsoft
+      description: this.description,
+      number: this.number,
+      // Mozilla
+      fileName: this.fileName,
+      lineNumber: this.lineNumber,
+      columnNumber: this.columnNumber,
+      stack: this.stack,
+      // Axios
+      config: this.config,
+      code: this.code
+    };
+  };
   return error;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/axios/lib/core/mergeConfig.js":
+/*!****************************************************!*\
+  !*** ./node_modules/axios/lib/core/mergeConfig.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var utils = __webpack_require__(/*! ../utils */ "./node_modules/axios/lib/utils.js");
+
+/**
+ * Config-specific merge-function which creates a new config-object
+ * by merging two configuration objects together.
+ *
+ * @param {Object} config1
+ * @param {Object} config2
+ * @returns {Object} New object resulting from merging config2 to config1
+ */
+module.exports = function mergeConfig(config1, config2) {
+  // eslint-disable-next-line no-param-reassign
+  config2 = config2 || {};
+  var config = {};
+
+  utils.forEach(['url', 'method', 'params', 'data'], function valueFromConfig2(prop) {
+    if (typeof config2[prop] !== 'undefined') {
+      config[prop] = config2[prop];
+    }
+  });
+
+  utils.forEach(['headers', 'auth', 'proxy'], function mergeDeepProperties(prop) {
+    if (utils.isObject(config2[prop])) {
+      config[prop] = utils.deepMerge(config1[prop], config2[prop]);
+    } else if (typeof config2[prop] !== 'undefined') {
+      config[prop] = config2[prop];
+    } else if (utils.isObject(config1[prop])) {
+      config[prop] = utils.deepMerge(config1[prop]);
+    } else if (typeof config1[prop] !== 'undefined') {
+      config[prop] = config1[prop];
+    }
+  });
+
+  utils.forEach([
+    'baseURL', 'transformRequest', 'transformResponse', 'paramsSerializer',
+    'timeout', 'withCredentials', 'adapter', 'responseType', 'xsrfCookieName',
+    'xsrfHeaderName', 'onUploadProgress', 'onDownloadProgress', 'maxContentLength',
+    'validateStatus', 'maxRedirects', 'httpAgent', 'httpsAgent', 'cancelToken',
+    'socketPath'
+  ], function defaultToConfig2(prop) {
+    if (typeof config2[prop] !== 'undefined') {
+      config[prop] = config2[prop];
+    } else if (typeof config1[prop] !== 'undefined') {
+      config[prop] = config1[prop];
+    }
+  });
+
+  return config;
 };
 
 
@@ -4355,8 +4292,7 @@ var createError = __webpack_require__(/*! ./createError */ "./node_modules/axios
  */
 module.exports = function settle(resolve, reject, response) {
   var validateStatus = response.config.validateStatus;
-  // Note: status is not exposed by XDomainRequest
-  if (!response.status || !validateStatus || validateStatus(response.status)) {
+  if (!validateStatus || validateStatus(response.status)) {
     resolve(response);
   } else {
     reject(createError(
@@ -4429,12 +4365,13 @@ function setContentTypeIfUnset(headers, value) {
 
 function getDefaultAdapter() {
   var adapter;
-  if (typeof XMLHttpRequest !== 'undefined') {
-    // For browsers use XHR adapter
-    adapter = __webpack_require__(/*! ./adapters/xhr */ "./node_modules/axios/lib/adapters/xhr.js");
-  } else if (typeof process !== 'undefined') {
+  // Only Node.JS has a process variable that is of [[Class]] process
+  if (typeof process !== 'undefined' && Object.prototype.toString.call(process) === '[object process]') {
     // For node use HTTP adapter
     adapter = __webpack_require__(/*! ./adapters/http */ "./node_modules/axios/lib/adapters/xhr.js");
+  } else if (typeof XMLHttpRequest !== 'undefined') {
+    // For browsers use XHR adapter
+    adapter = __webpack_require__(/*! ./adapters/xhr */ "./node_modules/axios/lib/adapters/xhr.js");
   }
   return adapter;
 }
@@ -4443,6 +4380,7 @@ var defaults = {
   adapter: getDefaultAdapter(),
 
   transformRequest: [function transformRequest(data, headers) {
+    normalizeHeaderName(headers, 'Accept');
     normalizeHeaderName(headers, 'Content-Type');
     if (utils.isFormData(data) ||
       utils.isArrayBuffer(data) ||
@@ -4536,54 +4474,6 @@ module.exports = function bind(fn, thisArg) {
 
 /***/ }),
 
-/***/ "./node_modules/axios/lib/helpers/btoa.js":
-/*!************************************************!*\
-  !*** ./node_modules/axios/lib/helpers/btoa.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// btoa polyfill for IE<10 courtesy https://github.com/davidchambers/Base64.js
-
-var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-
-function E() {
-  this.message = 'String contains an invalid character';
-}
-E.prototype = new Error;
-E.prototype.code = 5;
-E.prototype.name = 'InvalidCharacterError';
-
-function btoa(input) {
-  var str = String(input);
-  var output = '';
-  for (
-    // initialize result and counter
-    var block, charCode, idx = 0, map = chars;
-    // if the next str index does not exist:
-    //   change the mapping table to "="
-    //   check if d has no fractional digits
-    str.charAt(idx | 0) || (map = '=', idx % 1);
-    // "8 - idx % 1 * 8" generates the sequence 2, 4, 6, 8
-    output += map.charAt(63 & block >> 8 - idx % 1 * 8)
-  ) {
-    charCode = str.charCodeAt(idx += 3 / 4);
-    if (charCode > 0xFF) {
-      throw new E();
-    }
-    block = block << 8 | charCode;
-  }
-  return output;
-}
-
-module.exports = btoa;
-
-
-/***/ }),
-
 /***/ "./node_modules/axios/lib/helpers/buildURL.js":
 /*!****************************************************!*\
   !*** ./node_modules/axios/lib/helpers/buildURL.js ***!
@@ -4653,6 +4543,11 @@ module.exports = function buildURL(url, params, paramsSerializer) {
   }
 
   if (serializedParams) {
+    var hashmarkIndex = url.indexOf('#');
+    if (hashmarkIndex !== -1) {
+      url = url.slice(0, hashmarkIndex);
+    }
+
     url += (url.indexOf('?') === -1 ? '?' : '&') + serializedParams;
   }
 
@@ -4704,50 +4599,50 @@ module.exports = (
   utils.isStandardBrowserEnv() ?
 
   // Standard browser envs support document.cookie
-  (function standardBrowserEnv() {
-    return {
-      write: function write(name, value, expires, path, domain, secure) {
-        var cookie = [];
-        cookie.push(name + '=' + encodeURIComponent(value));
+    (function standardBrowserEnv() {
+      return {
+        write: function write(name, value, expires, path, domain, secure) {
+          var cookie = [];
+          cookie.push(name + '=' + encodeURIComponent(value));
 
-        if (utils.isNumber(expires)) {
-          cookie.push('expires=' + new Date(expires).toGMTString());
+          if (utils.isNumber(expires)) {
+            cookie.push('expires=' + new Date(expires).toGMTString());
+          }
+
+          if (utils.isString(path)) {
+            cookie.push('path=' + path);
+          }
+
+          if (utils.isString(domain)) {
+            cookie.push('domain=' + domain);
+          }
+
+          if (secure === true) {
+            cookie.push('secure');
+          }
+
+          document.cookie = cookie.join('; ');
+        },
+
+        read: function read(name) {
+          var match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
+          return (match ? decodeURIComponent(match[3]) : null);
+        },
+
+        remove: function remove(name) {
+          this.write(name, '', Date.now() - 86400000);
         }
-
-        if (utils.isString(path)) {
-          cookie.push('path=' + path);
-        }
-
-        if (utils.isString(domain)) {
-          cookie.push('domain=' + domain);
-        }
-
-        if (secure === true) {
-          cookie.push('secure');
-        }
-
-        document.cookie = cookie.join('; ');
-      },
-
-      read: function read(name) {
-        var match = document.cookie.match(new RegExp('(^|;\\s*)(' + name + ')=([^;]*)'));
-        return (match ? decodeURIComponent(match[3]) : null);
-      },
-
-      remove: function remove(name) {
-        this.write(name, '', Date.now() - 86400000);
-      }
-    };
-  })() :
+      };
+    })() :
 
   // Non standard browser env (web workers, react-native) lack needed support.
-  (function nonStandardBrowserEnv() {
-    return {
-      write: function write() {},
-      read: function read() { return null; },
-      remove: function remove() {}
-    };
-  })()
+    (function nonStandardBrowserEnv() {
+      return {
+        write: function write() {},
+        read: function read() { return null; },
+        remove: function remove() {}
+      };
+    })()
 );
 
 
@@ -4796,64 +4691,64 @@ module.exports = (
 
   // Standard browser envs have full support of the APIs needed to test
   // whether the request URL is of the same origin as current location.
-  (function standardBrowserEnv() {
-    var msie = /(msie|trident)/i.test(navigator.userAgent);
-    var urlParsingNode = document.createElement('a');
-    var originURL;
+    (function standardBrowserEnv() {
+      var msie = /(msie|trident)/i.test(navigator.userAgent);
+      var urlParsingNode = document.createElement('a');
+      var originURL;
 
-    /**
+      /**
     * Parse a URL to discover it's components
     *
     * @param {String} url The URL to be parsed
     * @returns {Object}
     */
-    function resolveURL(url) {
-      var href = url;
+      function resolveURL(url) {
+        var href = url;
 
-      if (msie) {
+        if (msie) {
         // IE needs attribute set twice to normalize properties
+          urlParsingNode.setAttribute('href', href);
+          href = urlParsingNode.href;
+        }
+
         urlParsingNode.setAttribute('href', href);
-        href = urlParsingNode.href;
+
+        // urlParsingNode provides the UrlUtils interface - http://url.spec.whatwg.org/#urlutils
+        return {
+          href: urlParsingNode.href,
+          protocol: urlParsingNode.protocol ? urlParsingNode.protocol.replace(/:$/, '') : '',
+          host: urlParsingNode.host,
+          search: urlParsingNode.search ? urlParsingNode.search.replace(/^\?/, '') : '',
+          hash: urlParsingNode.hash ? urlParsingNode.hash.replace(/^#/, '') : '',
+          hostname: urlParsingNode.hostname,
+          port: urlParsingNode.port,
+          pathname: (urlParsingNode.pathname.charAt(0) === '/') ?
+            urlParsingNode.pathname :
+            '/' + urlParsingNode.pathname
+        };
       }
 
-      urlParsingNode.setAttribute('href', href);
+      originURL = resolveURL(window.location.href);
 
-      // urlParsingNode provides the UrlUtils interface - http://url.spec.whatwg.org/#urlutils
-      return {
-        href: urlParsingNode.href,
-        protocol: urlParsingNode.protocol ? urlParsingNode.protocol.replace(/:$/, '') : '',
-        host: urlParsingNode.host,
-        search: urlParsingNode.search ? urlParsingNode.search.replace(/^\?/, '') : '',
-        hash: urlParsingNode.hash ? urlParsingNode.hash.replace(/^#/, '') : '',
-        hostname: urlParsingNode.hostname,
-        port: urlParsingNode.port,
-        pathname: (urlParsingNode.pathname.charAt(0) === '/') ?
-                  urlParsingNode.pathname :
-                  '/' + urlParsingNode.pathname
-      };
-    }
-
-    originURL = resolveURL(window.location.href);
-
-    /**
+      /**
     * Determine if a URL shares the same origin as the current location
     *
     * @param {String} requestURL The URL to test
     * @returns {boolean} True if URL shares the same origin, otherwise false
     */
-    return function isURLSameOrigin(requestURL) {
-      var parsed = (utils.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
-      return (parsed.protocol === originURL.protocol &&
+      return function isURLSameOrigin(requestURL) {
+        var parsed = (utils.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
+        return (parsed.protocol === originURL.protocol &&
             parsed.host === originURL.host);
-    };
-  })() :
+      };
+    })() :
 
   // Non standard browser envs (web workers, react-native) lack needed support.
-  (function nonStandardBrowserEnv() {
-    return function isURLSameOrigin() {
-      return true;
-    };
-  })()
+    (function nonStandardBrowserEnv() {
+      return function isURLSameOrigin() {
+        return true;
+      };
+    })()
 );
 
 
@@ -4998,7 +4893,7 @@ module.exports = function spread(callback) {
 
 
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
-var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/axios/node_modules/is-buffer/index.js");
 
 /*global toString:true*/
 
@@ -5174,9 +5069,13 @@ function trim(str) {
  *
  * react-native:
  *  navigator.product -> 'ReactNative'
+ * nativescript
+ *  navigator.product -> 'NativeScript' or 'NS'
  */
 function isStandardBrowserEnv() {
-  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+  if (typeof navigator !== 'undefined' && (navigator.product === 'ReactNative' ||
+                                           navigator.product === 'NativeScript' ||
+                                           navigator.product === 'NS')) {
     return false;
   }
   return (
@@ -5258,6 +5157,32 @@ function merge(/* obj1, obj2, obj3, ... */) {
 }
 
 /**
+ * Function equal to merge with the difference being that no reference
+ * to original objects is kept.
+ *
+ * @see merge
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+function deepMerge(/* obj1, obj2, obj3, ... */) {
+  var result = {};
+  function assignValue(val, key) {
+    if (typeof result[key] === 'object' && typeof val === 'object') {
+      result[key] = deepMerge(result[key], val);
+    } else if (typeof val === 'object') {
+      result[key] = deepMerge({}, val);
+    } else {
+      result[key] = val;
+    }
+  }
+
+  for (var i = 0, l = arguments.length; i < l; i++) {
+    forEach(arguments[i], assignValue);
+  }
+  return result;
+}
+
+/**
  * Extends object a by mutably adding to it the properties of object b.
  *
  * @param {Object} a The object to be extended
@@ -5295,9 +5220,32 @@ module.exports = {
   isStandardBrowserEnv: isStandardBrowserEnv,
   forEach: forEach,
   merge: merge,
+  deepMerge: deepMerge,
   extend: extend,
   trim: trim
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/axios/node_modules/is-buffer/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/axios/node_modules/is-buffer/index.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+module.exports = function isBuffer (obj) {
+  return obj != null && obj.constructor != null &&
+    typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
 
 
 /***/ }),
@@ -5701,7 +5649,7 @@ function getOption(options, name, defaultValue) {
 
   var Buffer;
   try {
-    Buffer = __webpack_require__(/*! buffer */ 10).Buffer;
+    Buffer = __webpack_require__(/*! buffer */ 12).Buffer;
   } catch (e) {
   }
 
@@ -9143,7 +9091,7 @@ if (typeof self === 'object') {
 } else {
   // Node.js or Web worker with no crypto support
   try {
-    var crypto = __webpack_require__(/*! crypto */ 11);
+    var crypto = __webpack_require__(/*! crypto */ 13);
     if (typeof crypto.randomBytes !== 'function')
       throw new Error('Not supported');
 
@@ -24249,10 +24197,10 @@ utils.intFromLE = intFromLE;
 /*!********************************************!*\
   !*** ./node_modules/elliptic/package.json ***!
   \********************************************/
-/*! exports provided: _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _shasum, _spec, _where, author, bugs, bundleDependencies, dependencies, deprecated, description, devDependencies, files, homepage, keywords, license, main, name, repository, scripts, version, default */
+/*! exports provided: _args, _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _spec, _where, author, bugs, dependencies, description, devDependencies, files, homepage, keywords, license, main, name, repository, scripts, version, default */
 /***/ (function(module) {
 
-module.exports = {"_from":"elliptic@^6.0.0","_id":"elliptic@6.4.1","_inBundle":false,"_integrity":"sha512-BsXLz5sqX8OHcsh7CqBMztyXARmGQ3LWPtGjJi6DiJHq5C/qvi9P3OqgswKSDftbu8+IoI/QDTAm2fFnQ9SZSQ==","_location":"/elliptic","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"elliptic@^6.0.0","name":"elliptic","escapedName":"elliptic","rawSpec":"^6.0.0","saveSpec":null,"fetchSpec":"^6.0.0"},"_requiredBy":["/browserify-sign","/create-ecdh"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.1.tgz","_shasum":"c2d0b7776911b86722c632c3c06c60f2f819939a","_spec":"elliptic@^6.0.0","_where":"/mnt/c/Users/alpri/Documents/Projects/SOFTWARE DEV/illini-advisor/node_modules/browserify-sign","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"bundleDependencies":false,"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"deprecated":false,"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.4.1"};
+module.exports = {"_args":[["elliptic@6.4.1","/home/alprielse/Documents/Projects/schedule-scope"]],"_from":"elliptic@6.4.1","_id":"elliptic@6.4.1","_inBundle":false,"_integrity":"sha512-BsXLz5sqX8OHcsh7CqBMztyXARmGQ3LWPtGjJi6DiJHq5C/qvi9P3OqgswKSDftbu8+IoI/QDTAm2fFnQ9SZSQ==","_location":"/elliptic","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"elliptic@6.4.1","name":"elliptic","escapedName":"elliptic","rawSpec":"6.4.1","saveSpec":null,"fetchSpec":"6.4.1"},"_requiredBy":["/browserify-sign","/create-ecdh"],"_resolved":"https://registry.npmjs.org/elliptic/-/elliptic-6.4.1.tgz","_spec":"6.4.1","_where":"/home/alprielse/Documents/Projects/schedule-scope","author":{"name":"Fedor Indutny","email":"fedor@indutny.com"},"bugs":{"url":"https://github.com/indutny/elliptic/issues"},"dependencies":{"bn.js":"^4.4.0","brorand":"^1.0.1","hash.js":"^1.0.0","hmac-drbg":"^1.0.0","inherits":"^2.0.1","minimalistic-assert":"^1.0.0","minimalistic-crypto-utils":"^1.0.0"},"description":"EC cryptography","devDependencies":{"brfs":"^1.4.3","coveralls":"^2.11.3","grunt":"^0.4.5","grunt-browserify":"^5.0.0","grunt-cli":"^1.2.0","grunt-contrib-connect":"^1.0.0","grunt-contrib-copy":"^1.0.0","grunt-contrib-uglify":"^1.0.1","grunt-mocha-istanbul":"^3.0.1","grunt-saucelabs":"^8.6.2","istanbul":"^0.4.2","jscs":"^2.9.0","jshint":"^2.6.0","mocha":"^2.1.0"},"files":["lib"],"homepage":"https://github.com/indutny/elliptic","keywords":["EC","Elliptic","curve","Cryptography"],"license":"MIT","main":"lib/elliptic.js","name":"elliptic","repository":{"type":"git","url":"git+ssh://git@github.com/indutny/elliptic.git"},"scripts":{"jscs":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","jshint":"jscs benchmarks/*.js lib/*.js lib/**/*.js lib/**/**/*.js test/index.js","lint":"npm run jscs && npm run jshint","test":"npm run lint && npm run unit","unit":"istanbul test _mocha --reporter=spec test/index.js","version":"grunt dist && git add dist/"},"version":"6.4.1"};
 
 /***/ }),
 
@@ -27960,38 +27908,6 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 };
 
 module.exports = invariant;
-
-
-/***/ }),
-
-/***/ "./node_modules/is-buffer/index.js":
-/*!*****************************************!*\
-  !*** ./node_modules/is-buffer/index.js ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-
-// The _isBuffer check is for Safari 5-7 support, because it's missing
-// Object.prototype.constructor. Remove this eventually
-module.exports = function (obj) {
-  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
-}
-
-function isBuffer (obj) {
-  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
-}
-
-// For Node v0.10 support. Remove this eventually.
-function isSlowBuffer (obj) {
-  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
-}
 
 
 /***/ }),
@@ -38916,12 +38832,12 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ "./node_modules/object-assign/index.js":
 /*!***************************************************************************************************!*\
-  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_ecf3a5bbb48abe85e1e6 ***!
+  !*** delegated ./node_modules/object-assign/index.js from dll-reference dll_e8427f5b250f425a56e7 ***!
   \***************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ecf3a5bbb48abe85e1e6 */ "dll-reference dll_ecf3a5bbb48abe85e1e6"))("./node_modules/object-assign/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_e8427f5b250f425a56e7 */ "dll-reference dll_e8427f5b250f425a56e7"))("./node_modules/object-assign/index.js");
 
 /***/ }),
 
@@ -42006,12 +41922,12 @@ module.exports = exports['default'];
 
 /***/ "./node_modules/prop-types/checkPropTypes.js":
 /*!*********************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_ecf3a5bbb48abe85e1e6 ***!
+  !*** delegated ./node_modules/prop-types/checkPropTypes.js from dll-reference dll_e8427f5b250f425a56e7 ***!
   \*********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ecf3a5bbb48abe85e1e6 */ "dll-reference dll_ecf3a5bbb48abe85e1e6"))("./node_modules/prop-types/checkPropTypes.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_e8427f5b250f425a56e7 */ "dll-reference dll_e8427f5b250f425a56e7"))("./node_modules/prop-types/checkPropTypes.js");
 
 /***/ }),
 
@@ -42619,12 +42535,12 @@ if (true) {
 
 /***/ "./node_modules/prop-types/lib/ReactPropTypesSecret.js":
 /*!*******************************************************************************************************************!*\
-  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_ecf3a5bbb48abe85e1e6 ***!
+  !*** delegated ./node_modules/prop-types/lib/ReactPropTypesSecret.js from dll-reference dll_e8427f5b250f425a56e7 ***!
   \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ecf3a5bbb48abe85e1e6 */ "dll-reference dll_ecf3a5bbb48abe85e1e6"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_e8427f5b250f425a56e7 */ "dll-reference dll_e8427f5b250f425a56e7"))("./node_modules/prop-types/lib/ReactPropTypesSecret.js");
 
 /***/ }),
 
@@ -46702,12 +46618,12 @@ function transformContext(Context) {
 
 /***/ "./node_modules/react-dom/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_ecf3a5bbb48abe85e1e6 ***!
+  !*** delegated ./node_modules/react-dom/index.js from dll-reference dll_e8427f5b250f425a56e7 ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ecf3a5bbb48abe85e1e6 */ "dll-reference dll_ecf3a5bbb48abe85e1e6"))("./node_modules/react-dom/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_e8427f5b250f425a56e7 */ "dll-reference dll_e8427f5b250f425a56e7"))("./node_modules/react-dom/index.js");
 
 /***/ }),
 
@@ -50243,12 +50159,12 @@ exports.classNamesShape = classNamesShape;
 
 /***/ "./node_modules/react/index.js":
 /*!*******************************************************************************************!*\
-  !*** delegated ./node_modules/react/index.js from dll-reference dll_ecf3a5bbb48abe85e1e6 ***!
+  !*** delegated ./node_modules/react/index.js from dll-reference dll_e8427f5b250f425a56e7 ***!
   \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ecf3a5bbb48abe85e1e6 */ "dll-reference dll_ecf3a5bbb48abe85e1e6"))("./node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_e8427f5b250f425a56e7 */ "dll-reference dll_e8427f5b250f425a56e7"))("./node_modules/react/index.js");
 
 /***/ }),
 
@@ -50543,7 +50459,7 @@ util.inherits = __webpack_require__(/*! inherits */ "./node_modules/inherits/inh
 /*</replacement>*/
 
 /*<replacement>*/
-var debugUtil = __webpack_require__(/*! util */ 8);
+var debugUtil = __webpack_require__(/*! util */ 10);
 var debug = void 0;
 if (debugUtil && debugUtil.debuglog) {
   debug = debugUtil.debuglog('stream');
@@ -52432,7 +52348,7 @@ Writable.prototype._destroy = function (err, cb) {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Buffer = __webpack_require__(/*! safe-buffer */ "./node_modules/safe-buffer/index.js").Buffer;
-var util = __webpack_require__(/*! util */ 9);
+var util = __webpack_require__(/*! util */ 11);
 
 function copyBuffer(src, target, offset) {
   src.copy(target, offset);
@@ -57813,12 +57729,12 @@ module.exports = warning;
 
 /***/ "./node_modules/webpack/buildin/global.js":
 /*!******************************************************************************************************!*\
-  !*** delegated ./node_modules/webpack/buildin/global.js from dll-reference dll_ecf3a5bbb48abe85e1e6 ***!
+  !*** delegated ./node_modules/webpack/buildin/global.js from dll-reference dll_e8427f5b250f425a56e7 ***!
   \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_ecf3a5bbb48abe85e1e6 */ "dll-reference dll_ecf3a5bbb48abe85e1e6"))("./node_modules/webpack/buildin/global.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_e8427f5b250f425a56e7 */ "dll-reference dll_e8427f5b250f425a56e7"))("./node_modules/webpack/buildin/global.js");
 
 /***/ }),
 
@@ -57902,7 +57818,7 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_courses__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/courses */ "./actions/courses.js");
+/* harmony import */ var _services_courses_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/courses/actions */ "./services/courses/actions.js");
 /* harmony import */ var _components_AppNav___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/AppNav/ */ "./components/AppNav/index.js");
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var _containers_Searchbar___WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../containers/Searchbar/ */ "./containers/Searchbar/index.js");
@@ -58025,10 +57941,10 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     loadCoursesBatch: function loadCoursesBatch(batch, keywords) {
-      dispatch(Object(_actions_courses__WEBPACK_IMPORTED_MODULE_2__["fetchCourseBatch"])(batch, keywords));
+      dispatch(Object(_services_courses_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCourseBatch"])(batch, keywords));
     },
     incrementBatchNumber: function incrementBatchNumber() {
-      dispatch(Object(_actions_courses__WEBPACK_IMPORTED_MODULE_2__["incrementBatchNumber"])());
+      dispatch(Object(_services_courses_actions__WEBPACK_IMPORTED_MODULE_2__["incrementBatchNumber"])());
     }
   };
 };
@@ -58056,7 +57972,176 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 
 /***/ }),
 
+/***/ "./services/ActionStringCreator.js":
+/*!*****************************************!*\
+  !*** ./services/ActionStringCreator.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var createAsyncActionStrings = function createAsyncActionStrings(action) {
+  return {
+    REQUEST: action + "_REQUEST",
+    SUCCESS: action + "_SUCCESS",
+    FAILURE: action + "_FAILURE"
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (createAsyncActionStrings);
+
+/***/ }),
+
+/***/ "./services/courses/actions.js":
+/*!*************************************!*\
+  !*** ./services/courses/actions.js ***!
+  \*************************************/
+/*! exports provided: Types, fetchCourseBatch, addCourse, addCourseBatch, incrementBatchNumber, clearCourses */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Types", function() { return Types; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCourseBatch", function() { return fetchCourseBatch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourse", function() { return addCourse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourseBatch", function() { return addCourseBatch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "incrementBatchNumber", function() { return incrementBatchNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearCourses", function() { return clearCourses; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ActionStringCreator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ActionStringCreator */ "./services/ActionStringCreator.js");
+
+
+var Types = {
+  ADD_COURSE: "ADD_COURSE",
+  ADD_COURSE_BATCH: "ADD_COURSE_BATCH",
+  FETCH_COURSE_BATCH: Object(_ActionStringCreator__WEBPACK_IMPORTED_MODULE_1__["default"])("FETCH_COURSE_BATCH"),
+  INCREMENT_BATCH_NUMBER: "INCREMENT_BATCH_NUMBER",
+  CLEAR_COURSES: "CLEAR_COURSES"
+};
+
+var fetchCourseBatchRequest = function fetchCourseBatchRequest() {
+  return {
+    type: Types.FETCH_COURSE_BATCH.REQUEST
+  };
+};
+
+var fetchCourseBatchSuccess = function fetchCourseBatchSuccess() {
+  return {
+    type: Types.FETCH_COURSE_BATCH.SUCCESS
+  };
+};
+
+var fetchCourseBatchFailure = function fetchCourseBatchFailure(err) {
+  return {
+    type: Types.FETCH_COURSE_BATCH.FAILURE,
+    err: err
+  };
+};
+
+var fetchCourseBatch = function fetchCourseBatch(batch, keywords) {
+  return function (dispatch) {
+    dispatch(fetchCourseBatchRequest());
+    return axios__WEBPACK_IMPORTED_MODULE_0___default()({
+      url: '/api/courses/batch/' + batch,
+      params: {
+        keywords: keywords
+      }
+    }).then(function (res) {
+      dispatch(fetchCourseBatchSuccess());
+      dispatch(addCourseBatch(res.data));
+    }).catch(function (err) {
+      dispatch(fetchCourseBatchFailure(err.data));
+    });
+  };
+};
+var addCourse = function addCourse(course) {
+  return {
+    type: Types.ADD_COURSE,
+    course: course
+  };
+};
+var addCourseBatch = function addCourseBatch(batch) {
+  return {
+    type: Types.ADD_COURSE_BATCH,
+    batch: batch
+  };
+};
+var incrementBatchNumber = function incrementBatchNumber() {
+  return {
+    type: Types.INCREMENT_BATCH_NUMBER
+  };
+};
+var clearCourses = function clearCourses() {
+  return {
+    type: Types.CLEAR_COURSES
+  };
+};
+
+/***/ }),
+
+/***/ "./services/filtering/actions.js":
+/*!***************************************!*\
+  !*** ./services/filtering/actions.js ***!
+  \***************************************/
+/*! exports provided: Types, updateKeywords, updateFilter */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Types", function() { return Types; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateKeywords", function() { return updateKeywords; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateFilter", function() { return updateFilter; });
+/* harmony import */ var _courses_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../courses/actions */ "./services/courses/actions.js");
+
+var Types = {
+  UPDATE_FILTER: "UPDATE_FILTER",
+  UPDATE_KEYWORDS: "UPDATE_KEYWORDS"
+};
+var updateKeywords = function updateKeywords(keywords) {
+  return function (dispatch) {
+    dispatch(Object(_courses_actions__WEBPACK_IMPORTED_MODULE_0__["clearCourses"])());
+    dispatch(Object(_courses_actions__WEBPACK_IMPORTED_MODULE_0__["fetchCourseBatch"])(0, keywords));
+    dispatch({
+      type: Types.UPDATE_KEYWORDS,
+      keywords: keywords
+    });
+  };
+};
+var updateFilter = function updateFilter(filter, value) {
+  return {
+    type: Types.UPDATE_FILTER,
+    filter: filter,
+    value: value
+  };
+};
+
+/***/ }),
+
 /***/ 10:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 11:
+/*!**********************!*\
+  !*** util (ignored) ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 12:
 /*!************************!*\
   !*** buffer (ignored) ***!
   \************************/
@@ -58067,7 +58152,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 
 /***/ }),
 
-/***/ 11:
+/***/ 13:
 /*!************************!*\
   !*** crypto (ignored) ***!
   \************************/
@@ -58078,7 +58163,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 5:
 /*!********************************!*\
   !*** multi ./pages/explore.js ***!
   \********************************/
@@ -58092,38 +58177,16 @@ return { page: module.exports.default }});
 
 /***/ }),
 
-/***/ 8:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 9:
-/*!**********************!*\
-  !*** util (ignored) ***!
-  \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ "dll-reference dll_ecf3a5bbb48abe85e1e6":
+/***/ "dll-reference dll_e8427f5b250f425a56e7":
 /*!*******************************************!*\
-  !*** external "dll_ecf3a5bbb48abe85e1e6" ***!
+  !*** external "dll_e8427f5b250f425a56e7" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_ecf3a5bbb48abe85e1e6;
+module.exports = dll_e8427f5b250f425a56e7;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js","styles"]]]));;
+},[[5,"static/runtime/webpack.js","styles"]]]));;
 //# sourceMappingURL=explore.js.map

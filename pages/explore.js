@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchCourseBatch,
-  incrementBatchNumber as incrementBatchNumberAction } from '../actions/courses'
+  incrementBatchNumber as incrementBatchNumberAction } from '../services/courses/actions'
 
 import AppNav from '../components/AppNav/'
 import Layout from '../components/Layout'

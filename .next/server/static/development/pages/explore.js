@@ -88,125 +88,10 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./actions/courses.js":
-/*!****************************!*\
-  !*** ./actions/courses.js ***!
-  \****************************/
-/*! exports provided: fetchCourseBatch, addCourse, addCourseBatch, incrementBatchNumber, clearCourses */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCourseBatch", function() { return fetchCourseBatch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourse", function() { return addCourse; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourseBatch", function() { return addCourseBatch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "incrementBatchNumber", function() { return incrementBatchNumber; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearCourses", function() { return clearCourses; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants/ActionTypes */ "./constants/ActionTypes.js");
-
-
-
-var fetchCourseBatchRequest = function fetchCourseBatchRequest() {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["FETCH_COURSE_BATCH"].REQUEST
-  };
-};
-
-var fetchCourseBatchSuccess = function fetchCourseBatchSuccess() {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["FETCH_COURSE_BATCH"].SUCCESS
-  };
-};
-
-var fetchCourseBatchFailure = function fetchCourseBatchFailure(err) {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["FETCH_COURSE_BATCH"].FAILURE,
-    err: err
-  };
-};
-
-var fetchCourseBatch = function fetchCourseBatch(batch, keywords) {
-  return function (dispatch) {
-    dispatch(fetchCourseBatchRequest());
-    return axios__WEBPACK_IMPORTED_MODULE_0___default()({
-      url: '/api/courses/batch/' + batch,
-      params: {
-        keywords: keywords
-      }
-    }).then(function (res) {
-      dispatch(fetchCourseBatchSuccess());
-      dispatch(addCourseBatch(res.data));
-    }).catch(function (err) {
-      dispatch(fetchCourseBatchFailure(err.data));
-    });
-  };
-};
-var addCourse = function addCourse(course) {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["ADD_COURSE"],
-    course: course
-  };
-};
-var addCourseBatch = function addCourseBatch(batch) {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["ADD_COURSE_BATCH"],
-    batch: batch
-  };
-};
-var incrementBatchNumber = function incrementBatchNumber() {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["INCREMENT_BATCH_NUMBER"]
-  };
-};
-var clearCourses = function clearCourses() {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_1__["CLEAR_COURSES"]
-  };
-};
-
-/***/ }),
-
-/***/ "./actions/filtering.js":
-/*!******************************!*\
-  !*** ./actions/filtering.js ***!
-  \******************************/
-/*! exports provided: updateKeywords, updateFilter */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateKeywords", function() { return updateKeywords; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateFilter", function() { return updateFilter; });
-/* harmony import */ var _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/ActionTypes */ "./constants/ActionTypes.js");
-/* harmony import */ var _courses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./courses */ "./actions/courses.js");
-
-
-var updateKeywords = function updateKeywords(keywords) {
-  return function (dispatch) {
-    dispatch(Object(_courses__WEBPACK_IMPORTED_MODULE_1__["clearCourses"])());
-    dispatch(Object(_courses__WEBPACK_IMPORTED_MODULE_1__["fetchCourseBatch"])(0, keywords));
-    dispatch({
-      type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["UPDATE_KEYWORDS"],
-      keywords: keywords
-    });
-  };
-};
-var updateFilter = function updateFilter(filter, value) {
-  return {
-    type: _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["UPDATE_FILTER"],
-    filter: filter,
-    value: value
-  };
-};
-
-/***/ }),
 
 /***/ "./components/AppNav/Nav.scss":
 /*!************************************!*\
@@ -556,40 +441,6 @@ var Layout = function Layout(props) {
 
 /***/ }),
 
-/***/ "./constants/ActionTypes.js":
-/*!**********************************!*\
-  !*** ./constants/ActionTypes.js ***!
-  \**********************************/
-/*! exports provided: CLEAR_COURSES, UPDATE_KEYWORDS, INCREMENT_BATCH_NUMBER, UPDATE_FILTER, ADD_COURSE, ADD_COURSE_BATCH, FETCH_COURSE_BATCH */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_COURSES", function() { return CLEAR_COURSES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_KEYWORDS", function() { return UPDATE_KEYWORDS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INCREMENT_BATCH_NUMBER", function() { return INCREMENT_BATCH_NUMBER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_FILTER", function() { return UPDATE_FILTER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COURSE", function() { return ADD_COURSE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COURSE_BATCH", function() { return ADD_COURSE_BATCH; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_COURSE_BATCH", function() { return FETCH_COURSE_BATCH; });
-var createAsyncActionStrings = function createAsyncActionStrings(action) {
-  return {
-    REQUEST: action + "_REQUEST",
-    SUCCESS: action + "_SUCCESS",
-    FAILURE: action + "_FAILURE"
-  };
-};
-
-var CLEAR_COURSES = "CLEAR_COURSES";
-var UPDATE_KEYWORDS = "UPDATE_KEYWORDS";
-var INCREMENT_BATCH_NUMBER = "INCREMENT_BATCH_NUMBER";
-var UPDATE_FILTER = "UPDATE_FILTER";
-var ADD_COURSE = "ADD_COURSE";
-var ADD_COURSE_BATCH = "ADD_COURSE_BATCH";
-var FETCH_COURSE_BATCH = createAsyncActionStrings("FETCH_COURSE_BATCH");
-
-/***/ }),
-
 /***/ "./containers/KeywordDisplay/KeywordDisplay.scss":
 /*!*******************************************************!*\
   !*** ./containers/KeywordDisplay/KeywordDisplay.scss ***!
@@ -625,7 +476,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _actions_filtering__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../actions/filtering */ "./actions/filtering.js");
+/* harmony import */ var _services_filtering_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../services/filtering/actions */ "./services/filtering/actions.js");
 /* harmony import */ var react_bootstrap_ButtonGroup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap/ButtonGroup */ "react-bootstrap/ButtonGroup");
 /* harmony import */ var react_bootstrap_ButtonGroup__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_ButtonGroup__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_bootstrap_Button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap/Button */ "react-bootstrap/Button");
@@ -718,7 +569,7 @@ function (_Component) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     updateKeywords: function updateKeywords(keywords) {
-      dispatch(Object(_actions_filtering__WEBPACK_IMPORTED_MODULE_2__["updateKeywords"])(keywords));
+      dispatch(Object(_services_filtering_actions__WEBPACK_IMPORTED_MODULE_2__["updateKeywords"])(keywords));
     }
   };
 };
@@ -903,8 +754,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _actions_filtering__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/filtering */ "./actions/filtering.js");
-/* harmony import */ var _actions_courses__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/courses */ "./actions/courses.js");
+/* harmony import */ var _services_filtering_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/filtering/actions */ "./services/filtering/actions.js");
+/* harmony import */ var _services_courses_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/courses/actions */ "./services/courses/actions.js");
 /* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap/Col */ "react-bootstrap/Col");
 /* harmony import */ var react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap_Col__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_bootstrap_Row__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-bootstrap/Row */ "react-bootstrap/Row");
@@ -1119,7 +970,7 @@ function (_Component) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     updateKeywords: function updateKeywords(keywords) {
-      dispatch(Object(_actions_filtering__WEBPACK_IMPORTED_MODULE_3__["updateKeywords"])(keywords));
+      dispatch(Object(_services_filtering_actions__WEBPACK_IMPORTED_MODULE_3__["updateKeywords"])(keywords));
     }
   };
 };
@@ -1147,7 +998,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "react-redux");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _actions_courses__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/courses */ "./actions/courses.js");
+/* harmony import */ var _services_courses_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/courses/actions */ "./services/courses/actions.js");
 /* harmony import */ var _components_AppNav___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/AppNav/ */ "./components/AppNav/index.js");
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
 /* harmony import */ var _containers_Searchbar___WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../containers/Searchbar/ */ "./containers/Searchbar/index.js");
@@ -1261,10 +1112,10 @@ var mapStateToProps = function mapStateToProps(state, ownProps) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
     loadCoursesBatch: function loadCoursesBatch(batch, keywords) {
-      dispatch(Object(_actions_courses__WEBPACK_IMPORTED_MODULE_2__["fetchCourseBatch"])(batch, keywords));
+      dispatch(Object(_services_courses_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCourseBatch"])(batch, keywords));
     },
     incrementBatchNumber: function incrementBatchNumber() {
-      dispatch(Object(_actions_courses__WEBPACK_IMPORTED_MODULE_2__["incrementBatchNumber"])());
+      dispatch(Object(_services_courses_actions__WEBPACK_IMPORTED_MODULE_2__["incrementBatchNumber"])());
     }
   };
 };
@@ -1284,7 +1135,154 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
 
 /***/ }),
 
-/***/ 3:
+/***/ "./services/ActionStringCreator.js":
+/*!*****************************************!*\
+  !*** ./services/ActionStringCreator.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var createAsyncActionStrings = function createAsyncActionStrings(action) {
+  return {
+    REQUEST: action + "_REQUEST",
+    SUCCESS: action + "_SUCCESS",
+    FAILURE: action + "_FAILURE"
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (createAsyncActionStrings);
+
+/***/ }),
+
+/***/ "./services/courses/actions.js":
+/*!*************************************!*\
+  !*** ./services/courses/actions.js ***!
+  \*************************************/
+/*! exports provided: Types, fetchCourseBatch, addCourse, addCourseBatch, incrementBatchNumber, clearCourses */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Types", function() { return Types; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCourseBatch", function() { return fetchCourseBatch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourse", function() { return addCourse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourseBatch", function() { return addCourseBatch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "incrementBatchNumber", function() { return incrementBatchNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearCourses", function() { return clearCourses; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ActionStringCreator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ActionStringCreator */ "./services/ActionStringCreator.js");
+
+
+var Types = {
+  ADD_COURSE: "ADD_COURSE",
+  ADD_COURSE_BATCH: "ADD_COURSE_BATCH",
+  FETCH_COURSE_BATCH: Object(_ActionStringCreator__WEBPACK_IMPORTED_MODULE_1__["default"])("FETCH_COURSE_BATCH"),
+  INCREMENT_BATCH_NUMBER: "INCREMENT_BATCH_NUMBER",
+  CLEAR_COURSES: "CLEAR_COURSES"
+};
+
+var fetchCourseBatchRequest = function fetchCourseBatchRequest() {
+  return {
+    type: Types.FETCH_COURSE_BATCH.REQUEST
+  };
+};
+
+var fetchCourseBatchSuccess = function fetchCourseBatchSuccess() {
+  return {
+    type: Types.FETCH_COURSE_BATCH.SUCCESS
+  };
+};
+
+var fetchCourseBatchFailure = function fetchCourseBatchFailure(err) {
+  return {
+    type: Types.FETCH_COURSE_BATCH.FAILURE,
+    err: err
+  };
+};
+
+var fetchCourseBatch = function fetchCourseBatch(batch, keywords) {
+  return function (dispatch) {
+    dispatch(fetchCourseBatchRequest());
+    return axios__WEBPACK_IMPORTED_MODULE_0___default()({
+      url: '/api/courses/batch/' + batch,
+      params: {
+        keywords: keywords
+      }
+    }).then(function (res) {
+      dispatch(fetchCourseBatchSuccess());
+      dispatch(addCourseBatch(res.data));
+    }).catch(function (err) {
+      dispatch(fetchCourseBatchFailure(err.data));
+    });
+  };
+};
+var addCourse = function addCourse(course) {
+  return {
+    type: Types.ADD_COURSE,
+    course: course
+  };
+};
+var addCourseBatch = function addCourseBatch(batch) {
+  return {
+    type: Types.ADD_COURSE_BATCH,
+    batch: batch
+  };
+};
+var incrementBatchNumber = function incrementBatchNumber() {
+  return {
+    type: Types.INCREMENT_BATCH_NUMBER
+  };
+};
+var clearCourses = function clearCourses() {
+  return {
+    type: Types.CLEAR_COURSES
+  };
+};
+
+/***/ }),
+
+/***/ "./services/filtering/actions.js":
+/*!***************************************!*\
+  !*** ./services/filtering/actions.js ***!
+  \***************************************/
+/*! exports provided: Types, updateKeywords, updateFilter */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Types", function() { return Types; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateKeywords", function() { return updateKeywords; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateFilter", function() { return updateFilter; });
+/* harmony import */ var _courses_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../courses/actions */ "./services/courses/actions.js");
+
+var Types = {
+  UPDATE_FILTER: "UPDATE_FILTER",
+  UPDATE_KEYWORDS: "UPDATE_KEYWORDS"
+};
+var updateKeywords = function updateKeywords(keywords) {
+  return function (dispatch) {
+    dispatch(Object(_courses_actions__WEBPACK_IMPORTED_MODULE_0__["clearCourses"])());
+    dispatch(Object(_courses_actions__WEBPACK_IMPORTED_MODULE_0__["fetchCourseBatch"])(0, keywords));
+    dispatch({
+      type: Types.UPDATE_KEYWORDS,
+      keywords: keywords
+    });
+  };
+};
+var updateFilter = function updateFilter(filter, value) {
+  return {
+    type: Types.UPDATE_FILTER,
+    filter: filter,
+    value: value
+  };
+};
+
+/***/ }),
+
+/***/ 4:
 /*!********************************!*\
   !*** multi ./pages/explore.js ***!
   \********************************/

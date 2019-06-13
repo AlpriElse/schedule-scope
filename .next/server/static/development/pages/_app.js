@@ -93,40 +93,6 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
-/***/ "./constants/ActionTypes.js":
-/*!**********************************!*\
-  !*** ./constants/ActionTypes.js ***!
-  \**********************************/
-/*! exports provided: CLEAR_COURSES, UPDATE_KEYWORDS, INCREMENT_BATCH_NUMBER, UPDATE_FILTER, ADD_COURSE, ADD_COURSE_BATCH, FETCH_COURSE_BATCH */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_COURSES", function() { return CLEAR_COURSES; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_KEYWORDS", function() { return UPDATE_KEYWORDS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "INCREMENT_BATCH_NUMBER", function() { return INCREMENT_BATCH_NUMBER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_FILTER", function() { return UPDATE_FILTER; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COURSE", function() { return ADD_COURSE; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ADD_COURSE_BATCH", function() { return ADD_COURSE_BATCH; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_COURSE_BATCH", function() { return FETCH_COURSE_BATCH; });
-var createAsyncActionStrings = function createAsyncActionStrings(action) {
-  return {
-    REQUEST: action + "_REQUEST",
-    SUCCESS: action + "_SUCCESS",
-    FAILURE: action + "_FAILURE"
-  };
-};
-
-var CLEAR_COURSES = "CLEAR_COURSES";
-var UPDATE_KEYWORDS = "UPDATE_KEYWORDS";
-var INCREMENT_BATCH_NUMBER = "INCREMENT_BATCH_NUMBER";
-var UPDATE_FILTER = "UPDATE_FILTER";
-var ADD_COURSE = "ADD_COURSE";
-var ADD_COURSE_BATCH = "ADD_COURSE_BATCH";
-var FETCH_COURSE_BATCH = createAsyncActionStrings("FETCH_COURSE_BATCH");
-
-/***/ }),
-
 /***/ "./lib/with-redux-store.js":
 /*!*********************************!*\
   !*** ./lib/with-redux-store.js ***!
@@ -342,131 +308,6 @@ function (_App) {
 
 /***/ }),
 
-/***/ "./reducers/courses.js":
-/*!*****************************!*\
-  !*** ./reducers/courses.js ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/ActionTypes */ "./constants/ActionTypes.js");
-/* harmony import */ var _redux_initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../redux/initialState */ "./redux/initialState.js");
-
-
-
-var courses = function courses() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _redux_initialState__WEBPACK_IMPORTED_MODULE_1__["initialState"];
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_COURSE"]:
-      return Object.assign({}, state, {
-        courseList: state.courseList.concat(action.course)
-      });
-
-    case _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["ADD_COURSE_BATCH"]:
-      return Object.assign({}, state, {
-        courseList: state.courseList.concat(action.batch)
-      });
-
-    case _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["FETCH_COURSE_BATCH"].REQUEST:
-      return Object.assign({}, state, {
-        courses: Object.assign({}, state.courses, {
-          isFetching: true
-        })
-      });
-
-    case _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["FETCH_COURSE_BATCH"].SUCCESS:
-      return Object.assign({}, state, {
-        courses: Object.assign({}, state.courses, {
-          isFetching: false
-        })
-      });
-
-    case _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["INCREMENT_BATCH_NUMBER"]:
-      return Object.assign({}, state, {
-        batchNumber: state.batchNumber + 1
-      });
-
-    case _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["CLEAR_COURSES"]:
-      return Object.assign({}, state, {
-        courseList: []
-      });
-
-    default:
-      return state;
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (courses);
-
-/***/ }),
-
-/***/ "./reducers/filtering.js":
-/*!*******************************!*\
-  !*** ./reducers/filtering.js ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/ActionTypes */ "./constants/ActionTypes.js");
-/* harmony import */ var _redux_initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../redux/initialState */ "./redux/initialState.js");
-
-
-
-var courses = function courses() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _redux_initialState__WEBPACK_IMPORTED_MODULE_1__["initialState"];
-  var action = arguments.length > 1 ? arguments[1] : undefined;
-
-  switch (action.type) {
-    case _constants_ActionTypes__WEBPACK_IMPORTED_MODULE_0__["UPDATE_KEYWORDS"]:
-      return Object.assign({}, state, {
-        keywords: action.keywords,
-        courses: {
-          isFetching: false,
-          ready: false,
-          batchNumber: 0
-        },
-        courseList: [],
-        batchNumber: 0
-      });
-
-    default:
-      return state;
-  }
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (courses);
-
-/***/ }),
-
-/***/ "./reducers/index.js":
-/*!***************************!*\
-  !*** ./reducers/index.js ***!
-  \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "redux");
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _courses__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./courses */ "./reducers/courses.js");
-/* harmony import */ var _filtering__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./filtering */ "./reducers/filtering.js");
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  courses: _courses__WEBPACK_IMPORTED_MODULE_1__["default"],
-  filtering: _filtering__WEBPACK_IMPORTED_MODULE_2__["default"]
-}));
-
-/***/ }),
-
 /***/ "./redux/initialState.js":
 /*!*******************************!*\
   !*** ./redux/initialState.js ***!
@@ -508,15 +349,287 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! redux-thunk */ "redux-thunk");
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(redux_thunk__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _initialState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./initialState */ "./redux/initialState.js");
-/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers */ "./reducers/index.js");
+/* harmony import */ var _services_reducers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/reducers */ "./services/reducers.js");
 
 
 
 
 function initializeStore() {
   var initialState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers__WEBPACK_IMPORTED_MODULE_3__["default"], initialState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1___default.a));
+  return Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_services_reducers__WEBPACK_IMPORTED_MODULE_3__["default"], initialState, Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(redux_thunk__WEBPACK_IMPORTED_MODULE_1___default.a));
 }
+
+/***/ }),
+
+/***/ "./services/ActionStringCreator.js":
+/*!*****************************************!*\
+  !*** ./services/ActionStringCreator.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var createAsyncActionStrings = function createAsyncActionStrings(action) {
+  return {
+    REQUEST: action + "_REQUEST",
+    SUCCESS: action + "_SUCCESS",
+    FAILURE: action + "_FAILURE"
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (createAsyncActionStrings);
+
+/***/ }),
+
+/***/ "./services/courses/actions.js":
+/*!*************************************!*\
+  !*** ./services/courses/actions.js ***!
+  \*************************************/
+/*! exports provided: Types, fetchCourseBatch, addCourse, addCourseBatch, incrementBatchNumber, clearCourses */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Types", function() { return Types; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCourseBatch", function() { return fetchCourseBatch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourse", function() { return addCourse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addCourseBatch", function() { return addCourseBatch; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "incrementBatchNumber", function() { return incrementBatchNumber; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearCourses", function() { return clearCourses; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ActionStringCreator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../ActionStringCreator */ "./services/ActionStringCreator.js");
+
+
+var Types = {
+  ADD_COURSE: "ADD_COURSE",
+  ADD_COURSE_BATCH: "ADD_COURSE_BATCH",
+  FETCH_COURSE_BATCH: Object(_ActionStringCreator__WEBPACK_IMPORTED_MODULE_1__["default"])("FETCH_COURSE_BATCH"),
+  INCREMENT_BATCH_NUMBER: "INCREMENT_BATCH_NUMBER",
+  CLEAR_COURSES: "CLEAR_COURSES"
+};
+
+var fetchCourseBatchRequest = function fetchCourseBatchRequest() {
+  return {
+    type: Types.FETCH_COURSE_BATCH.REQUEST
+  };
+};
+
+var fetchCourseBatchSuccess = function fetchCourseBatchSuccess() {
+  return {
+    type: Types.FETCH_COURSE_BATCH.SUCCESS
+  };
+};
+
+var fetchCourseBatchFailure = function fetchCourseBatchFailure(err) {
+  return {
+    type: Types.FETCH_COURSE_BATCH.FAILURE,
+    err: err
+  };
+};
+
+var fetchCourseBatch = function fetchCourseBatch(batch, keywords) {
+  return function (dispatch) {
+    dispatch(fetchCourseBatchRequest());
+    return axios__WEBPACK_IMPORTED_MODULE_0___default()({
+      url: '/api/courses/batch/' + batch,
+      params: {
+        keywords: keywords
+      }
+    }).then(function (res) {
+      dispatch(fetchCourseBatchSuccess());
+      dispatch(addCourseBatch(res.data));
+    }).catch(function (err) {
+      dispatch(fetchCourseBatchFailure(err.data));
+    });
+  };
+};
+var addCourse = function addCourse(course) {
+  return {
+    type: Types.ADD_COURSE,
+    course: course
+  };
+};
+var addCourseBatch = function addCourseBatch(batch) {
+  return {
+    type: Types.ADD_COURSE_BATCH,
+    batch: batch
+  };
+};
+var incrementBatchNumber = function incrementBatchNumber() {
+  return {
+    type: Types.INCREMENT_BATCH_NUMBER
+  };
+};
+var clearCourses = function clearCourses() {
+  return {
+    type: Types.CLEAR_COURSES
+  };
+};
+
+/***/ }),
+
+/***/ "./services/courses/reducers.js":
+/*!**************************************!*\
+  !*** ./services/courses/reducers.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./actions */ "./services/courses/actions.js");
+/* harmony import */ var _redux_initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../redux/initialState */ "./redux/initialState.js");
+
+
+
+var courses = function courses() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _redux_initialState__WEBPACK_IMPORTED_MODULE_1__["initialState"];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions__WEBPACK_IMPORTED_MODULE_0__["Types"].ADD_COURSE:
+      return Object.assign({}, state, {
+        courseList: state.courseList.concat(action.course)
+      });
+
+    case _actions__WEBPACK_IMPORTED_MODULE_0__["Types"].ADD_COURSE_BATCH:
+      return Object.assign({}, state, {
+        courseList: state.courseList.concat(action.batch)
+      });
+
+    case _actions__WEBPACK_IMPORTED_MODULE_0__["Types"].FETCH_COURSE_BATCH.REQUEST:
+      return Object.assign({}, state, {
+        courses: Object.assign({}, state.courses, {
+          isFetching: true
+        })
+      });
+
+    case _actions__WEBPACK_IMPORTED_MODULE_0__["Types"].FETCH_COURSE_BATCH.SUCCESS:
+      return Object.assign({}, state, {
+        courses: Object.assign({}, state.courses, {
+          isFetching: false
+        })
+      });
+
+    case _actions__WEBPACK_IMPORTED_MODULE_0__["Types"].INCREMENT_BATCH_NUMBER:
+      return Object.assign({}, state, {
+        batchNumber: state.batchNumber + 1
+      });
+
+    case _actions__WEBPACK_IMPORTED_MODULE_0__["Types"].CLEAR_COURSES:
+      return Object.assign({}, state, {
+        courseList: []
+      });
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (courses);
+
+/***/ }),
+
+/***/ "./services/filtering/actions.js":
+/*!***************************************!*\
+  !*** ./services/filtering/actions.js ***!
+  \***************************************/
+/*! exports provided: Types, updateKeywords, updateFilter */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Types", function() { return Types; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateKeywords", function() { return updateKeywords; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateFilter", function() { return updateFilter; });
+/* harmony import */ var _courses_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../courses/actions */ "./services/courses/actions.js");
+
+var Types = {
+  UPDATE_FILTER: "UPDATE_FILTER",
+  UPDATE_KEYWORDS: "UPDATE_KEYWORDS"
+};
+var updateKeywords = function updateKeywords(keywords) {
+  return function (dispatch) {
+    dispatch(Object(_courses_actions__WEBPACK_IMPORTED_MODULE_0__["clearCourses"])());
+    dispatch(Object(_courses_actions__WEBPACK_IMPORTED_MODULE_0__["fetchCourseBatch"])(0, keywords));
+    dispatch({
+      type: Types.UPDATE_KEYWORDS,
+      keywords: keywords
+    });
+  };
+};
+var updateFilter = function updateFilter(filter, value) {
+  return {
+    type: Types.UPDATE_FILTER,
+    filter: filter,
+    value: value
+  };
+};
+
+/***/ }),
+
+/***/ "./services/filtering/reducers.js":
+/*!****************************************!*\
+  !*** ./services/filtering/reducers.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./actions */ "./services/filtering/actions.js");
+/* harmony import */ var _redux_initialState__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../redux/initialState */ "./redux/initialState.js");
+
+
+
+var courses = function courses() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _redux_initialState__WEBPACK_IMPORTED_MODULE_1__["initialState"];
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _actions__WEBPACK_IMPORTED_MODULE_0__["Types"].UPDATE_KEYWORDS:
+      return Object.assign({}, state, {
+        keywords: action.keywords,
+        courses: {
+          isFetching: false,
+          ready: false,
+          batchNumber: 0
+        },
+        courseList: [],
+        batchNumber: 0
+      });
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (courses);
+
+/***/ }),
+
+/***/ "./services/reducers.js":
+/*!******************************!*\
+  !*** ./services/reducers.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "redux");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(redux__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _courses_reducers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./courses/reducers */ "./services/courses/reducers.js");
+/* harmony import */ var _filtering_reducers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./filtering/reducers */ "./services/filtering/reducers.js");
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
+  courses: _courses_reducers__WEBPACK_IMPORTED_MODULE_1__["default"],
+  filtering: _filtering_reducers__WEBPACK_IMPORTED_MODULE_2__["default"]
+}));
 
 /***/ }),
 
@@ -540,6 +653,17 @@ module.exports = __webpack_require__(/*! ./pages/_app.js */"./pages/_app.js");
 /***/ (function(module, exports) {
 
 module.exports = require("@babel/runtime/regenerator");
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 
