@@ -1,11 +1,21 @@
 {
-  "undefined": [
+  "./noop": [
     {
-      "id": 8,
-      "name": null,
+      "id": "./node_modules/next/dist/client/noop.js",
+      "name": "./node_modules/next/dist/client/noop.js",
+      "file": "static/chunks/0.js",
+      "publicPath": "static/chunks/0.js"
+    }
+  ],
+  "./Nav.scss": [
+    {
+      "id": "./components/AppNav/Nav.scss",
+      "name": "./components/AppNav/Nav.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
-    },
+    }
+  ],
+  "undefined": [
     {
       "id": 4,
       "name": null,
@@ -13,19 +23,7 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 9,
-      "name": null,
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    },
-    {
-      "id": 7,
-      "name": null,
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    },
-    {
-      "id": 14,
+      "id": 5,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
@@ -37,32 +35,20 @@
       "publicPath": "static/chunks/styles.js"
     },
     {
-      "id": 15,
+      "id": 7,
       "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "./Nav.scss": [
+    },
     {
-      "id": "./components/AppNav/Nav.scss",
-      "name": "./components/AppNav/Nav.scss",
+      "id": 12,
+      "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "./CourseCard.scss": [
+    },
     {
-      "id": "./components/CourseView/components/CourseCard/CourseCard.scss",
-      "name": "./components/CourseView/components/CourseCard/CourseCard.scss",
-      "file": "static/chunks/styles.js",
-      "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "./KeywordDisplay.scss": [
-    {
-      "id": "./containers/KeywordDisplay/KeywordDisplay.scss",
-      "name": "./containers/KeywordDisplay/KeywordDisplay.scss",
+      "id": 13,
+      "name": null,
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -71,6 +57,14 @@
     {
       "id": "./containers/KeywordDisplay/component/Keyword/Keyword.scss",
       "name": "./containers/KeywordDisplay/component/Keyword/Keyword.scss",
+      "file": "static/chunks/styles.js",
+      "publicPath": "static/chunks/styles.js"
+    }
+  ],
+  "./CourseCard.scss": [
+    {
+      "id": "./components/CourseView/components/CourseCard/CourseCard.scss",
+      "name": "./components/CourseView/components/CourseCard/CourseCard.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
     }
@@ -91,20 +85,12 @@
       "publicPath": "static/chunks/styles.js"
     }
   ],
-  "./index.scss": [
+  "./KeywordDisplay.scss": [
     {
-      "id": "./pages/index.scss",
-      "name": "./pages/index.scss",
+      "id": "./containers/KeywordDisplay/KeywordDisplay.scss",
+      "name": "./containers/KeywordDisplay/KeywordDisplay.scss",
       "file": "static/chunks/styles.js",
       "publicPath": "static/chunks/styles.js"
-    }
-  ],
-  "./noop": [
-    {
-      "id": "./node_modules/next/dist/client/noop.js",
-      "name": "./node_modules/next/dist/client/noop.js",
-      "file": "static/chunks/0.js",
-      "publicPath": "static/chunks/0.js"
     }
   ]
 }

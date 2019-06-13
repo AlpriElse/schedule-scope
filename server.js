@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const cors = require('cors')
 const next = require('next')
@@ -8,6 +10,7 @@ const nextApp = next({ dev })
 const handle = nextApp.getRequestHandler()
 
 const api = require('./api')
+
 nextApp.prepare()
 .then(() => {
 
