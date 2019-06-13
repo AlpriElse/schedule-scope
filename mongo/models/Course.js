@@ -9,10 +9,11 @@ const CourseSchema = new mongoose.Schema({
   credit_hours: String,
   number: Number,
   terms_offered: [String],
-  general_education: [String]
-}, {
-  _id: false
+  general_education: [String],
+  department_code: String
 })
+
+CourseSchema.index({ description: 'text' })
 
 module.exports = mongoose.model(
   'Course',
