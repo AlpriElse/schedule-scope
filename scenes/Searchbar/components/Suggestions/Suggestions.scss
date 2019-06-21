@@ -1,0 +1,46 @@
+.float {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 0;
+  width: 90%;
+  z-index: 10;
+  overflow-y: auto;
+}
+.suggestions {
+  padding: 0;
+  background-color: white;
+  list-style: none;
+  border-radius: 1em;
+  border: solid 2px rgba(0,0,0,0.2)
+}
+
+.suggestions li {
+  padding: 1em;
+}
+
+.suggestions li:hover {
+  cursor: pointer;
+  background-color: #00ADAB;
+  color: white;
+}
+
+.section {
+  font-weight: 400;
+}
+
+.section:hover {
+  cursor: pointer;
+  background-color: white;
+  color: inherit;
+}
+
+.item {
+
+}
+
+.selected {
+  background-color: #00ADAB;
+  color: white;
+}

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import courses from './courses/reducers'
-import filtering from './filtering/reducers'
+import filters from './filters/reducers'
 
 export default combineReducers({
   courses,
-  filtering
+  filters
 })

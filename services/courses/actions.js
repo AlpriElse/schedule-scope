@@ -2,66 +2,42 @@ import axios from 'axios'
 import createAsyncActionStrings from '../ActionStringCreator'
 
 export const Types = {
-  ADD_COURSE: "ADD_COURSE",
-  ADD_COURSE_BATCH: "ADD_COURSE_BATCH",
-  FETCH_COURSE_BATCH: createAsyncActionStrings("FETCH_COURSE_BATCH"),
-  INCREMENT_BATCH_NUMBER: "INCREMENT_BATCH_NUMBER",
+  FETCH_COURSES: createAsyncActionStrings("FETCH_COURSES"),
   CLEAR_COURSES: "CLEAR_COURSES"
 }
 
-const fetchCourseBatchRequest = () => {
+const fetchCoursesRequest = () => {
   return {
-    type: Types.FETCH_COURSE_BATCH.REQUEST
+    type: Types.FETCH_COURSES.REQUEST
   }
 }
 
-const fetchCourseBatchSuccess = () => {
+const fetchCoursesSuccess = (courses) => {
   return {
-    type: Types.FETCH_COURSE_BATCH.SUCCESS
+    type: Types.FETCH_COURSES.SUCCESS,
+    courses
   }
 }
 
-const fetchCourseBatchFailure = (err) => {
+const fetchCoursesFailure = (err) => {
   return {
-    type: Types.FETCH_COURSE_BATCH.FAILURE,
+    type: Types.FETCH_COURSES.FAILURE,
     err: err
   }
 }
 
-export const fetchCourseBatch = (batch, keywords) => {
-  return dispatch => {
-    dispatch(fetchCourseBatchRequest())
+export const fetchCourses = () => {
+  return (dispatch, getState) => {
+    let { filters: { api_fields }} = getState()
+    dispatch(fetchCoursesRequest())
     return axios({
       url: '/api/courses/batch/' + batch,
-      params: {
-        keywords: keywords
-      }
+      params: api_fields
     }).then(res => {
-      dispatch(fetchCourseBatchSuccess())
-      dispatch(addCourseBatch(res.data))
+      dispatch(fetchCoursesSuccess(res.data))
     }).catch(err => {
-      dispatch(fetchCourseBatchFailure(err.data))
+      dispatch(fetchCoursesFailure(err.data))
     })
-  }
-}
-
-export const addCourse = (course) => {
-  return {
-    type: Types.ADD_COURSE,
-    course: course
-  }
-}
-
-export const addCourseBatch = (batch) => {
-  return {
-    type: Types.ADD_COURSE_BATCH,
-    batch: batch
-  }
-}
-
-export const incrementBatchNumber = () => {
-  return {
-    type: Types.INCREMENT_BATCH_NUMBER
   }
 }
 

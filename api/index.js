@@ -6,20 +6,18 @@ const api = require('express').Router()
 api.get('/course?', (req, res) => {
   const query = { }
 
-  // if (req.query.custom !== undefined) {
-  //   query.$text = {
-  //     $search: req.query.custom
-  //   }
-  // }
-
-  if (req.query.number !== undefined) {
-    query.number = req.query.number
-  }
-  if (req.query.name !== undefined) {
-    query.name = req.query.name
-  }
   if (req.query.department_code !== undefined) {
-    query.department_code = req.query.department_code
+    let department = req.query.department_code
+    if (typeof department === 'object') {
+      query.$or = []
+      for (let code of department) {
+        query.$or.push({
+          department_code: code
+        })
+      }
+    } else {
+      query.department_code = req.query.department_code
+    }
     // Handle multiple asks
   }
 

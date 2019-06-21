@@ -1,13 +1,16 @@
-export var initialState = {
+export const initialState = {
   courses: {
     isFetching: false,
-    ready: false,
-    batchNumber: 0
+    isReady: false,
+    list: []
   },
-  courseList: [],
   filters: {
-    department: ""
+    api_fields: {
+      department_code: undefined,
+      terms_offered: undefined,
+      general_education: undefined,
+      credit_hours: undefined
+    }
   },
-  keywords: [],
-  batchNumber: 0
-};
+
+}

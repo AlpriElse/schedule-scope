@@ -3,29 +3,19 @@ import { initialState } from '../../redux/initialState'
 
 const courses = (state = initialState, action) => {
   switch(action.type) {
-    case Types.ADD_COURSE:
-      return Object.assign({}, state, {
-        courseList: state.courseList.concat(action.course)
-      })
-    case Types.ADD_COURSE_BATCH:
-      return Object.assign({}, state, {
-        courseList: state.courseList.concat(action.batch)
-      })
-    case Types.FETCH_COURSE_BATCH.REQUEST:
+    case Types.FETCH_COURSES.REQUEST:
       return Object.assign({}, state, {
         courses: Object.assign({}, state.courses, {
-          isFetching: true
+          isFetching: true,
+          isReady: false
         })
       })
-    case Types.FETCH_COURSE_BATCH.SUCCESS:
+    case Types.FETCH_COURSES.SUCCESS:
       return Object.assign({}, state, {
-        courses: Object.assign({}, state.courses, {
-          isFetching: false
+        courses: Object.assign({}, {
+          isFetching: false,
+          list: action.courses
         })
-      })
-    case Types.INCREMENT_BATCH_NUMBER:
-      return Object.assign({}, state, {
-        batchNumber: state.batchNumber + 1
       })
     case Types.CLEAR_COURSES:
       return Object.assign({}, state, {

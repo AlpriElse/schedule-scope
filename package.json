@@ -5,31 +5,44 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server.js",
-    "heroku-postbuild": "next build"
+    "heroku-postbuild": "next build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.19.0",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.3.1",
+    "classnames": "^2.2.6",
     "concurrently": "^4.0.1",
     "cors": "^2.8.5",
     "csv-parse": "^4.1.0",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
+    "jquery": "^3.4.1",
     "js-hash-code": "^1.0.0",
     "mongoose": "^5.5.15",
     "next": "^7.0.2",
     "node-fetch": "^2.3.0",
     "node-sass": "^4.11.0",
-    "react": "^16.6.3",
-    "react-bootstrap": "^1.0.0-beta.5",
-    "react-dom": "^16.6.3",
+    "popper.js": "^1.15.0",
+    "react": "^16.8.0",
+    "react-bootstrap": "^1.0.0-beta.9",
+    "react-dom": "^16.8.0",
     "react-masonry-component": "^6.2.1",
     "react-redux": "^6.0.0",
     "reactstrap": "^6.5.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "sweetalert2": "^8.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@storybook/addon-actions": "^5.1.8",
+    "@storybook/addon-links": "^5.1.8",
+    "@storybook/addons": "^5.1.8",
+    "@storybook/react": "^5.1.8",
+    "babel-loader": "^8.0.6"
   }
 }
