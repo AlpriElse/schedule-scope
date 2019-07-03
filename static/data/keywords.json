@@ -1,1549 +1,1543 @@
-[
-  {
-    "type": "Department",
-    "keywords": [
-      {
-        "name": "Asian American Studies",
-        "aliases": [
-          "Asian American Studies",
-          "AAS"
-        ],
-        "token": "AAS"
-      },
-      {
-        "name": "Agricultural and Biological Engineering",
-        "aliases": [
-          "Agricultural and Biological Engineering",
-          "ABE"
-        ],
-        "token": "ABE"
-      },
-      {
-        "name": "Agricultural and Consumer Economics",
-        "aliases": [
-          "Agricultural and Consumer Economics",
-          "ACE"
-        ],
-        "token": "ACE"
-      },
-      {
-        "name": "Agricultural, Consumer and Environmental Sciences",
-        "aliases": [
-          "Agricultural, Consumer and Environmental Sciences",
-          "ACES"
-        ],
-        "token": "ACES"
-      },
-      {
-        "name": "Advertising",
-        "aliases": [
-          "Advertising",
-          "ADV"
-        ],
-        "token": "ADV"
-      },
-      {
-        "name": "Air Force Aerospace Studies",
-        "aliases": [
-          "Air Force Aerospace Studies",
-          "AFAS"
-        ],
-        "token": "AFAS"
-      },
-      {
-        "name": "African American Studies",
-        "aliases": [
-          "African American Studies",
-          "AFRO"
-        ],
-        "token": "AFRO"
-      },
-      {
-        "name": "Agricultural Communications",
-        "aliases": [
-          "Agricultural Communications",
-          "AGCM"
-        ],
-        "token": "AGCM"
-      },
-      {
-        "name": "Agricultural Education",
-        "aliases": [
-          "Agricultural Education",
-          "AGED"
-        ],
-        "token": "AGED"
-      },
-      {
-        "name": "Applied Health Sciences Courses",
-        "aliases": [
-          "Applied Health Sciences Courses",
-          "AHS"
-        ],
-        "token": "AHS"
-      },
-      {
-        "name": "American Indian Studies",
-        "aliases": [
-          "American Indian Studies",
-          "AIS"
-        ],
-        "token": "AIS"
-      },
-      {
-        "name": "Animal Sciences",
-        "aliases": [
-          "Animal Sciences",
-          "ANSC"
-        ],
-        "token": "ANSC"
-      },
-      {
-        "name": "Anthropology",
-        "aliases": [
-          "Anthropology",
-          "ANTH"
-        ],
-        "token": "ANTH"
-      },
-      {
-        "name": "Arabic",
-        "aliases": [
-          "Arabic",
-          "ARAB"
-        ],
-        "token": "ARAB"
-      },
-      {
-        "name": "Architecture",
-        "aliases": [
-          "Architecture",
-          "ARCH"
-        ],
-        "token": "ARCH"
-      },
-      {
-        "name": "Art",
-        "aliases": [
-          "Art",
-          "ART"
-        ],
-        "token": "ART"
-      },
-      {
-        "name": "Art--Design",
-        "aliases": [
-          "Art--Design",
-          "ARTD"
-        ],
-        "token": "ARTD"
-      },
-      {
-        "name": "Art--Education",
-        "aliases": [
-          "Art--Education",
-          "ARTE"
-        ],
-        "token": "ARTE"
-      },
-      {
-        "name": "Art--Foundation",
-        "aliases": [
-          "Art--Foundation",
-          "ARTF"
-        ],
-        "token": "ARTF"
-      },
-      {
-        "name": "Art--History",
-        "aliases": [
-          "Art--History",
-          "ARTH"
-        ],
-        "token": "ARTH"
-      },
-      {
-        "name": "Art--Studio",
-        "aliases": [
-          "Art--Studio",
-          "ARTS"
-        ],
-        "token": "ARTS"
-      },
-      {
-        "name": "Actuarial Science and Risk Management",
-        "aliases": [
-          "Actuarial Science and Risk Management",
-          "ASRM"
-        ],
-        "token": "ASRM"
-      },
-      {
-        "name": "Asian Studies",
-        "aliases": [
-          "Asian Studies",
-          "ASST"
-        ],
-        "token": "ASST"
-      },
-      {
-        "name": "Astronomy",
-        "aliases": [
-          "Astronomy",
-          "ASTR"
-        ],
-        "token": "ASTR"
-      },
-      {
-        "name": "Atmospheric Sciences",
-        "aliases": [
-          "Atmospheric Sciences",
-          "ATMS"
-        ],
-        "token": "ATMS"
-      },
-      {
-        "name": "Business Administration",
-        "aliases": [
-          "Business Administration",
-          "BADM"
-        ],
-        "token": "BADM"
-      },
-      {
-        "name": "Basque",
-        "aliases": [
-          "Basque",
-          "BASQ"
-        ],
-        "token": "BASQ"
-      },
-      {
-        "name": "Brain and Cognitive Science",
-        "aliases": [
-          "Brain and Cognitive Science",
-          "BCOG"
-        ],
-        "token": "BCOG"
-      },
-      {
-        "name": "Bosnian-Croatian-Serbian",
-        "aliases": [
-          "Bosnian-Croatian-Serbian",
-          "BCS"
-        ],
-        "token": "BCS"
-      },
-      {
-        "name": "Accountancy",
-        "aliases": [
-          "Accountancy",
-          "ACCY"
-        ],
-        "token": "ACCY"
-      },
-      {
-        "name": "Aerospace Engineering",
-        "aliases": [
-          "Aerospace Engineering",
-          "AE"
-        ],
-        "token": "AE"
-      },
-      {
-        "name": "African Studies",
-        "aliases": [
-          "African Studies",
-          "AFST"
-        ],
-        "token": "AFST"
-      },
-      {
-        "name": "Biochemistry",
-        "aliases": [
-          "Biochemistry",
-          "BIOC"
-        ],
-        "token": "BIOC"
-      },
-      {
-        "name": "Bioengineering",
-        "aliases": [
-          "Bioengineering",
-          "BIOE"
-        ],
-        "token": "BIOE"
-      },
-      {
-        "name": "Biology",
-        "aliases": [
-          "Biology",
-          "BIOL"
-        ],
-        "token": "BIOL"
-      },
-      {
-        "name": "Biophysics",
-        "aliases": [
-          "Biophysics",
-          "BIOP"
-        ],
-        "token": "BIOP"
-      },
-      {
-        "name": "Biomedical Sciences and Engineering",
-        "aliases": [
-          "Biomedical Sciences and Engineering",
-          "BSE"
-        ],
-        "token": "BSE"
-      },
-      {
-        "name": "Comparative Biosciences",
-        "aliases": [
-          "Comparative Biosciences",
-          "CB"
-        ],
-        "token": "CB"
-      },
-      {
-        "name": "Cell and Developmental Biology",
-        "aliases": [
-          "Cell and Developmental Biology",
-          "CDB"
-        ],
-        "token": "CDB"
-      },
-      {
-        "name": "Civil and Environmental Engineering",
-        "aliases": [
-          "Civil and Environmental Engineering",
-          "CEE"
-        ],
-        "token": "CEE"
-      },
-      {
-        "name": "Chemical and Biomolecular Engineering",
-        "aliases": [
-          "Chemical and Biomolecular Engineering",
-          "CHBE"
-        ],
-        "token": "CHBE"
-      },
-      {
-        "name": "Chemistry",
-        "aliases": [
-          "Chemistry",
-          "CHEM"
-        ],
-        "token": "CHEM"
-      },
-      {
-        "name": "Chinese",
-        "aliases": [
-          "Chinese",
-          "CHIN"
-        ],
-        "token": "CHIN"
-      },
-      {
-        "name": "Community Health",
-        "aliases": [
-          "Community Health",
-          "CHLH"
-        ],
-        "token": "CHLH"
-      },
-      {
-        "name": "Campus Honors Program Courses",
-        "aliases": [
-          "Campus Honors Program Courses",
-          "CHP"
-        ],
-        "token": "CHP"
-      },
-      {
-        "name": "Curriculum and Instruction",
-        "aliases": [
-          "Curriculum and Instruction",
-          "CI"
-        ],
-        "token": "CI"
-      },
-      {
-        "name": "Business and Technical Writing",
-        "aliases": [
-          "Business and Technical Writing",
-          "BTW"
-        ],
-        "token": "BTW"
-      },
-      {
-        "name": "Classical Civilization",
-        "aliases": [
-          "Classical Civilization",
-          "CLCV"
-        ],
-        "token": "CLCV"
-      },
-      {
-        "name": "Clinical Sciences and Engineering",
-        "aliases": [
-          "Clinical Sciences and Engineering",
-          "CLE"
-        ],
-        "token": "CLE"
-      },
-      {
-        "name": "Business",
-        "aliases": [
-          "Business",
-          "BUS"
-        ],
-        "token": "BUS"
-      },
-      {
-        "name": "Crop Sciences",
-        "aliases": [
-          "Crop Sciences",
-          "CPSC"
-        ],
-        "token": "CPSC"
-      },
-      {
-        "name": "Computer Science",
-        "aliases": [
-          "Computer Science",
-          "CS"
-        ],
-        "token": "CS"
-      },
-      {
-        "name": "Computational Science and Engineering",
-        "aliases": [
-          "Computational Science and Engineering",
-          "CSE"
-        ],
-        "token": "CSE"
-      },
-      {
-        "name": "Creative Writing",
-        "aliases": [
-          "Creative Writing",
-          "CW"
-        ],
-        "token": "CW"
-      },
-      {
-        "name": "Comparative and World Literature",
-        "aliases": [
-          "Comparative and World Literature",
-          "CWL"
-        ],
-        "token": "CWL"
-      },
-      {
-        "name": "Czech",
-        "aliases": [
-          "Czech",
-          "CZCH"
-        ],
-        "token": "CZCH"
-      },
-      {
-        "name": "Dance",
-        "aliases": [
-          "Dance",
-          "DANC"
-        ],
-        "token": "DANC"
-      },
-      {
-        "name": "East Asian Language and Culture",
-        "aliases": [
-          "East Asian Language and Culture",
-          "EALC"
-        ],
-        "token": "EALC"
-      },
-      {
-        "name": "Electrical and Computer Engineering",
-        "aliases": [
-          "Electrical and Computer Engineering",
-          "ECE"
-        ],
-        "token": "ECE"
-      },
-      {
-        "name": "Economics",
-        "aliases": [
-          "Economics",
-          "ECON"
-        ],
-        "token": "ECON"
-      },
-      {
-        "name": "Communication",
-        "aliases": [
-          "Communication",
-          "CMN"
-        ],
-        "token": "CMN"
-      },
-      {
-        "name": "Committee on Inst Cooperation",
-        "aliases": [
-          "Committee on Inst Cooperation",
-          "CIC"
-        ],
-        "token": "CIC"
-      },
-      {
-        "name": "Educational Practice",
-        "aliases": [
-          "Educational Practice",
-          "EDPR"
-        ],
-        "token": "EDPR"
-      },
-      {
-        "name": "Engineering",
-        "aliases": [
-          "Engineering",
-          "ENG"
-        ],
-        "token": "ENG"
-      },
-      {
-        "name": "Engineering Honors",
-        "aliases": [
-          "Engineering Honors",
-          "ENGH"
-        ],
-        "token": "ENGH"
-      },
-      {
-        "name": "English",
-        "aliases": [
-          "English",
-          "ENGL"
-        ],
-        "token": "ENGL"
-      },
-      {
-        "name": "Environmental Sustainability",
-        "aliases": [
-          "Environmental Sustainability",
-          "ENSU"
-        ],
-        "token": "ENSU"
-      },
-      {
-        "name": "Entomology",
-        "aliases": [
-          "Entomology",
-          "ENT"
-        ],
-        "token": "ENT"
-      },
-      {
-        "name": "Environmental Studies",
-        "aliases": [
-          "Environmental Studies",
-          "ENVS"
-        ],
-        "token": "ENVS"
-      },
-      {
-        "name": "Educational Organization and Leadership",
-        "aliases": [
-          "Educational Organization and Leadership",
-          "EOL"
-        ],
-        "token": "EOL"
-      },
-      {
-        "name": "Education Policy, Organization and Leadership",
-        "aliases": [
-          "Education Policy, Organization and Leadership",
-          "EPOL"
-        ],
-        "token": "EPOL"
-      },
-      {
-        "name": "English as an International Language",
-        "aliases": [
-          "English as an International Language",
-          "EIL"
-        ],
-        "token": "EIL"
-      },
-      {
-        "name": "Educational Policy Studies",
-        "aliases": [
-          "Educational Policy Studies",
-          "EPS"
-        ],
-        "token": "EPS"
-      },
-      {
-        "name": "Earth, Society, and Environment",
-        "aliases": [
-          "Earth, Society, and Environment",
-          "ESE"
-        ],
-        "token": "ESE"
-      },
-      {
-        "name": "English as a Second Language",
-        "aliases": [
-          "English as a Second Language",
-          "ESL"
-        ],
-        "token": "ESL"
-      },
-      {
-        "name": "European Union Studies",
-        "aliases": [
-          "European Union Studies",
-          "EURO"
-        ],
-        "token": "EURO"
-      },
-      {
-        "name": "Fine and Applied Arts",
-        "aliases": [
-          "Fine and Applied Arts",
-          "FAA"
-        ],
-        "token": "FAA"
-      },
-      {
-        "name": "Finance",
-        "aliases": [
-          "Finance",
-          "FIN"
-        ],
-        "token": "FIN"
-      },
-      {
-        "name": "Foreign Language Teacher Education",
-        "aliases": [
-          "Foreign Language Teacher Education",
-          "FLTE"
-        ],
-        "token": "FLTE"
-      },
-      {
-        "name": "French",
-        "aliases": [
-          "French",
-          "FR"
-        ],
-        "token": "FR"
-      },
-      {
-        "name": "Food Science and Human Nutrition",
-        "aliases": [
-          "Food Science and Human Nutrition",
-          "FSHN"
-        ],
-        "token": "FSHN"
-      },
-      {
-        "name": "Graduate College",
-        "aliases": [
-          "Graduate College",
-          "GC"
-        ],
-        "token": "GC"
-      },
-      {
-        "name": "Grand Challenge Learning",
-        "aliases": [
-          "Grand Challenge Learning",
-          "GCL"
-        ],
-        "token": "GCL"
-      },
-      {
-        "name": "Geography",
-        "aliases": [
-          "Geography",
-          "GEOG"
-        ],
-        "token": "GEOG"
-      },
-      {
-        "name": "Geology",
-        "aliases": [
-          "Geology",
-          "GEOL"
-        ],
-        "token": "GEOL"
-      },
-      {
-        "name": "German",
-        "aliases": [
-          "German",
-          "GER"
-        ],
-        "token": "GER"
-      },
-      {
-        "name": "Global Studies",
-        "aliases": [
-          "Global Studies",
-          "GLBL"
-        ],
-        "token": "GLBL"
-      },
-      {
-        "name": "Germanic",
-        "aliases": [
-          "Germanic",
-          "GMC"
-        ],
-        "token": "GMC"
-      },
-      {
-        "name": "Greek",
-        "aliases": [
-          "Greek",
-          "GRK"
-        ],
-        "token": "GRK"
-      },
-      {
-        "name": "Modern Greek",
-        "aliases": [
-          "Modern Greek",
-          "GRKM"
-        ],
-        "token": "GRKM"
-      },
-      {
-        "name": "General Studies",
-        "aliases": [
-          "General Studies",
-          "GS"
-        ],
-        "token": "GS"
-      },
-      {
-        "name": "Gender and Women's Studies",
-        "aliases": [
-          "Gender and Women's Studies",
-          "GWS"
-        ],
-        "token": "GWS"
-      },
-      {
-        "name": "Human Development and Family Studies",
-        "aliases": [
-          "Human Development and Family Studies",
-          "HDFS"
-        ],
-        "token": "HDFS"
-      },
-      {
-        "name": "Hebrew, Modern and Classical",
-        "aliases": [
-          "Hebrew, Modern and Classical",
-          "HEBR"
-        ],
-        "token": "HEBR"
-      },
-      {
-        "name": "History",
-        "aliases": [
-          "History",
-          "HIST"
-        ],
-        "token": "HIST"
-      },
-      {
-        "name": "Hindi",
-        "aliases": [
-          "Hindi",
-          "HNDI"
-        ],
-        "token": "HNDI"
-      },
-      {
-        "name": "Horticulture",
-        "aliases": [
-          "Horticulture",
-          "HORT"
-        ],
-        "token": "HORT"
-      },
-      {
-        "name": "Human Resource Development",
-        "aliases": [
-          "Human Resource Development",
-          "HRD"
-        ],
-        "token": "HRD"
-      },
-      {
-        "name": "Humanities Courses",
-        "aliases": [
-          "Humanities Courses",
-          "HUM"
-        ],
-        "token": "HUM"
-      },
-      {
-        "name": "Integrative Biology",
-        "aliases": [
-          "Integrative Biology",
-          "IB"
-        ],
-        "token": "IB"
-      },
-      {
-        "name": "Industrial Engineering",
-        "aliases": [
-          "Industrial Engineering",
-          "IE"
-        ],
-        "token": "IE"
-      },
-      {
-        "name": "i-Health Program",
-        "aliases": [
-          "i-Health Program",
-          "IHLT"
-        ],
-        "token": "IHLT"
-      },
-      {
-        "name": "Informatics",
-        "aliases": [
-          "Informatics",
-          "INFO"
-        ],
-        "token": "INFO"
-      },
-      {
-        "name": "Information Sciences",
-        "aliases": [
-          "Information Sciences",
-          "IS"
-        ],
-        "token": "IS"
-      },
-      {
-        "name": "Italian",
-        "aliases": [
-          "Italian",
-          "ITAL"
-        ],
-        "token": "ITAL"
-      },
-      {
-        "name": "Japanese",
-        "aliases": [
-          "Japanese",
-          "JAPN"
-        ],
-        "token": "JAPN"
-      },
-      {
-        "name": "Journalism",
-        "aliases": [
-          "Journalism",
-          "JOUR"
-        ],
-        "token": "JOUR"
-      },
-      {
-        "name": "Jewish Studies",
-        "aliases": [
-          "Jewish Studies",
-          "JS"
-        ],
-        "token": "JS"
-      },
-      {
-        "name": "Kinesiology",
-        "aliases": [
-          "Kinesiology",
-          "KIN"
-        ],
-        "token": "KIN"
-      },
-      {
-        "name": "Korean",
-        "aliases": [
-          "Korean",
-          "KOR"
-        ],
-        "token": "KOR"
-      },
-      {
-        "name": "Landscape Architecture",
-        "aliases": [
-          "Landscape Architecture",
-          "LA"
-        ],
-        "token": "LA"
-      },
-      {
-        "name": "Liberal Arts and Sciences",
-        "aliases": [
-          "Liberal Arts and Sciences",
-          "LAS"
-        ],
-        "token": "LAS"
-      },
-      {
-        "name": "Latin American and Caribbean Studies",
-        "aliases": [
-          "Latin American and Caribbean Studies",
-          "LAST"
-        ],
-        "token": "LAST"
-      },
-      {
-        "name": "Latin",
-        "aliases": [
-          "Latin",
-          "LAT"
-        ],
-        "token": "LAT"
-      },
-      {
-        "name": "Law",
-        "aliases": [
-          "Law",
-          "LAW"
-        ],
-        "token": "LAW"
-      },
-      {
-        "name": "Labor and Employment Relations",
-        "aliases": [
-          "Labor and Employment Relations",
-          "LER"
-        ],
-        "token": "LER"
-      },
-      {
-        "name": "Linguistics",
-        "aliases": [
-          "Linguistics",
-          "LING"
-        ],
-        "token": "LING"
-      },
-      {
-        "name": "Latina\/Latino Studies",
-        "aliases": [
-          "Latina\/Latino Studies",
-          "LLS"
-        ],
-        "token": "LLS"
-      },
-      {
-        "name": "Media and Cinema Studies",
-        "aliases": [
-          "Media and Cinema Studies",
-          "MACS"
-        ],
-        "token": "MACS"
-      },
-      {
-        "name": "Mathematics",
-        "aliases": [
-          "Mathematics",
-          "MATH"
-        ],
-        "token": "MATH"
-      },
-      {
-        "name": "Regular MBA Program Administration",
-        "aliases": [
-          "Regular MBA Program Administration",
-          "MBA"
-        ],
-        "token": "MBA"
-      },
-      {
-        "name": "Molecular and Cell Biology",
-        "aliases": [
-          "Molecular and Cell Biology",
-          "MCB"
-        ],
-        "token": "MCB"
-      },
-      {
-        "name": "Media",
-        "aliases": [
-          "Media",
-          "MDIA"
-        ],
-        "token": "MDIA"
-      },
-      {
-        "name": "Medieval Studies",
-        "aliases": [
-          "Medieval Studies",
-          "MDVL"
-        ],
-        "token": "MDVL"
-      },
-      {
-        "name": "Mechanical Engineering",
-        "aliases": [
-          "Mechanical Engineering",
-          "ME"
-        ],
-        "token": "ME"
-      },
-      {
-        "name": "Microbiology",
-        "aliases": [
-          "Microbiology",
-          "MICR"
-        ],
-        "token": "MICR"
-      },
-      {
-        "name": "Military Science",
-        "aliases": [
-          "Military Science",
-          "MILS"
-        ],
-        "token": "MILS"
-      },
-      {
-        "name": "Molecular and Integrative Physiology",
-        "aliases": [
-          "Molecular and Integrative Physiology",
-          "MIP"
-        ],
-        "token": "MIP"
-      },
-      {
-        "name": "Materials Science and Engineering",
-        "aliases": [
-          "Materials Science and Engineering",
-          "MSE"
-        ],
-        "token": "MSE"
-      },
-      {
-        "name": "Music",
-        "aliases": [
-          "Music",
-          "MUS"
-        ],
-        "token": "MUS"
-      },
-      {
-        "name": "Museum Studies",
-        "aliases": [
-          "Museum Studies",
-          "MUSE"
-        ],
-        "token": "MUSE"
-      },
-      {
-        "name": "Neuroscience",
-        "aliases": [
-          "Neuroscience",
-          "NEUR"
-        ],
-        "token": "NEUR"
-      },
-      {
-        "name": "Nuclear, Plasma, and Radiological Engineering",
-        "aliases": [
-          "Nuclear, Plasma, and Radiological Engineering",
-          "NPRE"
-        ],
-        "token": "NPRE"
-      },
-      {
-        "name": "Natural Resources and Environmental Sciences",
-        "aliases": [
-          "Natural Resources and Environmental Sciences",
-          "NRES"
-        ],
-        "token": "NRES"
-      },
-      {
-        "name": "Naval Science",
-        "aliases": [
-          "Naval Science",
-          "NS"
-        ],
-        "token": "NS"
-      },
-      {
-        "name": "Nutritional Sciences",
-        "aliases": [
-          "Nutritional Sciences",
-          "NUTR"
-        ],
-        "token": "NUTR"
-      },
-      {
-        "name": "Pathobiology",
-        "aliases": [
-          "Pathobiology",
-          "PATH"
-        ],
-        "token": "PATH"
-      },
-      {
-        "name": "Plant Biology",
-        "aliases": [
-          "Plant Biology",
-          "PBIO"
-        ],
-        "token": "PBIO"
-      },
-      {
-        "name": "Persian",
-        "aliases": [
-          "Persian",
-          "PERS"
-        ],
-        "token": "PERS"
-      },
-      {
-        "name": "Philosophy",
-        "aliases": [
-          "Philosophy",
-          "PHIL"
-        ],
-        "token": "PHIL"
-      },
-      {
-        "name": "Physics",
-        "aliases": [
-          "Physics",
-          "PHYS"
-        ],
-        "token": "PHYS"
-      },
-      {
-        "name": "Plant Pathology",
-        "aliases": [
-          "Plant Pathology",
-          "PLPA"
-        ],
-        "token": "PLPA"
-      },
-      {
-        "name": "Polish",
-        "aliases": [
-          "Polish",
-          "POL"
-        ],
-        "token": "POL"
-      },
-      {
-        "name": "Portuguese",
-        "aliases": [
-          "Portuguese",
-          "PORT"
-        ],
-        "token": "PORT"
-      },
-      {
-        "name": "Political Science",
-        "aliases": [
-          "Political Science",
-          "PS"
-        ],
-        "token": "PS"
-      },
-      {
-        "name": "Professional Science Master's Program",
-        "aliases": [
-          "Professional Science Master's Program",
-          "PSM"
-        ],
-        "token": "PSM"
-      },
-      {
-        "name": "Psychology",
-        "aliases": [
-          "Psychology",
-          "PSYC"
-        ],
-        "token": "PSYC"
-      },
-      {
-        "name": "Russian, East European and Eurasian Studies",
-        "aliases": [
-          "Russian, East European and Eurasian Studies",
-          "REES"
-        ],
-        "token": "REES"
-      },
-      {
-        "name": "Rehabilitation Counseling",
-        "aliases": [
-          "Rehabilitation Counseling",
-          "REHB"
-        ],
-        "token": "REHB"
-      },
-      {
-        "name": "Religion",
-        "aliases": [
-          "Religion",
-          "REL"
-        ],
-        "token": "REL"
-      },
-      {
-        "name": "Rhetoric and Composition",
-        "aliases": [
-          "Rhetoric and Composition",
-          "RHET"
-        ],
-        "token": "RHET"
-      },
-      {
-        "name": "Romance Linguistics",
-        "aliases": [
-          "Romance Linguistics",
-          "RMLG"
-        ],
-        "token": "RMLG"
-      },
-      {
-        "name": "Education",
-        "aliases": [
-          "Education",
-          "EDUC"
-        ],
-        "token": "EDUC"
-      },
-      {
-        "name": "Recreation, Sport, and Tourism",
-        "aliases": [
-          "Recreation, Sport, and Tourism",
-          "RST"
-        ],
-        "token": "RST"
-      },
-      {
-        "name": "South Asian and Middle Eastern Studies",
-        "aliases": [
-          "South Asian and Middle Eastern Studies",
-          "SAME"
-        ],
-        "token": "SAME"
-      },
-      {
-        "name": "Strategic Brand Communication",
-        "aliases": [
-          "Strategic Brand Communication",
-          "SBC"
-        ],
-        "token": "SBC"
-      },
-      {
-        "name": "Scandinavian",
-        "aliases": [
-          "Scandinavian",
-          "SCAN"
-        ],
-        "token": "SCAN"
-      },
-      {
-        "name": "Systems Engineering and Design",
-        "aliases": [
-          "Systems Engineering and Design",
-          "SE"
-        ],
-        "token": "SE"
-      },
-      {
-        "name": "Russian",
-        "aliases": [
-          "Russian",
-          "RUSS"
-        ],
-        "token": "RUSS"
-      },
-      {
-        "name": "Speech and Hearing Science",
-        "aliases": [
-          "Speech and Hearing Science",
-          "SHS"
-        ],
-        "token": "SHS"
-      },
-      {
-        "name": "Literatures, Cultures, and Linguistics",
-        "aliases": [
-          "Literatures, Cultures, and Linguistics",
-          "SLCL"
-        ],
-        "token": "SLCL"
-      },
-      {
-        "name": "Second Language Studies",
-        "aliases": [
-          "Second Language Studies",
-          "SLS"
-        ],
-        "token": "SLS"
-      },
-      {
-        "name": "Sociology",
-        "aliases": [
-          "Sociology",
-          "SOC"
-        ],
-        "token": "SOC"
-      },
-      {
-        "name": "Social Work",
-        "aliases": [
-          "Social Work",
-          "SOCW"
-        ],
-        "token": "SOCW"
-      },
-      {
-        "name": "Spanish",
-        "aliases": [
-          "Spanish",
-          "SPAN"
-        ],
-        "token": "SPAN"
-      },
-      {
-        "name": "Special Education",
-        "aliases": [
-          "Special Education",
-          "SPED"
-        ],
-        "token": "SPED"
-      },
-      {
-        "name": "Statistics",
-        "aliases": [
-          "Statistics",
-          "STAT"
-        ],
-        "token": "STAT"
-      },
-      {
-        "name": "Swahili",
-        "aliases": [
-          "Swahili",
-          "SWAH"
-        ],
-        "token": "SWAH"
-      },
-      {
-        "name": "Educational Psychology",
-        "aliases": [
-          "Educational Psychology",
-          "EPSY"
-        ],
-        "token": "EPSY"
-      },
-      {
-        "name": "Theoretical and Applied Mechanics",
-        "aliases": [
-          "Theoretical and Applied Mechanics",
-          "TAM"
-        ],
-        "token": "TAM"
-      },
-      {
-        "name": "Theatre",
-        "aliases": [
-          "Theatre",
-          "THEA"
-        ],
-        "token": "THEA"
-      },
-      {
-        "name": "Technology and Management Courses",
-        "aliases": [
-          "Technology and Management Courses",
-          "TMGT"
-        ],
-        "token": "TMGT"
-      },
-      {
-        "name": "Translation Studies",
-        "aliases": [
-          "Translation Studies",
-          "TRST"
-        ],
-        "token": "TRST"
-      },
-      {
-        "name": "Technical Systems Management",
-        "aliases": [
-          "Technical Systems Management",
-          "TSM"
-        ],
-        "token": "TSM"
-      },
-      {
-        "name": "Turkish",
-        "aliases": [
-          "Turkish",
-          "TURK"
-        ],
-        "token": "TURK"
-      },
-      {
-        "name": "Ukrainian",
-        "aliases": [
-          "Ukrainian",
-          "UKR"
-        ],
-        "token": "UKR"
-      },
-      {
-        "name": "Urban and Regional Planning",
-        "aliases": [
-          "Urban and Regional Planning",
-          "UP"
-        ],
-        "token": "UP"
-      },
-      {
-        "name": "Veterinary Clinical Medicine",
-        "aliases": [
-          "Veterinary Clinical Medicine",
-          "VCM"
-        ],
-        "token": "VCM"
-      },
-      {
-        "name": "Veterinary Medicine Courses",
-        "aliases": [
-          "Veterinary Medicine Courses",
-          "VM"
-        ],
-        "token": "VM"
-      },
-      {
-        "name": "Women and Gender in Global Perspectives Program",
-        "aliases": [
-          "Women and Gender in Global Perspectives Program",
-          "WGGP"
-        ],
-        "token": "WGGP"
-      },
-      {
-        "name": "Wolof",
-        "aliases": [
-          "Wolof",
-          "WLOF"
-        ],
-        "token": "WLOF"
-      },
-      {
-        "name": "Writing Studies",
-        "aliases": [
-          "Writing Studies",
-          "WRIT"
-        ],
-        "token": "WRIT"
-      },
-      {
-        "name": "Yiddish",
-        "aliases": [
-          "Yiddish",
-          "YDSH"
-        ],
-        "token": "YDSH"
-      },
-      {
-        "name": "Slavic",
-        "aliases": [
-          "Slavic",
-          "SLAV"
-        ],
-        "token": "SLAV"
-      },
-      {
-        "name": "Technology Entrepreneurship",
-        "aliases": [
-          "Technology Entrepreneurship",
-          "TE"
-        ],
-        "token": "TE"
-      },
-      {
-        "name": "Center for Advanced Study",
-        "aliases": [
-          "Center for Advanced Study",
-          "CAS"
-        ],
-        "token": "CAS"
-      }
-    ]
-  },
-  {
-    "type": "General Education Requirements",
-    "keywords": [
-      {
-        "name": "Humanities & the Arts",
-        "aliases": [
-          "Humanities & the Arts",
-          "Humanities",
-          "HUM"
-        ],
-        "token": "HUM"
-      },
-      {
-        "name": "Cultural Studies",
-        "aliases": [
-          "Cultural Studies",
-          "CS"
-        ],
-        "token": "CS"
-      },
-      {
-        "name": "Social & Behavioral Sciences",
-        "aliases": [
-          "Social & Behavioral Sciences",
-          "SBS"
-        ],
-        "token": "SBS"
-      },
-      {
-        "name": "Quantitative Reasoning",
-        "aliases": [
-          "Quantitative Reasoning",
-          "QR"
-        ],
-        "token": "QR"
-      },
-      {
-        "name": "Advanced Composition",
-        "aliases": [
-          "Advanced Composition",
-          "ACP"
-        ],
-        "token": "ACP"
-      },
-      {
-        "name": "Natural Sciences & Technology",
-        "aliases": [
-          "Natural Sciences & Technology",
-          "NAT"
-        ],
-        "token": "NAT"
-      }
-    ]
-  }
-]
+{
+  "department": [
+    {
+      "name": "Asian American Studies",
+      "aliases": [
+        "Asian American Studies",
+        "AAS"
+      ],
+      "token": "AAS"
+    },
+    {
+      "name": "Agricultural and Biological Engineering",
+      "aliases": [
+        "Agricultural and Biological Engineering",
+        "ABE"
+      ],
+      "token": "ABE"
+    },
+    {
+      "name": "Agricultural and Consumer Economics",
+      "aliases": [
+        "Agricultural and Consumer Economics",
+        "ACE"
+      ],
+      "token": "ACE"
+    },
+    {
+      "name": "Agricultural, Consumer and Environmental Sciences",
+      "aliases": [
+        "Agricultural, Consumer and Environmental Sciences",
+        "ACES"
+      ],
+      "token": "ACES"
+    },
+    {
+      "name": "Advertising",
+      "aliases": [
+        "Advertising",
+        "ADV"
+      ],
+      "token": "ADV"
+    },
+    {
+      "name": "Air Force Aerospace Studies",
+      "aliases": [
+        "Air Force Aerospace Studies",
+        "AFAS"
+      ],
+      "token": "AFAS"
+    },
+    {
+      "name": "African American Studies",
+      "aliases": [
+        "African American Studies",
+        "AFRO"
+      ],
+      "token": "AFRO"
+    },
+    {
+      "name": "Agricultural Communications",
+      "aliases": [
+        "Agricultural Communications",
+        "AGCM"
+      ],
+      "token": "AGCM"
+    },
+    {
+      "name": "Agricultural Education",
+      "aliases": [
+        "Agricultural Education",
+        "AGED"
+      ],
+      "token": "AGED"
+    },
+    {
+      "name": "Applied Health Sciences Courses",
+      "aliases": [
+        "Applied Health Sciences Courses",
+        "AHS"
+      ],
+      "token": "AHS"
+    },
+    {
+      "name": "American Indian Studies",
+      "aliases": [
+        "American Indian Studies",
+        "AIS"
+      ],
+      "token": "AIS"
+    },
+    {
+      "name": "Animal Sciences",
+      "aliases": [
+        "Animal Sciences",
+        "ANSC"
+      ],
+      "token": "ANSC"
+    },
+    {
+      "name": "Anthropology",
+      "aliases": [
+        "Anthropology",
+        "ANTH"
+      ],
+      "token": "ANTH"
+    },
+    {
+      "name": "Arabic",
+      "aliases": [
+        "Arabic",
+        "ARAB"
+      ],
+      "token": "ARAB"
+    },
+    {
+      "name": "Architecture",
+      "aliases": [
+        "Architecture",
+        "ARCH"
+      ],
+      "token": "ARCH"
+    },
+    {
+      "name": "Art",
+      "aliases": [
+        "Art",
+        "ART"
+      ],
+      "token": "ART"
+    },
+    {
+      "name": "Art--Design",
+      "aliases": [
+        "Art--Design",
+        "ARTD"
+      ],
+      "token": "ARTD"
+    },
+    {
+      "name": "Art--Education",
+      "aliases": [
+        "Art--Education",
+        "ARTE"
+      ],
+      "token": "ARTE"
+    },
+    {
+      "name": "Art--Foundation",
+      "aliases": [
+        "Art--Foundation",
+        "ARTF"
+      ],
+      "token": "ARTF"
+    },
+    {
+      "name": "Art--History",
+      "aliases": [
+        "Art--History",
+        "ARTH"
+      ],
+      "token": "ARTH"
+    },
+    {
+      "name": "Art--Studio",
+      "aliases": [
+        "Art--Studio",
+        "ARTS"
+      ],
+      "token": "ARTS"
+    },
+    {
+      "name": "Actuarial Science and Risk Management",
+      "aliases": [
+        "Actuarial Science and Risk Management",
+        "ASRM"
+      ],
+      "token": "ASRM"
+    },
+    {
+      "name": "Asian Studies",
+      "aliases": [
+        "Asian Studies",
+        "ASST"
+      ],
+      "token": "ASST"
+    },
+    {
+      "name": "Astronomy",
+      "aliases": [
+        "Astronomy",
+        "ASTR"
+      ],
+      "token": "ASTR"
+    },
+    {
+      "name": "Atmospheric Sciences",
+      "aliases": [
+        "Atmospheric Sciences",
+        "ATMS"
+      ],
+      "token": "ATMS"
+    },
+    {
+      "name": "Business Administration",
+      "aliases": [
+        "Business Administration",
+        "BADM"
+      ],
+      "token": "BADM"
+    },
+    {
+      "name": "Basque",
+      "aliases": [
+        "Basque",
+        "BASQ"
+      ],
+      "token": "BASQ"
+    },
+    {
+      "name": "Brain and Cognitive Science",
+      "aliases": [
+        "Brain and Cognitive Science",
+        "BCOG"
+      ],
+      "token": "BCOG"
+    },
+    {
+      "name": "Bosnian-Croatian-Serbian",
+      "aliases": [
+        "Bosnian-Croatian-Serbian",
+        "BCS"
+      ],
+      "token": "BCS"
+    },
+    {
+      "name": "Accountancy",
+      "aliases": [
+        "Accountancy",
+        "ACCY"
+      ],
+      "token": "ACCY"
+    },
+    {
+      "name": "Aerospace Engineering",
+      "aliases": [
+        "Aerospace Engineering",
+        "AE"
+      ],
+      "token": "AE"
+    },
+    {
+      "name": "African Studies",
+      "aliases": [
+        "African Studies",
+        "AFST"
+      ],
+      "token": "AFST"
+    },
+    {
+      "name": "Biochemistry",
+      "aliases": [
+        "Biochemistry",
+        "BIOC"
+      ],
+      "token": "BIOC"
+    },
+    {
+      "name": "Bioengineering",
+      "aliases": [
+        "Bioengineering",
+        "BIOE"
+      ],
+      "token": "BIOE"
+    },
+    {
+      "name": "Biology",
+      "aliases": [
+        "Biology",
+        "BIOL"
+      ],
+      "token": "BIOL"
+    },
+    {
+      "name": "Biophysics",
+      "aliases": [
+        "Biophysics",
+        "BIOP"
+      ],
+      "token": "BIOP"
+    },
+    {
+      "name": "Biomedical Sciences and Engineering",
+      "aliases": [
+        "Biomedical Sciences and Engineering",
+        "BSE"
+      ],
+      "token": "BSE"
+    },
+    {
+      "name": "Comparative Biosciences",
+      "aliases": [
+        "Comparative Biosciences",
+        "CB"
+      ],
+      "token": "CB"
+    },
+    {
+      "name": "Cell and Developmental Biology",
+      "aliases": [
+        "Cell and Developmental Biology",
+        "CDB"
+      ],
+      "token": "CDB"
+    },
+    {
+      "name": "Civil and Environmental Engineering",
+      "aliases": [
+        "Civil and Environmental Engineering",
+        "CEE"
+      ],
+      "token": "CEE"
+    },
+    {
+      "name": "Chemical and Biomolecular Engineering",
+      "aliases": [
+        "Chemical and Biomolecular Engineering",
+        "CHBE"
+      ],
+      "token": "CHBE"
+    },
+    {
+      "name": "Chemistry",
+      "aliases": [
+        "Chemistry",
+        "CHEM"
+      ],
+      "token": "CHEM"
+    },
+    {
+      "name": "Chinese",
+      "aliases": [
+        "Chinese",
+        "CHIN"
+      ],
+      "token": "CHIN"
+    },
+    {
+      "name": "Community Health",
+      "aliases": [
+        "Community Health",
+        "CHLH"
+      ],
+      "token": "CHLH"
+    },
+    {
+      "name": "Campus Honors Program Courses",
+      "aliases": [
+        "Campus Honors Program Courses",
+        "CHP"
+      ],
+      "token": "CHP"
+    },
+    {
+      "name": "Curriculum and Instruction",
+      "aliases": [
+        "Curriculum and Instruction",
+        "CI"
+      ],
+      "token": "CI"
+    },
+    {
+      "name": "Business and Technical Writing",
+      "aliases": [
+        "Business and Technical Writing",
+        "BTW"
+      ],
+      "token": "BTW"
+    },
+    {
+      "name": "Classical Civilization",
+      "aliases": [
+        "Classical Civilization",
+        "CLCV"
+      ],
+      "token": "CLCV"
+    },
+    {
+      "name": "Clinical Sciences and Engineering",
+      "aliases": [
+        "Clinical Sciences and Engineering",
+        "CLE"
+      ],
+      "token": "CLE"
+    },
+    {
+      "name": "Business",
+      "aliases": [
+        "Business",
+        "BUS"
+      ],
+      "token": "BUS"
+    },
+    {
+      "name": "Crop Sciences",
+      "aliases": [
+        "Crop Sciences",
+        "CPSC"
+      ],
+      "token": "CPSC"
+    },
+    {
+      "name": "Computer Science",
+      "aliases": [
+        "Computer Science",
+        "CS"
+      ],
+      "token": "CS"
+    },
+    {
+      "name": "Computational Science and Engineering",
+      "aliases": [
+        "Computational Science and Engineering",
+        "CSE"
+      ],
+      "token": "CSE"
+    },
+    {
+      "name": "Creative Writing",
+      "aliases": [
+        "Creative Writing",
+        "CW"
+      ],
+      "token": "CW"
+    },
+    {
+      "name": "Comparative and World Literature",
+      "aliases": [
+        "Comparative and World Literature",
+        "CWL"
+      ],
+      "token": "CWL"
+    },
+    {
+      "name": "Czech",
+      "aliases": [
+        "Czech",
+        "CZCH"
+      ],
+      "token": "CZCH"
+    },
+    {
+      "name": "Dance",
+      "aliases": [
+        "Dance",
+        "DANC"
+      ],
+      "token": "DANC"
+    },
+    {
+      "name": "East Asian Language and Culture",
+      "aliases": [
+        "East Asian Language and Culture",
+        "EALC"
+      ],
+      "token": "EALC"
+    },
+    {
+      "name": "Electrical and Computer Engineering",
+      "aliases": [
+        "Electrical and Computer Engineering",
+        "ECE"
+      ],
+      "token": "ECE"
+    },
+    {
+      "name": "Economics",
+      "aliases": [
+        "Economics",
+        "ECON"
+      ],
+      "token": "ECON"
+    },
+    {
+      "name": "Communication",
+      "aliases": [
+        "Communication",
+        "CMN"
+      ],
+      "token": "CMN"
+    },
+    {
+      "name": "Committee on Inst Cooperation",
+      "aliases": [
+        "Committee on Inst Cooperation",
+        "CIC"
+      ],
+      "token": "CIC"
+    },
+    {
+      "name": "Educational Practice",
+      "aliases": [
+        "Educational Practice",
+        "EDPR"
+      ],
+      "token": "EDPR"
+    },
+    {
+      "name": "Engineering",
+      "aliases": [
+        "Engineering",
+        "ENG"
+      ],
+      "token": "ENG"
+    },
+    {
+      "name": "Engineering Honors",
+      "aliases": [
+        "Engineering Honors",
+        "ENGH"
+      ],
+      "token": "ENGH"
+    },
+    {
+      "name": "English",
+      "aliases": [
+        "English",
+        "ENGL"
+      ],
+      "token": "ENGL"
+    },
+    {
+      "name": "Environmental Sustainability",
+      "aliases": [
+        "Environmental Sustainability",
+        "ENSU"
+      ],
+      "token": "ENSU"
+    },
+    {
+      "name": "Entomology",
+      "aliases": [
+        "Entomology",
+        "ENT"
+      ],
+      "token": "ENT"
+    },
+    {
+      "name": "Environmental Studies",
+      "aliases": [
+        "Environmental Studies",
+        "ENVS"
+      ],
+      "token": "ENVS"
+    },
+    {
+      "name": "Educational Organization and Leadership",
+      "aliases": [
+        "Educational Organization and Leadership",
+        "EOL"
+      ],
+      "token": "EOL"
+    },
+    {
+      "name": "Education Policy, Organization and Leadership",
+      "aliases": [
+        "Education Policy, Organization and Leadership",
+        "EPOL"
+      ],
+      "token": "EPOL"
+    },
+    {
+      "name": "English as an International Language",
+      "aliases": [
+        "English as an International Language",
+        "EIL"
+      ],
+      "token": "EIL"
+    },
+    {
+      "name": "Educational Policy Studies",
+      "aliases": [
+        "Educational Policy Studies",
+        "EPS"
+      ],
+      "token": "EPS"
+    },
+    {
+      "name": "Earth, Society, and Environment",
+      "aliases": [
+        "Earth, Society, and Environment",
+        "ESE"
+      ],
+      "token": "ESE"
+    },
+    {
+      "name": "English as a Second Language",
+      "aliases": [
+        "English as a Second Language",
+        "ESL"
+      ],
+      "token": "ESL"
+    },
+    {
+      "name": "European Union Studies",
+      "aliases": [
+        "European Union Studies",
+        "EURO"
+      ],
+      "token": "EURO"
+    },
+    {
+      "name": "Fine and Applied Arts",
+      "aliases": [
+        "Fine and Applied Arts",
+        "FAA"
+      ],
+      "token": "FAA"
+    },
+    {
+      "name": "Finance",
+      "aliases": [
+        "Finance",
+        "FIN"
+      ],
+      "token": "FIN"
+    },
+    {
+      "name": "Foreign Language Teacher Education",
+      "aliases": [
+        "Foreign Language Teacher Education",
+        "FLTE"
+      ],
+      "token": "FLTE"
+    },
+    {
+      "name": "French",
+      "aliases": [
+        "French",
+        "FR"
+      ],
+      "token": "FR"
+    },
+    {
+      "name": "Food Science and Human Nutrition",
+      "aliases": [
+        "Food Science and Human Nutrition",
+        "FSHN"
+      ],
+      "token": "FSHN"
+    },
+    {
+      "name": "Graduate College",
+      "aliases": [
+        "Graduate College",
+        "GC"
+      ],
+      "token": "GC"
+    },
+    {
+      "name": "Grand Challenge Learning",
+      "aliases": [
+        "Grand Challenge Learning",
+        "GCL"
+      ],
+      "token": "GCL"
+    },
+    {
+      "name": "Geography",
+      "aliases": [
+        "Geography",
+        "GEOG"
+      ],
+      "token": "GEOG"
+    },
+    {
+      "name": "Geology",
+      "aliases": [
+        "Geology",
+        "GEOL"
+      ],
+      "token": "GEOL"
+    },
+    {
+      "name": "German",
+      "aliases": [
+        "German",
+        "GER"
+      ],
+      "token": "GER"
+    },
+    {
+      "name": "Global Studies",
+      "aliases": [
+        "Global Studies",
+        "GLBL"
+      ],
+      "token": "GLBL"
+    },
+    {
+      "name": "Germanic",
+      "aliases": [
+        "Germanic",
+        "GMC"
+      ],
+      "token": "GMC"
+    },
+    {
+      "name": "Greek",
+      "aliases": [
+        "Greek",
+        "GRK"
+      ],
+      "token": "GRK"
+    },
+    {
+      "name": "Modern Greek",
+      "aliases": [
+        "Modern Greek",
+        "GRKM"
+      ],
+      "token": "GRKM"
+    },
+    {
+      "name": "General Studies",
+      "aliases": [
+        "General Studies",
+        "GS"
+      ],
+      "token": "GS"
+    },
+    {
+      "name": "Gender and Women's Studies",
+      "aliases": [
+        "Gender and Women's Studies",
+        "GWS"
+      ],
+      "token": "GWS"
+    },
+    {
+      "name": "Human Development and Family Studies",
+      "aliases": [
+        "Human Development and Family Studies",
+        "HDFS"
+      ],
+      "token": "HDFS"
+    },
+    {
+      "name": "Hebrew, Modern and Classical",
+      "aliases": [
+        "Hebrew, Modern and Classical",
+        "HEBR"
+      ],
+      "token": "HEBR"
+    },
+    {
+      "name": "History",
+      "aliases": [
+        "History",
+        "HIST"
+      ],
+      "token": "HIST"
+    },
+    {
+      "name": "Hindi",
+      "aliases": [
+        "Hindi",
+        "HNDI"
+      ],
+      "token": "HNDI"
+    },
+    {
+      "name": "Horticulture",
+      "aliases": [
+        "Horticulture",
+        "HORT"
+      ],
+      "token": "HORT"
+    },
+    {
+      "name": "Human Resource Development",
+      "aliases": [
+        "Human Resource Development",
+        "HRD"
+      ],
+      "token": "HRD"
+    },
+    {
+      "name": "Humanities Courses",
+      "aliases": [
+        "Humanities Courses",
+        "HUM"
+      ],
+      "token": "HUM"
+    },
+    {
+      "name": "Integrative Biology",
+      "aliases": [
+        "Integrative Biology",
+        "IB"
+      ],
+      "token": "IB"
+    },
+    {
+      "name": "Industrial Engineering",
+      "aliases": [
+        "Industrial Engineering",
+        "IE"
+      ],
+      "token": "IE"
+    },
+    {
+      "name": "i-Health Program",
+      "aliases": [
+        "i-Health Program",
+        "IHLT"
+      ],
+      "token": "IHLT"
+    },
+    {
+      "name": "Informatics",
+      "aliases": [
+        "Informatics",
+        "INFO"
+      ],
+      "token": "INFO"
+    },
+    {
+      "name": "Information Sciences",
+      "aliases": [
+        "Information Sciences",
+        "IS"
+      ],
+      "token": "IS"
+    },
+    {
+      "name": "Italian",
+      "aliases": [
+        "Italian",
+        "ITAL"
+      ],
+      "token": "ITAL"
+    },
+    {
+      "name": "Japanese",
+      "aliases": [
+        "Japanese",
+        "JAPN"
+      ],
+      "token": "JAPN"
+    },
+    {
+      "name": "Journalism",
+      "aliases": [
+        "Journalism",
+        "JOUR"
+      ],
+      "token": "JOUR"
+    },
+    {
+      "name": "Jewish Studies",
+      "aliases": [
+        "Jewish Studies",
+        "JS"
+      ],
+      "token": "JS"
+    },
+    {
+      "name": "Kinesiology",
+      "aliases": [
+        "Kinesiology",
+        "KIN"
+      ],
+      "token": "KIN"
+    },
+    {
+      "name": "Korean",
+      "aliases": [
+        "Korean",
+        "KOR"
+      ],
+      "token": "KOR"
+    },
+    {
+      "name": "Landscape Architecture",
+      "aliases": [
+        "Landscape Architecture",
+        "LA"
+      ],
+      "token": "LA"
+    },
+    {
+      "name": "Liberal Arts and Sciences",
+      "aliases": [
+        "Liberal Arts and Sciences",
+        "LAS"
+      ],
+      "token": "LAS"
+    },
+    {
+      "name": "Latin American and Caribbean Studies",
+      "aliases": [
+        "Latin American and Caribbean Studies",
+        "LAST"
+      ],
+      "token": "LAST"
+    },
+    {
+      "name": "Latin",
+      "aliases": [
+        "Latin",
+        "LAT"
+      ],
+      "token": "LAT"
+    },
+    {
+      "name": "Law",
+      "aliases": [
+        "Law",
+        "LAW"
+      ],
+      "token": "LAW"
+    },
+    {
+      "name": "Labor and Employment Relations",
+      "aliases": [
+        "Labor and Employment Relations",
+        "LER"
+      ],
+      "token": "LER"
+    },
+    {
+      "name": "Linguistics",
+      "aliases": [
+        "Linguistics",
+        "LING"
+      ],
+      "token": "LING"
+    },
+    {
+      "name": "Latina\/Latino Studies",
+      "aliases": [
+        "Latina\/Latino Studies",
+        "LLS"
+      ],
+      "token": "LLS"
+    },
+    {
+      "name": "Media and Cinema Studies",
+      "aliases": [
+        "Media and Cinema Studies",
+        "MACS"
+      ],
+      "token": "MACS"
+    },
+    {
+      "name": "Mathematics",
+      "aliases": [
+        "Mathematics",
+        "MATH"
+      ],
+      "token": "MATH"
+    },
+    {
+      "name": "Regular MBA Program Administration",
+      "aliases": [
+        "Regular MBA Program Administration",
+        "MBA"
+      ],
+      "token": "MBA"
+    },
+    {
+      "name": "Molecular and Cell Biology",
+      "aliases": [
+        "Molecular and Cell Biology",
+        "MCB"
+      ],
+      "token": "MCB"
+    },
+    {
+      "name": "Media",
+      "aliases": [
+        "Media",
+        "MDIA"
+      ],
+      "token": "MDIA"
+    },
+    {
+      "name": "Medieval Studies",
+      "aliases": [
+        "Medieval Studies",
+        "MDVL"
+      ],
+      "token": "MDVL"
+    },
+    {
+      "name": "Mechanical Engineering",
+      "aliases": [
+        "Mechanical Engineering",
+        "ME"
+      ],
+      "token": "ME"
+    },
+    {
+      "name": "Microbiology",
+      "aliases": [
+        "Microbiology",
+        "MICR"
+      ],
+      "token": "MICR"
+    },
+    {
+      "name": "Military Science",
+      "aliases": [
+        "Military Science",
+        "MILS"
+      ],
+      "token": "MILS"
+    },
+    {
+      "name": "Molecular and Integrative Physiology",
+      "aliases": [
+        "Molecular and Integrative Physiology",
+        "MIP"
+      ],
+      "token": "MIP"
+    },
+    {
+      "name": "Materials Science and Engineering",
+      "aliases": [
+        "Materials Science and Engineering",
+        "MSE"
+      ],
+      "token": "MSE"
+    },
+    {
+      "name": "Music",
+      "aliases": [
+        "Music",
+        "MUS"
+      ],
+      "token": "MUS"
+    },
+    {
+      "name": "Museum Studies",
+      "aliases": [
+        "Museum Studies",
+        "MUSE"
+      ],
+      "token": "MUSE"
+    },
+    {
+      "name": "Neuroscience",
+      "aliases": [
+        "Neuroscience",
+        "NEUR"
+      ],
+      "token": "NEUR"
+    },
+    {
+      "name": "Nuclear, Plasma, and Radiological Engineering",
+      "aliases": [
+        "Nuclear, Plasma, and Radiological Engineering",
+        "NPRE"
+      ],
+      "token": "NPRE"
+    },
+    {
+      "name": "Natural Resources and Environmental Sciences",
+      "aliases": [
+        "Natural Resources and Environmental Sciences",
+        "NRES"
+      ],
+      "token": "NRES"
+    },
+    {
+      "name": "Naval Science",
+      "aliases": [
+        "Naval Science",
+        "NS"
+      ],
+      "token": "NS"
+    },
+    {
+      "name": "Nutritional Sciences",
+      "aliases": [
+        "Nutritional Sciences",
+        "NUTR"
+      ],
+      "token": "NUTR"
+    },
+    {
+      "name": "Pathobiology",
+      "aliases": [
+        "Pathobiology",
+        "PATH"
+      ],
+      "token": "PATH"
+    },
+    {
+      "name": "Plant Biology",
+      "aliases": [
+        "Plant Biology",
+        "PBIO"
+      ],
+      "token": "PBIO"
+    },
+    {
+      "name": "Persian",
+      "aliases": [
+        "Persian",
+        "PERS"
+      ],
+      "token": "PERS"
+    },
+    {
+      "name": "Philosophy",
+      "aliases": [
+        "Philosophy",
+        "PHIL"
+      ],
+      "token": "PHIL"
+    },
+    {
+      "name": "Physics",
+      "aliases": [
+        "Physics",
+        "PHYS"
+      ],
+      "token": "PHYS"
+    },
+    {
+      "name": "Plant Pathology",
+      "aliases": [
+        "Plant Pathology",
+        "PLPA"
+      ],
+      "token": "PLPA"
+    },
+    {
+      "name": "Polish",
+      "aliases": [
+        "Polish",
+        "POL"
+      ],
+      "token": "POL"
+    },
+    {
+      "name": "Portuguese",
+      "aliases": [
+        "Portuguese",
+        "PORT"
+      ],
+      "token": "PORT"
+    },
+    {
+      "name": "Political Science",
+      "aliases": [
+        "Political Science",
+        "PS"
+      ],
+      "token": "PS"
+    },
+    {
+      "name": "Professional Science Master's Program",
+      "aliases": [
+        "Professional Science Master's Program",
+        "PSM"
+      ],
+      "token": "PSM"
+    },
+    {
+      "name": "Psychology",
+      "aliases": [
+        "Psychology",
+        "PSYC"
+      ],
+      "token": "PSYC"
+    },
+    {
+      "name": "Russian, East European and Eurasian Studies",
+      "aliases": [
+        "Russian, East European and Eurasian Studies",
+        "REES"
+      ],
+      "token": "REES"
+    },
+    {
+      "name": "Rehabilitation Counseling",
+      "aliases": [
+        "Rehabilitation Counseling",
+        "REHB"
+      ],
+      "token": "REHB"
+    },
+    {
+      "name": "Religion",
+      "aliases": [
+        "Religion",
+        "REL"
+      ],
+      "token": "REL"
+    },
+    {
+      "name": "Rhetoric and Composition",
+      "aliases": [
+        "Rhetoric and Composition",
+        "RHET"
+      ],
+      "token": "RHET"
+    },
+    {
+      "name": "Romance Linguistics",
+      "aliases": [
+        "Romance Linguistics",
+        "RMLG"
+      ],
+      "token": "RMLG"
+    },
+    {
+      "name": "Education",
+      "aliases": [
+        "Education",
+        "EDUC"
+      ],
+      "token": "EDUC"
+    },
+    {
+      "name": "Recreation, Sport, and Tourism",
+      "aliases": [
+        "Recreation, Sport, and Tourism",
+        "RST"
+      ],
+      "token": "RST"
+    },
+    {
+      "name": "South Asian and Middle Eastern Studies",
+      "aliases": [
+        "South Asian and Middle Eastern Studies",
+        "SAME"
+      ],
+      "token": "SAME"
+    },
+    {
+      "name": "Strategic Brand Communication",
+      "aliases": [
+        "Strategic Brand Communication",
+        "SBC"
+      ],
+      "token": "SBC"
+    },
+    {
+      "name": "Scandinavian",
+      "aliases": [
+        "Scandinavian",
+        "SCAN"
+      ],
+      "token": "SCAN"
+    },
+    {
+      "name": "Systems Engineering and Design",
+      "aliases": [
+        "Systems Engineering and Design",
+        "SE"
+      ],
+      "token": "SE"
+    },
+    {
+      "name": "Russian",
+      "aliases": [
+        "Russian",
+        "RUSS"
+      ],
+      "token": "RUSS"
+    },
+    {
+      "name": "Speech and Hearing Science",
+      "aliases": [
+        "Speech and Hearing Science",
+        "SHS"
+      ],
+      "token": "SHS"
+    },
+    {
+      "name": "Literatures, Cultures, and Linguistics",
+      "aliases": [
+        "Literatures, Cultures, and Linguistics",
+        "SLCL"
+      ],
+      "token": "SLCL"
+    },
+    {
+      "name": "Second Language Studies",
+      "aliases": [
+        "Second Language Studies",
+        "SLS"
+      ],
+      "token": "SLS"
+    },
+    {
+      "name": "Sociology",
+      "aliases": [
+        "Sociology",
+        "SOC"
+      ],
+      "token": "SOC"
+    },
+    {
+      "name": "Social Work",
+      "aliases": [
+        "Social Work",
+        "SOCW"
+      ],
+      "token": "SOCW"
+    },
+    {
+      "name": "Spanish",
+      "aliases": [
+        "Spanish",
+        "SPAN"
+      ],
+      "token": "SPAN"
+    },
+    {
+      "name": "Special Education",
+      "aliases": [
+        "Special Education",
+        "SPED"
+      ],
+      "token": "SPED"
+    },
+    {
+      "name": "Statistics",
+      "aliases": [
+        "Statistics",
+        "STAT"
+      ],
+      "token": "STAT"
+    },
+    {
+      "name": "Swahili",
+      "aliases": [
+        "Swahili",
+        "SWAH"
+      ],
+      "token": "SWAH"
+    },
+    {
+      "name": "Educational Psychology",
+      "aliases": [
+        "Educational Psychology",
+        "EPSY"
+      ],
+      "token": "EPSY"
+    },
+    {
+      "name": "Theoretical and Applied Mechanics",
+      "aliases": [
+        "Theoretical and Applied Mechanics",
+        "TAM"
+      ],
+      "token": "TAM"
+    },
+    {
+      "name": "Theatre",
+      "aliases": [
+        "Theatre",
+        "THEA"
+      ],
+      "token": "THEA"
+    },
+    {
+      "name": "Technology and Management Courses",
+      "aliases": [
+        "Technology and Management Courses",
+        "TMGT"
+      ],
+      "token": "TMGT"
+    },
+    {
+      "name": "Translation Studies",
+      "aliases": [
+        "Translation Studies",
+        "TRST"
+      ],
+      "token": "TRST"
+    },
+    {
+      "name": "Technical Systems Management",
+      "aliases": [
+        "Technical Systems Management",
+        "TSM"
+      ],
+      "token": "TSM"
+    },
+    {
+      "name": "Turkish",
+      "aliases": [
+        "Turkish",
+        "TURK"
+      ],
+      "token": "TURK"
+    },
+    {
+      "name": "Ukrainian",
+      "aliases": [
+        "Ukrainian",
+        "UKR"
+      ],
+      "token": "UKR"
+    },
+    {
+      "name": "Urban and Regional Planning",
+      "aliases": [
+        "Urban and Regional Planning",
+        "UP"
+      ],
+      "token": "UP"
+    },
+    {
+      "name": "Veterinary Clinical Medicine",
+      "aliases": [
+        "Veterinary Clinical Medicine",
+        "VCM"
+      ],
+      "token": "VCM"
+    },
+    {
+      "name": "Veterinary Medicine Courses",
+      "aliases": [
+        "Veterinary Medicine Courses",
+        "VM"
+      ],
+      "token": "VM"
+    },
+    {
+      "name": "Women and Gender in Global Perspectives Program",
+      "aliases": [
+        "Women and Gender in Global Perspectives Program",
+        "WGGP"
+      ],
+      "token": "WGGP"
+    },
+    {
+      "name": "Wolof",
+      "aliases": [
+        "Wolof",
+        "WLOF"
+      ],
+      "token": "WLOF"
+    },
+    {
+      "name": "Writing Studies",
+      "aliases": [
+        "Writing Studies",
+        "WRIT"
+      ],
+      "token": "WRIT"
+    },
+    {
+      "name": "Yiddish",
+      "aliases": [
+        "Yiddish",
+        "YDSH"
+      ],
+      "token": "YDSH"
+    },
+    {
+      "name": "Slavic",
+      "aliases": [
+        "Slavic",
+        "SLAV"
+      ],
+      "token": "SLAV"
+    },
+    {
+      "name": "Technology Entrepreneurship",
+      "aliases": [
+        "Technology Entrepreneurship",
+        "TE"
+      ],
+      "token": "TE"
+    },
+    {
+      "name": "Center for Advanced Study",
+      "aliases": [
+        "Center for Advanced Study",
+        "CAS"
+      ],
+      "token": "CAS"
+    }
+  ],
+  "General Education Requirements": [
+    {
+      "name": "Humanities & the Arts",
+      "aliases": [
+        "Humanities & the Arts",
+        "Humanities",
+        "HUM"
+      ],
+      "token": "HUM"
+    },
+    {
+      "name": "Cultural Studies",
+      "aliases": [
+        "Cultural Studies",
+        "CS"
+      ],
+      "token": "CS"
+    },
+    {
+      "name": "Social & Behavioral Sciences",
+      "aliases": [
+        "Social & Behavioral Sciences",
+        "SBS"
+      ],
+      "token": "SBS"
+    },
+    {
+      "name": "Quantitative Reasoning",
+      "aliases": [
+        "Quantitative Reasoning",
+        "QR"
+      ],
+      "token": "QR"
+    },
+    {
+      "name": "Advanced Composition",
+      "aliases": [
+        "Advanced Composition",
+        "ACP"
+      ],
+      "token": "ACP"
+    },
+    {
+      "name": "Natural Sciences & Technology",
+      "aliases": [
+        "Natural Sciences & Technology",
+        "NAT"
+      ],
+      "token": "NAT"
+    }
+  ]
+}

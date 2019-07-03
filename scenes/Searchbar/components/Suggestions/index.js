@@ -34,7 +34,10 @@ const Suggestions = (props) => {
               <ListGroup.Item
                 as='li'
                 key={keyword.name}
-                onClick={() => handleClick()}
+                onClick={() => handleClick({
+                  type: group.type,
+                  keyword: keyword
+                })}
                 className={
                   classNames(styles.item, {
                     [styles.selected]: activeSuggestion === i

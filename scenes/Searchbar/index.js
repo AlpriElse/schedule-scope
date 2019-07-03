@@ -8,14 +8,18 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
+import InputGroup from 'react-bootstrap/InputGroup'
+import DropdownButton from 'react-bootstrap/DropdownButton'
+import Dropdown from 'react-bootstrap/Dropdown'
 
 import useSearchForm from './services/SearchFormHook'
 import Suggestions from './components/Suggestions/'
 
 const Searchbar = (props) => {
-  const addFilter = (filter, value) => {
-    let { updateFilter } = this.props
-    updateFilter(filter, value)
+  const addFilter = (suggestion) => {
+    let { updateFilter } = props
+    console.log('addFilter', suggestion)
+    // updateFilter(filter, value)
   }
 
   let {
@@ -28,18 +32,32 @@ const Searchbar = (props) => {
     handleKeyDown,
     handleClick
   } = useSearchForm(addFilter)
-  console.log(filteredSuggestions)
+
   return (
     <Container>
       <Row>
         <Col md={{ span: 8, offset: 2}}>
           <Form onSubmit={handleSubmit}>
             <Form.Group>
-              <Form.Control
-                type="text"
-                value={input}
-                onChange={handleChange}
-                onKeyDown={handleKeyDown}/>
+              <InputGroup className="mb-3">
+                <DropdownButton
+                  as={InputGroup.Prepend}
+                  variant="outline-secondary"
+                  title="Dropdown"
+                  id="input-group-dropdown-1"
+                >
+                  <Dropdown.Item>Action</Dropdown.Item>
+                  <Dropdown.Item>Another action</Dropdown.Item>
+                  <Dropdown.Item>Something else here</Dropdown.Item>
+                  <Dropdown.Divider />
+                  <Dropdown.Item>Separated link</Dropdown.Item>
+                </DropdownButton>
+                <Form.Control
+                  type="text"
+                  value={input}
+                  onChange={handleChange}
+                  onKeyDown={handleKeyDown}/>
+              </InputGroup>
             </Form.Group>
           </Form>
           {

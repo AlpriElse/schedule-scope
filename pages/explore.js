@@ -3,14 +3,17 @@ import { connect } from 'react-redux'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 // import AppNav from '../components/AppNav/'
 import Layout from '../components/Layout'
 import Searchbar from '../scenes/Searchbar/'
-// import KeywordDisplay from '../containers/KeywordDisplay/'
+import KeywordDisplay from '../scenes/KeywordDisplay/'
 // import CourseView from '../components/CourseView/'
 
 import './explore.scss'
+
+import styles from './explore.scss'
 
 class ExplorePage extends React.Component {
   constructor(props) {
@@ -44,7 +47,7 @@ class ExplorePage extends React.Component {
   render() {
     return (
       <Layout>
-        <Container>
+        <Container className={styles.marginTop}>
           {/*
             <div className="container">
               <AppNav/>
@@ -54,10 +57,15 @@ class ExplorePage extends React.Component {
           <Row className='searchbar-container'>
             <Searchbar />
           </Row>
+          <Row>
+            <Col md={12}>
+            {
+
+              /* <KeywordDisplay/> */
+            }
+            </Col>
+          </Row>
           {/*
-            <div className="col-md-12">
-              <KeywordDisplay className="container"/>
-            </div>
           <div className="row">
             <CourseView courseList={this.props.courseList}/>
           </div>

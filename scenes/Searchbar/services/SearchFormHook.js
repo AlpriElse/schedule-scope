@@ -8,7 +8,6 @@ const useSearchForm = (addFilter) => {
   const [showSuggestions, setShowSuggestions] = useState(false)
   const [activeSuggestion, setActiveSuggestion] = useState(DEFAULT_SUGGESTION)
   const [suggestions, setSuggestions] = useState(undefined)
-
   const [filteredSuggestions, setFilteredSuggestions] = useState(suggestions)
 
   useEffect(() => {
@@ -60,20 +59,18 @@ const useSearchForm = (addFilter) => {
   }
 
   const handleKeyDown = (e) => {
-
     switch(e.keyCode) {
       case 13:
         //  [Enter]
-        if (activeSuggestion === 0) {
-          addFilter('user', currentInput)
-        } else {
-          let { filter, value } = suggestions[activeSuggestion - 1]
-          addFilter(field, value)
-        }
+        // if (activeSuggestion === 0) {
+        //   addFilter('user', currentInput)
+        // } else {
+        //   addFilter('suggestion', suggestions[activeSuggestion])
+        // }
         setCurrentInput('')
         setActiveSuggestion(0)
         setShowSuggestions(false)
-        setSuggestions([])
+        setFilteredSuggestions([])
 
         break;
       case 40:
@@ -83,23 +80,20 @@ const useSearchForm = (addFilter) => {
           len += type.keywords.length
         })
         setActiveSuggestion(Math.min(len, activeSuggestion + 1))
-        console.log(len, activeSuggestion)
         break;
       case 38:
         //  [Up Arrow]
         setActiveSuggestion(Math.max(DEFAULT_SUGGESTION, activeSuggestion - 1))
-        console.log(activeSuggestion)
         break;
     }
   }
 
   const handleClick = (suggestion) => {
-    let { filter, value } = suggestion
-    addFilter(filter, value)
+    addFilter(suggestion)
     setShowSuggestions(false)
     setActiveSuggestion(DEFAULT_SUGGESTION)
-    setCurrentInput('')
-    setSuggestions([])
+    setInput('')
+    setFilteredSuggestions([])
   }
 
   return {
