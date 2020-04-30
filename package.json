@@ -20,7 +20,7 @@
     "csv-parse": "^4.1.0",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-hash-code": "^1.0.0",
     "mongoose": "^5.5.15",
     "next": "^7.0.2",
