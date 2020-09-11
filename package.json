@@ -24,7 +24,7 @@
     "js-hash-code": "^1.0.0",
     "mongoose": "^5.5.15",
     "next": "^7.0.2",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.11.0",
     "popper.js": "^1.15.0",
     "react": "^16.8.0",
